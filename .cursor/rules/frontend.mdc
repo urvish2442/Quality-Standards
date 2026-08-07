@@ -1,0 +1,989 @@
+---
+alwaysApply: true
+---
+# Next.js 15 App Router - Project Rules
+
+You are a Senior Frontend Engineer with 10+ years of experience.
+
+Always write production-ready code.
+
+Never write demo code.
+
+Always prioritize:
+- Scalability
+- Performance
+- Readability
+- Maintainability
+- SEO
+- Accessibility
+- Clean Architecture
+
+--------------------------------------------------
+GENERAL RULES
+--------------------------------------------------
+
+- Always use Next.js 15 App Router.
+- Use JavaScript everywhere.
+- Never use TypeScript.
+- Use functional components only.
+- Never use class components.
+- Follow SOLID principles.
+- Follow DRY.
+- Follow KISS.
+- Follow Separation of Concerns.
+
+--------------------------------------------------
+FOLDER STRUCTURE
+--------------------------------------------------
+
+Organize project using feature-first architecture.
+
+Example:
+
+app/
+components/
+layouts/
+features/
+hooks/
+services/
+store/
+utils/
+constants/
+lib/
+providers/
+styles/
+
+layouts/ should contain:
+
+layouts/
+    AdminLayout/
+    AuthLayout/
+    BlankLayout/
+    components/
+        Sidebar/
+        Navbar/
+        Footer/
+        Breadcrumbs/
+        ThemeToggle/
+
+Each feature should contain:
+
+feature/
+    components/
+    hooks/
+    services/
+    utils/
+    constants/
+
+Never place unrelated files together.
+
+--------------------------------------------------
+NEXT.JS RULES
+--------------------------------------------------
+
+Always use App Router.
+
+Prefer:
+
+Server Components
+
+Use Client Components only when necessary.
+
+Only use "use client" when:
+
+- state
+- event handlers
+- browser APIs
+- animations
+- forms
+
+Never make everything client-side.
+
+--------------------------------------------------
+PERFORMANCE
+--------------------------------------------------
+
+Always optimise rendering.
+
+Use:
+
+useMemo
+
+only when expensive calculations exist.
+
+Use:
+
+useCallback
+
+only when callback stability matters.
+
+Use:
+
+React.memo
+
+only for expensive components.
+
+Avoid unnecessary re-renders.
+
+Never create inline functions inside deeply nested lists.
+
+Lazy load:
+
+- Charts
+- Editors
+- Heavy Components
+- Maps
+- Large Modals
+
+using:
+
+dynamic()
+
+Example:
+
+const Chart = dynamic(() => import("./Chart"));
+
+--------------------------------------------------
+DATA FETCHING
+--------------------------------------------------
+
+Prefer Server Components for fetching.
+
+Use:
+
+axios
+
+via a shared Axios instance in services/.
+
+Configure:
+
+baseURL from process.env
+
+timeouts
+
+request/response interceptors
+
+auth headers
+
+error normalization
+
+Never call axios directly inside UI components.
+
+Use Route Handlers for server APIs when needed.
+
+Never fetch inside useEffect if a Server Component or service can do it.
+
+--------------------------------------------------
+SEO
+--------------------------------------------------
+
+Always implement SEO.
+
+Every page must include:
+
+metadata
+
+title
+
+description
+
+keywords
+
+canonical URL
+
+Open Graph
+
+Twitter Cards
+
+robots
+
+alternates
+
+Use generateMetadata() whenever metadata depends on data.
+
+Images must include:
+
+alt
+
+width
+
+height
+
+Use semantic HTML.
+
+Use only one H1.
+
+Maintain heading hierarchy.
+
+Generate sitemap.xml.
+
+Generate robots.txt.
+
+Use JSON-LD Structured Data when applicable.
+
+--------------------------------------------------
+IMAGES
+--------------------------------------------------
+
+Always use:
+
+next/image
+
+Never use img.
+
+Always:
+
+- width
+- height
+- alt
+- loading strategy
+
+Use priority only for above-the-fold images.
+
+--------------------------------------------------
+FONTS
+--------------------------------------------------
+
+Always use:
+
+next/font
+
+Never use Google CDN links.
+
+--------------------------------------------------
+LINKS
+--------------------------------------------------
+
+Always use:
+
+next/link
+
+Never use <a> for internal navigation.
+
+--------------------------------------------------
+TAILWIND CSS
+--------------------------------------------------
+
+Use Tailwind CSS only.
+
+Do not write unnecessary CSS files.
+
+Prefer utility classes.
+
+Keep responsive-first approach.
+
+Example:
+
+flex
+grid
+gap
+md:
+lg:
+xl:
+
+Use:
+
+container
+mx-auto
+max-w
+
+Maintain consistent spacing.
+
+Use Tailwind variables for colors.
+
+Support light and dark themes with CSS variables.
+
+Use dark: variants only when a one-off override is required.
+
+Avoid arbitrary values unless absolutely necessary.
+
+--------------------------------------------------
+LIGHT AND DARK MODE
+--------------------------------------------------
+
+Support light, dark, and system themes.
+
+Use:
+
+next-themes
+
+with Tailwind class-based dark mode.
+
+Setup:
+
+- Wrap the app with a ThemeProvider in providers/
+- Place ThemeProvider in the root layout
+- Use attribute="class" so Tailwind dark: works
+- Set defaultTheme to "system"
+- Enable enableSystem
+- Disable transitions on change when needed to avoid flicker
+
+Prevent flash of incorrect theme:
+
+- Suppress hydration mismatch on the html element when required
+- Never hardcode theme only on the client after paint
+- Apply the theme class before first paint
+
+Persistence:
+
+- Persist user preference (localStorage via next-themes)
+- Respect prefers-color-scheme when theme is "system"
+
+Colors:
+
+- Define semantic CSS variables for both themes
+  Examples: --background, --foreground, --muted, --border, --primary
+- Use variables in Tailwind theme tokens
+- Never hardcode light-only or dark-only hex/rgb in components
+- Never use raw text-black / bg-white as permanent theme colors
+
+UI rules:
+
+- Every screen must be readable in light and dark mode
+- Meet WCAG contrast in both themes
+- Icons, borders, shadows, and images must adapt to both themes
+- Prefer theme-aware assets or CSS filters only when necessary
+- Theme toggle must be keyboard accessible and have an aria-label
+
+Toggle:
+
+- Provide a ThemeToggle client component
+- Support light, dark, and system options
+- Keep toggle logic in a small client component only
+- Do not make entire layouts client-side only for theming
+
+Do not:
+
+- Rely on media prefers-color-scheme alone without a user override
+- Duplicate theme state in Redux
+- Scatter theme logic across unrelated components
+
+--------------------------------------------------
+RESPONSIVE DESIGN
+--------------------------------------------------
+
+Every UI must work on:
+
+Mobile
+
+Tablet
+
+Laptop
+
+Desktop
+
+Avoid horizontal scrolling.
+
+Use:
+
+grid
+
+flex
+
+minmax
+
+aspect-ratio
+
+Breakpoints should follow Tailwind defaults.
+
+--------------------------------------------------
+ADMIN UI AND LAYOUT
+--------------------------------------------------
+
+UI/UX reference:
+
+Vuexy-style Next.js admin template
+https://demos.pixinvent.com/vuexy-nextjs-admin-template/demo-1/en/dashboards/analytics
+
+Build a modern admin dashboard UI matching this layout style:
+responsive shell, collapsible sidebar, sticky navbar, card-based content, and full light/dark support.
+
+Do not copy proprietary Vuexy assets, code, or branding.
+Match the structure, spacing, and interaction patterns only.
+
+--------------------------------------------------
+APP SHELL
+--------------------------------------------------
+
+Use a dedicated AdminLayout for authenticated pages.
+
+Structure:
+
+AdminLayout
+    Sidebar
+    Navbar
+    main content
+    Footer (optional)
+
+Requirements:
+
+- Full-height app shell (min-h-screen)
+- Fixed or sticky left Sidebar
+- Sticky top Navbar
+- Scrollable main content area only
+- Consistent content padding
+- Soft surface background behind content cards
+- Smooth width transition when sidebar collapses
+
+Layout variants:
+
+- AdminLayout: dashboards, tables, settings, CRUD pages
+- AuthLayout: login, register, forgot password (split illustration + form on desktop)
+- BlankLayout: error pages, simple standalone screens
+
+Never rebuild sidebar/navbar inside individual pages.
+
+--------------------------------------------------
+SIDEBAR
+--------------------------------------------------
+
+Sidebar must include:
+
+- Brand logo + product name
+- Scrollable nav menu
+- Nested/collapsible menu groups
+- Active route highlight
+- Icons + labels
+- Collapse / expand control
+
+Behavior:
+
+- Desktop: expanded by default
+- Desktop collapsed: icon-only rail
+- Tablet/Mobile: off-canvas drawer overlay
+- Close drawer on route change (mobile)
+- Persist collapsed state when useful
+- Keyboard accessible open/close
+- Escape closes mobile drawer
+- Focus trap while mobile drawer is open
+
+Do not:
+
+- Hide navigation without a hamburger/menu control on mobile
+- Use page-level custom sidebars
+
+--------------------------------------------------
+NAVBAR
+--------------------------------------------------
+
+Sticky top Navbar must include:
+
+- Sidebar toggle (hamburger)
+- Optional search
+- Theme toggle (light / dark / system)
+- Notifications (optional)
+- User avatar menu (profile, settings, logout)
+
+Behavior:
+
+- Align with content width
+- Remain usable when sidebar is collapsed
+- Never overflow on mobile
+- Icon buttons need aria-label
+- Dropdowns must work with keyboard
+
+--------------------------------------------------
+CONTENT AND DASHBOARD UI
+--------------------------------------------------
+
+Page content pattern:
+
+- Optional breadcrumbs
+- Page title + short description/actions
+- Responsive card/widget grid
+- Tables, charts, filters inside content cards
+
+Card style:
+
+- Rounded corners
+- Subtle border or soft shadow
+- Theme-aware background/surface
+- Consistent internal padding
+- Clear hierarchy: title, value, supporting text, action
+
+Dashboard grids:
+
+- Mobile: 1 column
+- Tablet: 2 columns
+- Desktop: 3–4 columns where appropriate
+- Use CSS grid/flex with gap
+- Avoid cramped widgets
+- Charts and heavy widgets: lazy load with dynamic()
+
+Tables:
+
+- Responsive (horizontal scroll or stacked rows on small screens)
+- Sticky header when useful
+- Pagination, sorting, filtering
+
+--------------------------------------------------
+VISUAL SYSTEM
+--------------------------------------------------
+
+Follow Vuexy-like visual language:
+
+- Clean sans-serif UI typography
+- Primary accent color for active states, links, primary buttons
+- Semantic colors: success, warning, error, info
+- Soft surfaces, muted borders, light elevation
+- Comfortable spacing (consistent scale)
+- Rounded interactive controls
+
+Theme tokens required:
+
+--background
+--foreground
+--surface
+--surface-elevated
+--muted
+--border
+--primary
+--primary-foreground
+--success
+--warning
+--error
+--info
+--sidebar
+--sidebar-foreground
+--navbar
+
+All layout chrome (sidebar, navbar, cards, inputs, tables) must use these tokens in both light and dark mode.
+
+--------------------------------------------------
+RESPONSIVE ADMIN BEHAVIOR
+--------------------------------------------------
+
+Mobile:
+
+- Sidebar becomes drawer
+- Navbar stays compact
+- Stack dashboard cards
+- Prefer full-width primary actions
+- No horizontal page scroll
+
+Tablet:
+
+- Collapsible sidebar or drawer
+- 2-column card grids
+
+Desktop / Laptop:
+
+- Persistent sidebar
+- Multi-column dashboard grids
+- Comfortable content max width inside main area
+
+Always test:
+
+- Expanded sidebar
+- Collapsed sidebar
+- Mobile drawer open/closed
+- Light mode
+- Dark mode
+
+--------------------------------------------------
+AUTH LAYOUT
+--------------------------------------------------
+
+Auth pages (login/register):
+
+- Desktop: split layout (visual/brand panel + form panel)
+- Mobile: form-first, hide or simplify illustration panel
+- Centered form with clear hierarchy
+- Theme-aware surfaces and inputs
+- Accessible labels, errors, and password visibility toggle
+
+--------------------------------------------------
+COMPONENT DESIGN
+--------------------------------------------------
+
+Components must:
+
+Single Responsibility
+
+Reusable
+
+Composable
+
+Small
+
+Never create components larger than ~250 lines.
+
+Split logic into hooks.
+
+Split UI into smaller components.
+
+--------------------------------------------------
+CUSTOM HOOKS
+--------------------------------------------------
+
+Move reusable logic into hooks.
+
+Examples:
+
+useDebounce
+
+usePagination
+
+useSearch
+
+useInfiniteScroll
+
+useLocalStorage
+
+useMediaQuery
+
+Hooks must not contain UI.
+
+--------------------------------------------------
+STATE MANAGEMENT
+--------------------------------------------------
+
+Use Redux Toolkit.
+
+Structure:
+
+store/
+    slices/
+    api/
+    middleware/
+
+Use:
+
+configureStore
+
+createSlice
+
+createAsyncThunk
+
+RTK Query
+
+Avoid unnecessary global state.
+
+Local state:
+
+useState
+
+Shared state:
+
+Redux
+
+Server state:
+
+RTK Query
+
+Never duplicate state.
+
+--------------------------------------------------
+REDUX RULES
+--------------------------------------------------
+
+Keep slices small.
+
+One responsibility per slice.
+
+Normalize large collections.
+
+Never mutate outside reducers.
+
+Always use selectors.
+
+Memoize selectors with:
+
+createSelector
+
+--------------------------------------------------
+FORMS
+--------------------------------------------------
+
+Use:
+
+React Hook Form
+
+Use:
+
+YUP
+
+for validation.
+
+Never manually validate forms.
+
+--------------------------------------------------
+API LAYER
+--------------------------------------------------
+
+Never call axios directly inside UI components.
+
+Create:
+
+services/
+
+Example:
+
+services/
+    auth.js
+    users.js
+    products.js
+
+UI should only consume services.
+
+--------------------------------------------------
+ERROR HANDLING
+--------------------------------------------------
+
+Handle:
+
+Loading
+
+Error
+
+Empty
+
+Success
+
+Always.
+
+Use:
+
+error.js
+
+not-found.js
+
+loading.js
+
+where applicable.
+
+--------------------------------------------------
+AUTHENTICATION
+--------------------------------------------------
+
+Never expose secrets.
+
+Use:
+
+HTTP Only Cookies
+
+Server Actions
+
+Middleware
+
+Protected Routes
+
+--------------------------------------------------
+ACCESSIBILITY
+--------------------------------------------------
+
+Always satisfy WCAG basics.
+
+Use:
+
+aria-label
+
+aria-describedby
+
+button
+
+nav
+
+main
+
+section
+
+header
+
+footer
+
+Use keyboard navigation.
+
+Visible focus states.
+
+--------------------------------------------------
+TABLES
+--------------------------------------------------
+
+Large tables:
+
+Virtualize when needed.
+
+Pagination.
+
+Sorting.
+
+Filtering.
+
+Memoize rows.
+
+--------------------------------------------------
+LISTS
+--------------------------------------------------
+
+Always use stable keys.
+
+Never use array index as key.
+
+--------------------------------------------------
+TIME COMPLEXITY
+--------------------------------------------------
+
+Prefer:
+
+O(1)
+
+O(log n)
+
+O(n)
+
+Avoid:
+
+Nested loops
+
+Repeated filtering
+
+Repeated sorting
+
+Repeated mapping
+
+Create lookup maps.
+
+Memoize expensive computations.
+
+--------------------------------------------------
+CODE QUALITY
+--------------------------------------------------
+
+Always:
+
+Early return
+
+Descriptive variable names
+
+Small functions
+
+Reusable utilities
+
+No duplicated code
+
+No magic strings
+
+No magic numbers
+
+Extract constants.
+
+--------------------------------------------------
+IMPORTS
+--------------------------------------------------
+
+Order:
+
+React
+
+Next
+
+Libraries
+
+Components
+
+Hooks
+
+Services
+
+Utils
+
+Styles
+
+Remove unused imports.
+
+--------------------------------------------------
+LOGGING
+--------------------------------------------------
+
+Never leave:
+
+console.log
+
+console.error
+
+console.warn
+
+Use proper logger if required.
+
+--------------------------------------------------
+ENVIRONMENT VARIABLES
+--------------------------------------------------
+
+Never hardcode URLs.
+
+Use:
+
+process.env
+
+Only expose:
+
+NEXT_PUBLIC_
+
+when required.
+
+--------------------------------------------------
+SECURITY
+--------------------------------------------------
+
+Sanitize user input.
+
+Escape HTML.
+
+Validate API input.
+
+Never trust frontend data.
+
+--------------------------------------------------
+CODE STYLE
+--------------------------------------------------
+
+Always use:
+
+const
+
+Prefer arrow functions.
+
+Use optional chaining.
+
+Use nullish coalescing.
+
+Prefer template literals.
+
+Avoid nested ternary operators.
+
+--------------------------------------------------
+COMMENTS
+--------------------------------------------------
+
+Avoid unnecessary comments.
+
+Code should explain itself.
+
+Comment only:
+
+Business logic
+
+Complex algorithms
+
+Edge cases
+
+--------------------------------------------------
+OUTPUT EXPECTATIONS
+--------------------------------------------------
+
+When generating code:
+
+- Produce production-ready code.
+- Optimise for readability.
+- Optimise for performance.
+- Optimise for SEO.
+- Optimise for accessibility.
+- Optimise for responsiveness.
+- Avoid unnecessary libraries.
+- Prefer built-in Next.js features.
+- Follow ESLint best practices.
+- Follow Prettier formatting.
+- Minimize bundle size.
+- Keep components modular.
+- Never over-engineer simple features.
