@@ -15,8 +15,19 @@ const sora = Sora({
 const APP_NAME = "Quality Standards";
 const APP_DESCRIPTION =
   "Engineering reference for limits and fits, dimensions, threads, GD&T, and surface roughness.";
+const APP_OG_DESCRIPTION =
+  "Engineering reference hub for manufacturing tolerances and quality standards.";
+const OG_IMAGE = {
+  url: "/og.png",
+  width: 1200,
+  height: 630,
+  alt: "Quality Standards — engineering reference by Urvish Rupareliya",
+};
 
 export const metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000",
+  ),
   applicationName: APP_NAME,
   title: {
     default: APP_NAME,
@@ -56,14 +67,14 @@ export const metadata = {
     type: "website",
     siteName: APP_NAME,
     title: APP_NAME,
-    description:
-      "Engineering reference hub for manufacturing tolerances and quality standards.",
+    description: APP_OG_DESCRIPTION,
+    images: [OG_IMAGE],
   },
   twitter: {
     card: "summary_large_image",
     title: APP_NAME,
-    description:
-      "Engineering reference hub for manufacturing tolerances and quality standards.",
+    description: APP_OG_DESCRIPTION,
+    images: [OG_IMAGE.url],
   },
 };
 
