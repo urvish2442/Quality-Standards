@@ -69,6 +69,14 @@ export const NAV_ITEMS = [
     icon: "roughness",
     description: "Surface finish grades, Ra/Rz parameters, and process ranges",
   },
+  {
+    id: "hardness",
+    label: "Hardness",
+    href: "/hardness",
+    icon: "hardness",
+    description:
+      "Brinell, Vickers, and Rockwell scales with conversion and material ranges",
+  },
 ];
 
 export const STANDARD_CARDS = NAV_ITEMS.filter((item) => item.id !== "overview");

@@ -1,6 +1,6 @@
 const APP_NAME = "Quality Standards";
 const APP_DESCRIPTION =
-  "Engineering reference for limits and fits, threads, GD&T, calculators, and surface roughness.";
+  "Engineering reference for limits and fits, threads, GD&T, calculators, surface roughness, and hardness.";
 
 export default function manifest() {
   return {

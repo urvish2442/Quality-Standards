@@ -15,7 +15,7 @@ const sora = Sora({
 
 const APP_NAME = "Quality Standards";
 const APP_DESCRIPTION =
-  "Engineering reference for limits and fits, dimensions, threads, GD&T, and surface roughness.";
+  "Engineering reference for limits and fits, dimensions, threads, GD&T, surface roughness, and hardness.";
 const APP_OG_DESCRIPTION =
   "Engineering reference hub for manufacturing tolerances and quality standards.";
 const OG_IMAGE = {
@@ -42,6 +42,7 @@ export const metadata = {
     "GD&T",
     "threads",
     "roughness",
+    "hardness",
     "tolerances",
   ],
   appleWebApp: {

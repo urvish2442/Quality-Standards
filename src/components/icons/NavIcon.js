@@ -19,6 +19,7 @@ import {
   RefreshCw,
   Triangle,
   Disc,
+  Diamond,
 } from "lucide-react";
 
 const ICON_MAP = {
@@ -30,6 +31,7 @@ const ICON_MAP = {
   thread: Waves,
   gdt: Crosshair,
   roughness: Activity,
+  hardness: Diamond,
   calculator: Calculator,
   converter: RefreshCw,
   position: Crosshair,

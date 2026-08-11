@@ -17,7 +17,7 @@ const OverviewPage = () => {
           <p className="mt-4 text-sm leading-relaxed text-muted sm:text-base">
             Browse manufacturing quality standards in one place. Start with
             Limits and Fits, then expand into threads, geometric tolerances,
-            roughness, and dimensional rules.
+            roughness, hardness, and dimensional rules.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
