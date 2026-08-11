@@ -7,6 +7,7 @@ import {
   getToleranceGrades,
 } from "@/features/limits-and-fits/utils/calculateTolerance";
 import NavIcon from "@/components/icons/NavIcon";
+import ThemedSelect from "@/components/ui/ThemedSelect";
 
 const FEATURE_OPTIONS = [
   {
@@ -29,6 +30,11 @@ const ToleranceCalculator = () => {
   const grades = useMemo(
     () => getToleranceGrades(featureType),
     [featureType],
+  );
+
+  const gradeOptions = useMemo(
+    () => grades.map((item) => ({ value: item, label: item })),
+    [grades],
   );
 
   const result = useMemo(() => {
@@ -76,11 +82,10 @@ const ToleranceCalculator = () => {
             return (
               <label
                 key={option.id}
-                className={`flex cursor-pointer items-center gap-2 rounded-xl border p-2.5 transition sm:gap-3 sm:rounded-2xl sm:p-4 ${
-                  checked
+                className={`flex cursor-pointer items-center gap-2 rounded-xl border p-2.5 transition sm:gap-3 sm:rounded-2xl sm:p-4 ${checked
                     ? "border-primary bg-primary-soft shadow-sm"
                     : "border-border bg-background hover:border-primary/40"
-                }`}
+                  }`}
               >
                 <input
                   type="radio"
@@ -91,11 +96,10 @@ const ToleranceCalculator = () => {
                   className="sr-only"
                 />
                 <span
-                  className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg sm:h-11 sm:w-11 sm:rounded-xl ${
-                    checked
+                  className={`inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg sm:h-11 sm:w-11 sm:rounded-xl ${checked
                       ? "bg-primary text-primary-foreground"
                       : "bg-surface text-primary"
-                  }`}
+                    }`}
                 >
                   <NavIcon name={option.icon} className="h-4 w-4 sm:h-5 sm:w-5" />
                 </span>
@@ -140,18 +144,12 @@ const ToleranceCalculator = () => {
               <span className="mb-1 block text-xs font-medium sm:mb-1.5 sm:text-sm">
                 Grade
               </span>
-              <select
+              <ThemedSelect
                 value={grade}
-                onChange={(event) => setGrade(event.target.value)}
-                className="h-10 w-full rounded-xl border border-border bg-background px-2.5 text-sm outline-none transition focus:border-primary sm:h-11 sm:px-3"
-                aria-label="Tolerance grade"
-              >
-                {grades.map((item) => (
-                  <option key={item} value={item}>
-                    {item}
-                  </option>
-                ))}
-              </select>
+                onChange={setGrade}
+                options={gradeOptions}
+                ariaLabel="Tolerance grade"
+              />
             </label>
           </div>
         </div>
