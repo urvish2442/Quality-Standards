@@ -6,6 +6,7 @@ import {
   decimalDegreesToDms,
   dmsToDecimalDegrees,
 } from "@/features/calculator/utils/conversions";
+import WarningMessage from "@/features/calculator/components/WarningMessage";
 
 const MODES = [
   { id: "length", label: "Length converter" },
@@ -53,7 +54,7 @@ const LengthConverter = () => {
           Result (mm)
         </p>
         {result.error ? (
-          <p className="mt-2 text-sm text-muted">{result.error}</p>
+          <WarningMessage className="mt-2">{result.error}</WarningMessage>
         ) : (
           <p className="mt-1 font-(family-name:--font-sora) text-2xl font-semibold text-primary">
             {result.display}
@@ -107,7 +108,7 @@ const AngleConverter = () => {
             Degrees ° Minutes ′ Seconds ″
           </p>
           {dmsResult.error ? (
-            <p className="mt-2 text-sm text-muted">{dmsResult.error}</p>
+            <WarningMessage className="mt-2">{dmsResult.error}</WarningMessage>
           ) : (
             <p className="mt-1 font-(family-name:--font-sora) text-xl font-semibold text-primary">
               {dmsResult.display}
@@ -171,7 +172,7 @@ const AngleConverter = () => {
             Decimal degrees
           </p>
           {decimalResult.error ? (
-            <p className="mt-2 text-sm text-muted">{decimalResult.error}</p>
+            <WarningMessage className="mt-2">{decimalResult.error}</WarningMessage>
           ) : (
             <p className="mt-1 font-(family-name:--font-sora) text-xl font-semibold text-primary">
               {decimalResult.display}

@@ -1,12 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
+import { Suspense, useCallback, useEffect, useState } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import Sidebar from "@/layouts/AdminLayout/components/Sidebar";
 import Navbar from "@/layouts/AdminLayout/components/Navbar";
 
-const AdminLayout = ({ children }) => {
+const AdminLayoutShell = ({ children }) => {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -16,7 +17,7 @@ const AdminLayout = ({ children }) => {
 
   useEffect(() => {
     closeMobile();
-  }, [pathname, closeMobile]);
+  }, [pathname, searchParams, closeMobile]);
 
   useEffect(() => {
     if (!mobileOpen) {
@@ -55,6 +56,14 @@ const AdminLayout = ({ children }) => {
         <main className="flex-1 px-4 py-3 sm:px-6 sm:py-6 lg:px-8">{children}</main>
       </div>
     </div>
+  );
+};
+
+const AdminLayout = ({ children }) => {
+  return (
+    <Suspense fallback={null}>
+      <AdminLayoutShell>{children}</AdminLayoutShell>
+    </Suspense>
   );
 };
 

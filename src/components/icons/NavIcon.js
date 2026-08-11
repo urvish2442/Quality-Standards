@@ -14,7 +14,11 @@ import {
   Waves,
   Sun,
   X,
+  ChevronDown,
   ChevronRight,
+  RefreshCw,
+  Triangle,
+  Disc,
 } from "lucide-react";
 
 const ICON_MAP = {
@@ -27,12 +31,17 @@ const ICON_MAP = {
   gdt: Crosshair,
   roughness: Activity,
   calculator: Calculator,
+  converter: RefreshCw,
+  position: Crosshair,
+  pcd: Disc,
+  triangle: Triangle,
   menu: Menu,
   close: X,
   sun: Sun,
   moon: Moon,
   system: Monitor,
   chevron: ChevronRight,
+  chevronDown: ChevronDown,
   panel: PanelLeft,
 };
 

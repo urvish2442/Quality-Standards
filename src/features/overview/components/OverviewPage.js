@@ -48,11 +48,7 @@ const OverviewPage = () => {
                   <span className="rounded-full bg-background px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-muted">
                     Soon
                   </span>
-                ) : (
-                  <span className="rounded-full bg-success/15 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide text-success">
-                    Ready
-                  </span>
-                )}
+                ) : null}
               </div>
               <h3 className="font-(family-name:--font-sora) text-lg font-semibold">
                 {card.label}

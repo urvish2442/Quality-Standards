@@ -1,56 +1,58 @@
 "use client";
 
-import { useState } from "react";
+import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import {
+  CALCULATOR_TABS,
+  getCalculatorTabId,
+} from "@/constants/navigation";
 import PositionCalculator from "@/features/calculator/components/PositionCalculator";
 import AngleCalculator from "@/features/calculator/components/AngleCalculator";
 import Converter from "@/features/calculator/components/Converter";
+import PcdCalculator from "@/features/calculator/components/PcdCalculator";
 
-const TABS = [
-  { id: "converter", label: "Converter" },
-  { id: "position", label: "Position" },
-  { id: "angle", label: "Triangle Solver" },
-];
+const PANEL_MAP = {
+  converter: Converter,
+  position: PositionCalculator,
+  pcd: PcdCalculator,
+  angle: AngleCalculator,
+};
 
 const CalculatorView = () => {
-  const [activeTab, setActiveTab] = useState("converter");
+  const searchParams = useSearchParams();
+  const activeTab = getCalculatorTabId(searchParams.get("tab"));
+  const ActivePanel = PANEL_MAP[activeTab] ?? Converter;
 
   return (
     <div className="flex w-full flex-col gap-6">
       <div
-        className="inline-flex w-full max-w-2xl rounded-2xl border border-border bg-surface p-1 shadow-(--card-shadow)"
+        className="inline-flex w-full max-w-3xl rounded-2xl border border-border bg-surface p-1 shadow-(--card-shadow)"
         role="tablist"
         aria-label="Calculator sections"
       >
-        {TABS.map((tab) => {
+        {CALCULATOR_TABS.map((tab) => {
           const isActive = activeTab === tab.id;
 
           return (
-            <button
+            <Link
               key={tab.id}
-              type="button"
+              href={tab.href}
               role="tab"
               aria-selected={isActive}
-              onClick={() => setActiveTab(tab.id)}
-              className={`flex-1 rounded-xl px-3 py-2.5 text-sm font-semibold transition sm:px-4 ${
+              className={`flex-1 rounded-xl px-3 py-2.5 text-center text-sm font-semibold transition sm:px-4 ${
                 isActive
                   ? "bg-primary text-primary-foreground shadow-sm"
                   : "text-muted hover:bg-primary-soft hover:text-foreground"
               }`}
             >
               {tab.label}
-            </button>
+            </Link>
           );
         })}
       </div>
 
       <div role="tabpanel">
-        {activeTab === "position" ? (
-          <PositionCalculator />
-        ) : activeTab === "angle" ? (
-          <AngleCalculator />
-        ) : (
-          <Converter />
-        )}
+        <ActivePanel />
       </div>
     </div>
   );

@@ -1,12 +1,85 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useSearchParams } from "next/navigation";
 import { NAV_ITEMS } from "@/constants/navigation";
 import NavIcon from "@/components/icons/NavIcon";
 
+const isItemActive = (item, pathname, searchParams) => {
+  if (item.href === "/") {
+    return pathname === "/";
+  }
+
+  if (!pathname.startsWith(item.href.split("?")[0])) {
+    return false;
+  }
+
+  if (item.href.includes("?tab=")) {
+    const tab = new URL(item.href, "http://local").searchParams.get("tab");
+    return searchParams.get("tab") === tab || (!searchParams.get("tab") && tab === "converter");
+  }
+
+  return true;
+};
+
+const NavLink = ({
+  item,
+  pathname,
+  searchParams,
+  collapsed,
+  onCloseMobile,
+  nested = false,
+}) => {
+  const isActive = isItemActive(item, pathname, searchParams);
+
+  return (
+    <Link
+      href={item.href}
+      onClick={onCloseMobile}
+      className={`flex items-center gap-3 rounded-xl text-sm transition-colors ${
+        nested ? "px-3 py-2" : "px-3 py-2.5"
+      } ${collapsed && !nested ? "lg:justify-center lg:px-2" : ""} ${
+        isActive
+          ? "bg-sidebar-active/20 font-semibold text-sidebar-active"
+          : "text-sidebar-foreground/85 hover:bg-white/10 hover:text-white"
+      }`}
+      aria-current={isActive ? "page" : undefined}
+      title={collapsed ? item.label : undefined}
+    >
+      <NavIcon name={item.icon} className={nested ? "h-4 w-4 shrink-0" : "h-5 w-5 shrink-0"} />
+      <span className={collapsed && !nested ? "lg:hidden" : ""}>{item.label}</span>
+    </Link>
+  );
+};
+
 const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
   const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const [openGroups, setOpenGroups] = useState({});
+
+  useEffect(() => {
+    const nextOpen = {};
+
+    NAV_ITEMS.forEach((item) => {
+      if (item.children?.length) {
+        const groupActive = item.children.some((child) =>
+          isItemActive(child, pathname, searchParams),
+        );
+        const parentActive = pathname.startsWith(item.href);
+        nextOpen[item.id] = groupActive || parentActive;
+      }
+    });
+
+    setOpenGroups((current) => ({ ...current, ...nextOpen }));
+  }, [pathname, searchParams]);
+
+  const toggleGroup = (id) => {
+    setOpenGroups((current) => ({
+      ...current,
+      [id]: !current[id],
+    }));
+  };
 
   return (
     <>
@@ -25,8 +98,22 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
         aria-label="Main navigation"
       >
         <div className="flex h-16 items-center gap-3 border-b border-white/10 px-5">
-          <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary text-sm font-bold text-primary-foreground">
-            QS
+          <div
+            className="relative flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-xl text-sm font-bold tracking-wide text-white shadow-[0_8px_18px_-6px_rgba(15,118,110,0.7)] ring-1 ring-white/20"
+            style={{
+              backgroundImage:
+                "linear-gradient(145deg, #2dd4bf 0%, #14b8a6 42%, #0f766e 100%)",
+            }}
+            aria-hidden="true"
+          >
+            <span
+              className="absolute inset-0 opacity-50"
+              style={{
+                backgroundImage:
+                  "linear-gradient(180deg, rgba(255,255,255,0.28) 0%, transparent 48%, rgba(0,0,0,0.18) 100%)",
+              }}
+            />
+            <span className="relative font-(family-name:--font-sora)">QS</span>
           </div>
           <div
             className={`min-w-0 overflow-hidden transition-all ${
@@ -60,11 +147,6 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
           </p>
           <ul className="space-y-1">
             {NAV_ITEMS.map((item) => {
-              const isActive =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
-
               if (item.disabled) {
                 return (
                   <li key={item.id}>
@@ -90,26 +172,86 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
                 );
               }
 
+              if (item.children?.length) {
+                const parentActive = pathname.startsWith(item.href);
+                const isOpen = openGroups[item.id] ?? parentActive;
+
+                return (
+                  <li key={item.id}>
+                    <div className="space-y-1">
+                      <div
+                        className={`flex items-center gap-1 rounded-xl ${
+                          parentActive ? "bg-sidebar-active/10" : ""
+                        }`}
+                      >
+                        <Link
+                          href={item.children[0].href}
+                          onClick={onCloseMobile}
+                          className={`flex min-w-0 flex-1 items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-colors ${
+                            collapsed ? "lg:justify-center lg:px-2" : ""
+                          } ${
+                            parentActive
+                              ? "font-semibold text-sidebar-active"
+                              : "text-sidebar-foreground/85 hover:bg-white/10 hover:text-white"
+                          }`}
+                          title={collapsed ? item.label : undefined}
+                        >
+                          <NavIcon name={item.icon} className="h-5 w-5 shrink-0" />
+                          <span className={collapsed ? "lg:hidden" : ""}>
+                            {item.label}
+                          </span>
+                        </Link>
+
+                        <button
+                          type="button"
+                          className={`mr-1 inline-flex h-8 w-8 items-center justify-center rounded-lg text-sidebar-muted transition hover:bg-white/10 hover:text-sidebar-foreground ${
+                            collapsed ? "lg:hidden" : ""
+                          }`}
+                          onClick={() => toggleGroup(item.id)}
+                          aria-expanded={isOpen}
+                          aria-label={`${isOpen ? "Collapse" : "Expand"} ${item.label}`}
+                        >
+                          <NavIcon
+                            name="chevronDown"
+                            className={`h-4 w-4 transition-transform duration-200 ${
+                              isOpen ? "rotate-180" : ""
+                            }`}
+                          />
+                        </button>
+                      </div>
+
+                      <ul
+                        className={`ml-4 space-y-1 border-l border-white/10 pl-2 ${
+                          collapsed ? "lg:hidden" : ""
+                        } ${isOpen ? "block" : "hidden"}`}
+                      >
+                        {item.children.map((child) => (
+                          <li key={child.id}>
+                            <NavLink
+                              item={child}
+                              pathname={pathname}
+                              searchParams={searchParams}
+                              collapsed={collapsed}
+                              onCloseMobile={onCloseMobile}
+                              nested
+                            />
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </li>
+                );
+              }
+
               return (
                 <li key={item.id}>
-                  <Link
-                    href={item.href}
-                    onClick={onCloseMobile}
-                    className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm transition-colors ${
-                      collapsed ? "lg:justify-center lg:px-2" : ""
-                    } ${
-                      isActive
-                        ? "bg-sidebar-active/20 font-semibold text-sidebar-active"
-                        : "text-sidebar-foreground/85 hover:bg-white/10 hover:text-white"
-                    }`}
-                    aria-current={isActive ? "page" : undefined}
-                    title={collapsed ? item.label : undefined}
-                  >
-                    <NavIcon name={item.icon} className="h-5 w-5 shrink-0" />
-                    <span className={collapsed ? "lg:hidden" : ""}>
-                      {item.label}
-                    </span>
-                  </Link>
+                  <NavLink
+                    item={item}
+                    pathname={pathname}
+                    searchParams={searchParams}
+                    collapsed={collapsed}
+                    onCloseMobile={onCloseMobile}
+                  />
                 </li>
               );
             })}
@@ -124,7 +266,13 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
           <p>ISO · ASME · DIN reference hub</p>
           <p className="mt-1.5">
             by{" "}
-            <span className="font-semibold text-primary">
+            <span
+              className="bg-clip-text font-semibold text-transparent"
+              style={{
+                backgroundImage:
+                  "linear-gradient(90deg, #2dd4bf 0%, #14b8a6 55%, #5eead4 100%)",
+              }}
+            >
               Urvish Rupareliya
             </span>
           </p>

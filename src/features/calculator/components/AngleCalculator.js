@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import TriangleDiagram from "@/features/calculator/components/TriangleDiagram";
+import WarningMessage from "@/features/calculator/components/WarningMessage";
 import { solveTriangle } from "@/features/calculator/utils/calculations";
 
 const emptyFields = {
@@ -116,9 +117,7 @@ const AngleCalculator = () => {
           </div>
 
           {result.error ? (
-            <p className="mt-4 rounded-xl border border-border bg-background px-4 py-3 text-sm text-muted">
-              {result.error}
-            </p>
+            <WarningMessage className="mt-4">{result.error}</WarningMessage>
           ) : (
             <div className="mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
               {[

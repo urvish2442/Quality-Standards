@@ -1,5 +1,6 @@
 import { Manrope, Sora } from "next/font/google";
 import ThemeProvider from "@/providers/ThemeProvider";
+import ServiceWorkerGuard from "@/providers/ServiceWorkerGuard";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -91,7 +92,10 @@ const RootLayout = ({ children }) => {
       <body
         className={`${manrope.variable} ${sora.variable} font-sans antialiased`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <ServiceWorkerGuard />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
