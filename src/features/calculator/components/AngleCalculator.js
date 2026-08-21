@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import NumberInput from "@/components/ui/NumberInput";
 import TriangleDiagram from "@/features/calculator/components/TriangleDiagram";
 import WarningMessage from "@/features/calculator/components/WarningMessage";
 import { solveTriangle } from "@/features/calculator/utils/calculations";
@@ -81,8 +82,7 @@ const AngleCalculator = () => {
                 <span className="mb-1 block text-xs font-medium sm:text-sm">
                   {field.label}
                 </span>
-                <input
-                  type="number"
+                <NumberInput
                   min="0"
                   step="any"
                   value={fields[field.key]}
@@ -103,8 +103,7 @@ const AngleCalculator = () => {
                 <span className="mb-1 block text-xs font-medium sm:text-sm">
                   {field.label}
                 </span>
-                <input
-                  type="number"
+                <NumberInput
                   min="0"
                   max="179.999"
                   step="any"

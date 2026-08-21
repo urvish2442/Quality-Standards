@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import NumberInput from "@/components/ui/NumberInput";
 import ThemedSelect from "@/components/ui/ThemedSelect";
 import PcdDiagram from "@/features/calculator/components/PcdDiagram";
 import WarningMessage from "@/features/calculator/components/WarningMessage";
@@ -46,7 +47,7 @@ const PcdCalculator = () => {
           </h3>
 
           <div className="mt-4 grid gap-4 sm:grid-cols-2">
-            <label className="block">
+            <div className="block">
               <span className="mb-1 block text-sm font-medium">
                 Number of holes
               </span>
@@ -56,14 +57,13 @@ const PcdCalculator = () => {
                 options={HOLE_OPTIONS}
                 ariaLabel="Number of holes"
               />
-            </label>
+            </div>
 
             <label className="block">
               <span className="mb-1 block text-sm font-medium">
                 Center distance
               </span>
-              <input
-                type="number"
+              <NumberInput
                 min="0"
                 step="0.001"
                 value={centerDistance}

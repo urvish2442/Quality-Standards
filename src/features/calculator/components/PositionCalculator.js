@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import NumberInput from "@/components/ui/NumberInput";
 import PositionDiagram from "@/features/calculator/components/PositionDiagram";
 import WarningMessage from "@/features/calculator/components/WarningMessage";
 import { calculatePositionDeviation } from "@/features/calculator/utils/calculations";
@@ -62,8 +63,7 @@ const PositionCalculator = () => {
                   <span className="mb-1 block text-sm font-medium">
                     Required X
                   </span>
-                  <input
-                    type="number"
+                  <NumberInput
                     step="any"
                     value={fields.requiredX}
                     onChange={updateField("requiredX")}
@@ -75,8 +75,7 @@ const PositionCalculator = () => {
                   <span className="mb-1 block text-sm font-medium">
                     Required Y
                   </span>
-                  <input
-                    type="number"
+                  <NumberInput
                     step="any"
                     value={fields.requiredY}
                     onChange={updateField("requiredY")}
@@ -99,8 +98,7 @@ const PositionCalculator = () => {
                   <span className="mb-1 block text-sm font-medium">
                     Obtained X
                   </span>
-                  <input
-                    type="number"
+                  <NumberInput
                     step="any"
                     value={fields.obtainedX}
                     onChange={updateField("obtainedX")}
@@ -112,8 +110,7 @@ const PositionCalculator = () => {
                   <span className="mb-1 block text-sm font-medium">
                     Obtained Y
                   </span>
-                  <input
-                    type="number"
+                  <NumberInput
                     step="any"
                     value={fields.obtainedY}
                     onChange={updateField("obtainedY")}

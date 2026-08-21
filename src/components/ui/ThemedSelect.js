@@ -33,18 +33,26 @@ const ThemedSelect = ({
       }
     };
 
-    document.addEventListener("mousedown", onPointerDown);
+    document.addEventListener("pointerdown", onPointerDown);
     document.addEventListener("keydown", onKeyDown);
 
     return () => {
-      document.removeEventListener("mousedown", onPointerDown);
+      document.removeEventListener("pointerdown", onPointerDown);
       document.removeEventListener("keydown", onKeyDown);
     };
   }, [open]);
 
-  const selectOption = (nextValue) => {
+  const selectOption = (event, nextValue) => {
+    event.preventDefault();
+    event.stopPropagation();
     onChange(String(nextValue));
     setOpen(false);
+  };
+
+  const toggleOpen = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setOpen((current) => !current);
   };
 
   return (
@@ -56,7 +64,7 @@ const ThemedSelect = ({
         aria-haspopup="listbox"
         aria-expanded={open}
         aria-controls={listId}
-        onClick={() => setOpen((current) => !current)}
+        onClick={toggleOpen}
         className="flex h-11 w-full items-center justify-between gap-2 rounded-xl border border-border bg-background px-3 text-left text-sm text-foreground outline-none transition hover:border-primary/40 focus-visible:border-primary"
       >
         <span className={selected ? "text-foreground" : "text-muted"}>
@@ -84,7 +92,14 @@ const ThemedSelect = ({
               <li key={option.value} role="option" aria-selected={isSelected}>
                 <button
                   type="button"
-                  onClick={() => selectOption(option.value)}
+                  onPointerDown={(event) => {
+                    if (event.button !== 0) {
+                      return;
+                    }
+
+                    selectOption(event, option.value);
+                  }}
+                  onClick={(event) => selectOption(event, option.value)}
                   className={`flex w-full items-center rounded-lg px-3 py-2.5 text-left text-sm transition ${
                     isSelected
                       ? "bg-primary text-primary-foreground"

@@ -7,6 +7,7 @@ import {
   getToleranceGrades,
 } from "@/features/limits-and-fits/utils/calculateTolerance";
 import NavIcon from "@/components/icons/NavIcon";
+import NumberInput from "@/components/ui/NumberInput";
 import ThemedSelect from "@/components/ui/ThemedSelect";
 
 const FEATURE_OPTIONS = [
@@ -127,8 +128,7 @@ const ToleranceCalculator = () => {
               <span className="mb-1 block text-xs font-medium sm:mb-1.5 sm:text-sm">
                 Dimension (mm)
               </span>
-              <input
-                type="number"
+              <NumberInput
                 min="3.001"
                 max="400"
                 step="any"
@@ -140,7 +140,7 @@ const ToleranceCalculator = () => {
               />
             </label>
 
-            <label className="block min-w-0">
+            <div className="block min-w-0">
               <span className="mb-1 block text-xs font-medium sm:mb-1.5 sm:text-sm">
                 Grade
               </span>
@@ -150,7 +150,7 @@ const ToleranceCalculator = () => {
                 options={gradeOptions}
                 ariaLabel="Tolerance grade"
               />
-            </label>
+            </div>
           </div>
         </div>
 

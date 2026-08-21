@@ -1,12 +1,13 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import NumberInput from "@/components/ui/NumberInput";
+import WarningMessage from "@/features/calculator/components/WarningMessage";
 import {
   convertInchesToMm,
   decimalDegreesToDms,
   dmsToDecimalDegrees,
 } from "@/features/calculator/utils/conversions";
-import WarningMessage from "@/features/calculator/components/WarningMessage";
 
 const MODES = [
   { id: "length", label: "Length converter" },
@@ -27,8 +28,7 @@ const LengthConverter = () => {
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
           <span className="mb-1 block text-sm font-medium">Input 1 (inch)</span>
-          <input
-            type="number"
+          <NumberInput
             step="any"
             value={input1}
             onChange={(event) => setInput1(event.target.value)}
@@ -38,8 +38,7 @@ const LengthConverter = () => {
         </label>
         <label className="block">
           <span className="mb-1 block text-sm font-medium">Input 2 (inch)</span>
-          <input
-            type="number"
+          <NumberInput
             step="any"
             value={input2}
             onChange={(event) => setInput2(event.target.value)}
@@ -91,8 +90,7 @@ const AngleConverter = () => {
           <span className="mb-1 block text-sm font-medium">
             Decimal degrees
           </span>
-          <input
-            type="number"
+          <NumberInput
             step="any"
             value={decimal}
             onChange={(event) => {
@@ -124,8 +122,7 @@ const AngleConverter = () => {
         <div className="mt-4 grid grid-cols-3 gap-3">
           <label className="block min-w-0">
             <span className="mb-1 block text-sm font-medium">Degrees</span>
-            <input
-              type="number"
+            <NumberInput
               step="any"
               value={degrees}
               onChange={(event) => {
@@ -137,8 +134,7 @@ const AngleConverter = () => {
           </label>
           <label className="block min-w-0">
             <span className="mb-1 block text-sm font-medium">Minutes</span>
-            <input
-              type="number"
+            <NumberInput
               min="0"
               max="59.999"
               step="any"
@@ -152,8 +148,7 @@ const AngleConverter = () => {
           </label>
           <label className="block min-w-0">
             <span className="mb-1 block text-sm font-medium">Seconds</span>
-            <input
-              type="number"
+            <NumberInput
               min="0"
               max="59"
               step="1"
