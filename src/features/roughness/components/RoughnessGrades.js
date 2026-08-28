@@ -28,20 +28,36 @@ const RoughnessGrades = () => {
             Grade table
           </h3>
           <p className="text-muted mt-1 text-sm">
-            Click a grade row to highlight it. Values in μm.
+            Click a grade row to highlight it. Ra values shown in μm and μin.
           </p>
         </div>
 
         <div className="overflow-x-auto">
           <table className="min-w-full text-left text-sm">
-            <thead className="bg-background/80 text-muted text-xs tracking-[0.08em] uppercase">
+            <thead className="bg-background/80 text-muted text-xs tracking-[0.08em]">
               <tr>
-                <th className="px-5 py-3 font-semibold sm:px-6">Grade</th>
-                <th className="px-5 py-3 font-semibold sm:px-6">Ra</th>
-                <th className="px-5 py-3 font-semibold sm:px-6">
-                  Rz (approx.)
+                <th className="px-5 py-3 font-semibold uppercase sm:px-6">
+                  Grade
                 </th>
                 <th className="px-5 py-3 font-semibold sm:px-6">
+                  <span className="uppercase">Ra</span>{" "}
+                  <span className="normal-case font-medium text-muted">
+                    (μm)
+                  </span>
+                </th>
+                <th className="px-5 py-3 font-semibold sm:px-6">
+                  <span className="uppercase">Ra</span>{" "}
+                  <span className="normal-case font-medium text-muted">
+                    (μin)
+                  </span>
+                </th>
+                <th className="px-5 py-3 font-semibold sm:px-6">
+                  <span className="uppercase">Rz</span>{" "}
+                  <span className="normal-case font-medium text-muted">
+                    (approx. μm)
+                  </span>
+                </th>
+                <th className="px-5 py-3 font-semibold uppercase sm:px-6">
                   Typical finish
                 </th>
               </tr>
@@ -73,6 +89,9 @@ const RoughnessGrades = () => {
                     </td>
                     <td className="text-primary px-5 py-3 font-mono sm:px-6">
                       {row.ra}
+                    </td>
+                    <td className="text-primary px-5 py-3 font-mono sm:px-6">
+                      {row.raInch}
                     </td>
                     <td className="px-5 py-3 font-mono sm:px-6">{row.rz}</td>
                     <td className="text-muted px-5 py-3 sm:px-6">
