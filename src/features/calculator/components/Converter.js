@@ -17,40 +17,62 @@ const MODES = [
 const LengthConverter = () => {
   const [input1, setInput1] = useState("");
   const [input2, setInput2] = useState("");
+  const [toInch, setToInch] = useState(false);
 
   const result = useMemo(
-    () => convertInchesToMm({ input1, input2 }),
-    [input1, input2]
+    () => convertInchesToMm({ input1, input2, toInch }),
+    [input1, input2, toInch]
   );
+
+  const inputUnitLabel = toInch ? "mm" : "inch";
+  const resultUnitLabel = toInch ? "inch" : "mm";
+  const placeholder1 = toInch ? "e.g. 25.273" : "e.g. 0.995";
+  const placeholder2 = toInch ? "e.g. 25.527" : "e.g. 1.005";
 
   return (
     <div className="flex flex-col gap-6">
+      <div className="flex items-center gap-2">
+        <label className="inline-flex cursor-pointer items-center gap-2 text-sm font-medium select-none">
+          <input
+            type="checkbox"
+            checked={toInch}
+            onChange={(e) => setToInch(e.target.checked)}
+            className="accent-primary border-border h-4 w-4 cursor-pointer rounded"
+          />
+          <span>To inch</span>
+        </label>
+      </div>
+
       <div className="grid gap-4 sm:grid-cols-2">
         <label className="block">
-          <span className="mb-1 block text-sm font-medium">Input 1 (inch)</span>
+          <span className="mb-1 block text-sm font-medium">
+            Input 1 ({inputUnitLabel})
+          </span>
           <NumberInput
             step="any"
             value={input1}
             onChange={(event) => setInput1(event.target.value)}
             className="border-border bg-background focus:border-primary h-11 w-full rounded-xl border px-3 text-sm transition outline-none"
-            placeholder="e.g. 0.995"
+            placeholder={placeholder1}
           />
         </label>
         <label className="block">
-          <span className="mb-1 block text-sm font-medium">Input 2 (inch)</span>
+          <span className="mb-1 block text-sm font-medium">
+            Input 2 ({inputUnitLabel})
+          </span>
           <NumberInput
             step="any"
             value={input2}
             onChange={(event) => setInput2(event.target.value)}
             className="border-border bg-background focus:border-primary h-11 w-full rounded-xl border px-3 text-sm transition outline-none"
-            placeholder="e.g. 1.005"
+            placeholder={placeholder2}
           />
         </label>
       </div>
 
       <div className="border-border bg-background rounded-xl border p-4">
         <p className="text-muted text-xs font-semibold tracking-[0.12em] uppercase">
-          Result (mm)
+          Result ({resultUnitLabel})
         </p>
         {result.error ? (
           <WarningMessage className="mt-2">{result.error}</WarningMessage>
@@ -60,8 +82,9 @@ const LengthConverter = () => {
           </p>
         )}
         <p className="text-muted mt-2 text-xs">
-          1 in = 25.4 mm. One value → direct conversion. Two values → nominal ±
-          tolerance from the mid-point.
+          {toInch
+            ? "25.4 mm = 1 in. One value → direct conversion. Two values → nominal ± tolerance from the mid-point."
+            : "1 in = 25.4 mm. One value → direct conversion. Two values → nominal ± tolerance from the mid-point."}
         </p>
       </div>
     </div>

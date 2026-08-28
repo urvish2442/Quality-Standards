@@ -17,44 +17,49 @@ const formatFixed = (value, digits = 3) => {
   return value.toFixed(digits);
 };
 
-export const convertInchesToMm = ({ input1, input2 }) => {
+export const convertInchesToMm = ({ input1, input2, toInch = false }) => {
   const value1 = toNumber(input1);
   const value2 = toNumber(input2);
 
+  const inputUnit = toInch ? "mm" : "inch";
+
   if (value1 === null && value2 === null) {
-    return { error: "Enter at least one inch value." };
+    return { error: `Enter at least one ${inputUnit} value.` };
   }
 
+  const factor = toInch ? 1 / INCH_TO_MM : INCH_TO_MM;
+  const digits = toInch ? 4 : 3;
+
   if (value1 !== null && value2 === null) {
-    const mm = value1 * INCH_TO_MM;
+    const converted = value1 * factor;
     return {
       mode: "single",
-      mm,
-      display: formatFixed(mm, 3),
+      converted,
+      display: formatFixed(converted, digits),
     };
   }
 
   if (value1 === null && value2 !== null) {
-    const mm = value2 * INCH_TO_MM;
+    const converted = value2 * factor;
     return {
       mode: "single",
-      mm,
-      display: formatFixed(mm, 3),
+      converted,
+      display: formatFixed(converted, digits),
     };
   }
 
-  const mm1 = value1 * INCH_TO_MM;
-  const mm2 = value2 * INCH_TO_MM;
-  const nominal = (mm1 + mm2) / 2;
-  const tolerance = Math.abs(mm2 - mm1) / 2;
+  const c1 = value1 * factor;
+  const c2 = value2 * factor;
+  const nominal = (c1 + c2) / 2;
+  const tolerance = Math.abs(c2 - c1) / 2;
 
   return {
     mode: "range",
-    mm1,
-    mm2,
+    c1,
+    c2,
     nominal,
     tolerance,
-    display: `${formatFixed(nominal, 3)} ± ${formatFixed(tolerance, 3)}`,
+    display: `${formatFixed(nominal, digits)} ± ${formatFixed(tolerance, digits)}`,
   };
 };
 
