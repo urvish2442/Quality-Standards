@@ -19,16 +19,16 @@ const ToleranceTable = ({
   };
 
   return (
-    <article className="overflow-hidden rounded-2xl border border-border bg-surface shadow-(--card-shadow)">
-      <div className="border-b border-border px-5 py-4 sm:px-6">
+    <article className="border-border bg-surface overflow-hidden rounded-2xl border shadow-(--card-shadow)">
+      <div className="border-border border-b px-5 py-4 sm:px-6">
         <h3 className="font-(family-name:--font-sora) text-lg font-semibold sm:text-xl">
           {title}
         </h3>
         {description ? (
-          <p className="mt-1 text-sm text-muted">{description}</p>
+          <p className="text-muted mt-1 text-sm">{description}</p>
         ) : null}
         {unit ? (
-          <p className="mt-1 text-xs uppercase tracking-[0.12em] text-muted">
+          <p className="text-muted mt-1 text-xs tracking-[0.12em] uppercase">
             Values in {unit}
           </p>
         ) : null}
@@ -36,7 +36,7 @@ const ToleranceTable = ({
 
       <div className="overflow-x-auto">
         <table className="min-w-full text-left text-sm">
-          <thead className="bg-background/80 text-xs uppercase tracking-[0.08em] text-muted">
+          <thead className="bg-background/80 text-muted text-xs tracking-[0.08em] uppercase">
             <tr>
               <th className="px-5 py-3 font-semibold sm:px-6">{rangeLabel}</th>
               {columns.map((column) => {
@@ -47,13 +47,9 @@ const ToleranceTable = ({
                     key={column.id}
                     className={`px-5 py-3 font-semibold sm:px-6 ${
                       onColumnSelect
-                        ? "cursor-pointer select-none transition-colors hover:bg-primary-soft hover:text-primary"
+                        ? "hover:bg-primary-soft hover:text-primary cursor-pointer transition-colors select-none"
                         : ""
-                    } ${
-                      isHighlighted
-                        ? "bg-primary-soft text-primary"
-                        : ""
-                    }`}
+                    } ${isHighlighted ? "bg-primary-soft text-primary" : ""}`}
                     title={
                       column.description
                         ? `${column.description} — click to highlight`
@@ -70,7 +66,7 @@ const ToleranceTable = ({
           </thead>
           <tbody>
             {rows.map((row) => (
-              <tr key={row.range} className="border-t border-border">
+              <tr key={row.range} className="border-border border-t">
                 <td className="px-5 py-3 font-medium sm:px-6">{row.range}</td>
                 {columns.map((column) => {
                   const isHighlighted = highlightedColumn === column.id;
@@ -80,7 +76,7 @@ const ToleranceTable = ({
                       key={`${row.range}-${column.id}`}
                       className={`px-5 py-3 font-mono sm:px-6 ${
                         isHighlighted
-                          ? "bg-primary-soft font-semibold text-primary"
+                          ? "bg-primary-soft text-primary font-semibold"
                           : "text-primary"
                       }`}
                     >

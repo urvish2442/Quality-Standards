@@ -35,7 +35,7 @@ const buildGeometry = (values) => {
   const pointB = { x: sideC, y: baseY };
   const cosA = Math.min(
     1,
-    Math.max(-1, (sideB ** 2 + sideC ** 2 - sideA ** 2) / (2 * sideB * sideC)),
+    Math.max(-1, (sideB ** 2 + sideC ** 2 - sideA ** 2) / (2 * sideB * sideC))
   );
   const sinA = Math.sqrt(Math.max(0, 1 - cosA ** 2));
   const pointC = { x: sideB * cosA, y: -sideB * sinA };
@@ -50,13 +50,11 @@ const buildGeometry = (values) => {
   const spanY = Math.max(maxY - minY, 1e-6);
   const scale = Math.min(
     (VIEW_WIDTH - PADDING * 2) / spanX,
-    (VIEW_HEIGHT - PADDING * 2) / spanY,
+    (VIEW_HEIGHT - PADDING * 2) / spanY
   );
 
-  const offsetX =
-    (VIEW_WIDTH - spanX * scale) / 2 - minX * scale;
-  const offsetY =
-    (VIEW_HEIGHT - spanY * scale) / 2 - minY * scale;
+  const offsetX = (VIEW_WIDTH - spanX * scale) / 2 - minX * scale;
+  const offsetY = (VIEW_HEIGHT - spanY * scale) / 2 - minY * scale;
 
   const mapPoint = (point) => ({
     x: point.x * scale + offsetX,
@@ -111,20 +109,20 @@ const TriangleDiagram = ({ values }) => {
       <h3 className="font-(family-name:--font-sora) text-lg font-semibold">
         Triangle notation
       </h3>
-      <p className="mt-1 text-sm text-muted">
-        Sides <span className="font-mono text-foreground">a</span>,{" "}
-        <span className="font-mono text-foreground">b</span>,{" "}
-        <span className="font-mono text-foreground">c</span> are opposite angles{" "}
-        <span className="font-mono text-foreground">A</span>,{" "}
-        <span className="font-mono text-foreground">B</span>,{" "}
-        <span className="font-mono text-foreground">C</span>. The shape updates
+      <p className="text-muted mt-1 text-sm">
+        Sides <span className="text-foreground font-mono">a</span>,{" "}
+        <span className="text-foreground font-mono">b</span>,{" "}
+        <span className="text-foreground font-mono">c</span> are opposite angles{" "}
+        <span className="text-foreground font-mono">A</span>,{" "}
+        <span className="text-foreground font-mono">B</span>,{" "}
+        <span className="text-foreground font-mono">C</span>. The shape updates
         from the solved sides.
       </p>
 
-      <div className="mt-4 flex flex-1 items-center justify-center rounded-xl border border-border bg-background p-4">
+      <div className="border-border bg-background mt-4 flex flex-1 items-center justify-center rounded-xl border p-4">
         <svg
           viewBox={`0 0 ${VIEW_WIDTH} ${VIEW_HEIGHT}`}
-          className="h-auto w-full max-w-sm text-foreground"
+          className="text-foreground h-auto w-full max-w-sm"
           role="img"
           aria-label="Triangle diagram scaled from solved side lengths"
         >
@@ -137,9 +135,24 @@ const TriangleDiagram = ({ values }) => {
             className="transition-all duration-300 ease-out"
           />
 
-          <circle cx={geometry.A.x} cy={geometry.A.y} r="3.5" fill="var(--primary)" />
-          <circle cx={geometry.B.x} cy={geometry.B.y} r="3.5" fill="var(--primary)" />
-          <circle cx={geometry.C.x} cy={geometry.C.y} r="3.5" fill="var(--primary)" />
+          <circle
+            cx={geometry.A.x}
+            cy={geometry.A.y}
+            r="3.5"
+            fill="var(--primary)"
+          />
+          <circle
+            cx={geometry.B.x}
+            cy={geometry.B.y}
+            r="3.5"
+            fill="var(--primary)"
+          />
+          <circle
+            cx={geometry.C.x}
+            cy={geometry.C.y}
+            r="3.5"
+            fill="var(--primary)"
+          />
 
           <text
             x={angleA.x}

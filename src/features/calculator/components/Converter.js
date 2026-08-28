@@ -20,7 +20,7 @@ const LengthConverter = () => {
 
   const result = useMemo(
     () => convertInchesToMm({ input1, input2 }),
-    [input1, input2],
+    [input1, input2]
   );
 
   return (
@@ -32,7 +32,7 @@ const LengthConverter = () => {
             step="any"
             value={input1}
             onChange={(event) => setInput1(event.target.value)}
-            className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none transition focus:border-primary"
+            className="border-border bg-background focus:border-primary h-11 w-full rounded-xl border px-3 text-sm transition outline-none"
             placeholder="e.g. 0.995"
           />
         </label>
@@ -42,24 +42,24 @@ const LengthConverter = () => {
             step="any"
             value={input2}
             onChange={(event) => setInput2(event.target.value)}
-            className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none transition focus:border-primary"
+            className="border-border bg-background focus:border-primary h-11 w-full rounded-xl border px-3 text-sm transition outline-none"
             placeholder="e.g. 1.005"
           />
         </label>
       </div>
 
-      <div className="rounded-xl border border-border bg-background p-4">
-        <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+      <div className="border-border bg-background rounded-xl border p-4">
+        <p className="text-muted text-xs font-semibold tracking-[0.12em] uppercase">
           Result (mm)
         </p>
         {result.error ? (
           <WarningMessage className="mt-2">{result.error}</WarningMessage>
         ) : (
-          <p className="mt-1 font-(family-name:--font-sora) text-2xl font-semibold text-primary">
+          <p className="text-primary mt-1 font-(family-name:--font-sora) text-2xl font-semibold">
             {result.display}
           </p>
         )}
-        <p className="mt-2 text-xs text-muted">
+        <p className="text-muted mt-2 text-xs">
           1 in = 25.4 mm. One value → direct conversion. Two values → nominal ±
           tolerance from the mid-point.
         </p>
@@ -77,12 +77,12 @@ const AngleConverter = () => {
   const dmsResult = useMemo(() => decimalDegreesToDms(decimal), [decimal]);
   const decimalResult = useMemo(
     () => dmsToDecimalDegrees({ degrees, minutes, seconds }),
-    [degrees, minutes, seconds],
+    [degrees, minutes, seconds]
   );
 
   return (
     <div className="grid gap-6 lg:grid-cols-2">
-      <div className="rounded-xl border border-border bg-background p-4">
+      <div className="border-border bg-background rounded-xl border p-4">
         <h3 className="font-(family-name:--font-sora) text-base font-semibold">
           Decimal degrees → DMS
         </h3>
@@ -96,26 +96,26 @@ const AngleConverter = () => {
             onChange={(event) => {
               setDecimal(event.target.value);
             }}
-            className="h-11 w-full rounded-xl border border-border bg-surface px-3 text-sm outline-none transition focus:border-primary"
+            className="border-border bg-surface focus:border-primary h-11 w-full rounded-xl border px-3 text-sm transition outline-none"
             placeholder="e.g. 12.505"
           />
         </label>
 
-        <div className="mt-4 rounded-xl border border-border bg-surface p-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+        <div className="border-border bg-surface mt-4 rounded-xl border p-3">
+          <p className="text-muted text-xs font-semibold tracking-[0.12em] uppercase">
             Degrees ° Minutes ′ Seconds ″
           </p>
           {dmsResult.error ? (
             <WarningMessage className="mt-2">{dmsResult.error}</WarningMessage>
           ) : (
-            <p className="mt-1 font-(family-name:--font-sora) text-xl font-semibold text-primary">
+            <p className="text-primary mt-1 font-(family-name:--font-sora) text-xl font-semibold">
               {dmsResult.display}
             </p>
           )}
         </div>
       </div>
 
-      <div className="rounded-xl border border-border bg-background p-4">
+      <div className="border-border bg-background rounded-xl border p-4">
         <h3 className="font-(family-name:--font-sora) text-base font-semibold">
           DMS → Decimal degrees
         </h3>
@@ -128,7 +128,7 @@ const AngleConverter = () => {
               onChange={(event) => {
                 setDegrees(event.target.value);
               }}
-              className="h-11 w-full rounded-xl border border-border bg-surface px-2.5 text-sm outline-none transition focus:border-primary sm:px-3"
+              className="border-border bg-surface focus:border-primary h-11 w-full rounded-xl border px-2.5 text-sm transition outline-none sm:px-3"
               placeholder="12"
             />
           </label>
@@ -142,7 +142,7 @@ const AngleConverter = () => {
               onChange={(event) => {
                 setMinutes(event.target.value);
               }}
-              className="h-11 w-full rounded-xl border border-border bg-surface px-2.5 text-sm outline-none transition focus:border-primary sm:px-3"
+              className="border-border bg-surface focus:border-primary h-11 w-full rounded-xl border px-2.5 text-sm transition outline-none sm:px-3"
               placeholder="30"
             />
           </label>
@@ -156,20 +156,22 @@ const AngleConverter = () => {
               onChange={(event) => {
                 setSeconds(event.target.value);
               }}
-              className="h-11 w-full rounded-xl border border-border bg-surface px-2.5 text-sm outline-none transition focus:border-primary sm:px-3"
+              className="border-border bg-surface focus:border-primary h-11 w-full rounded-xl border px-2.5 text-sm transition outline-none sm:px-3"
               placeholder="18"
             />
           </label>
         </div>
 
-        <div className="mt-4 rounded-xl border border-border bg-surface p-3">
-          <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+        <div className="border-border bg-surface mt-4 rounded-xl border p-3">
+          <p className="text-muted text-xs font-semibold tracking-[0.12em] uppercase">
             Decimal degrees
           </p>
           {decimalResult.error ? (
-            <WarningMessage className="mt-2">{decimalResult.error}</WarningMessage>
+            <WarningMessage className="mt-2">
+              {decimalResult.error}
+            </WarningMessage>
           ) : (
-            <p className="mt-1 font-(family-name:--font-sora) text-xl font-semibold text-primary">
+            <p className="text-primary mt-1 font-(family-name:--font-sora) text-xl font-semibold">
               {decimalResult.display}
             </p>
           )}
@@ -184,20 +186,20 @@ const Converter = () => {
 
   return (
     <div className="flex flex-col gap-6">
-      <section className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
-        <p className="mb-2 inline-flex rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+      <section className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
+        <p className="bg-primary-soft text-primary mb-2 inline-flex rounded-full px-3 py-1 text-xs font-semibold tracking-[0.14em] uppercase">
           Converter
         </p>
         <h2 className="font-(family-name:--font-sora) text-2xl font-semibold tracking-tight">
           Length and angle unit converter
         </h2>
-        <p className="mt-2 max-w-3xl text-sm text-muted">
+        <p className="text-muted mt-2 max-w-3xl text-sm">
           Convert inches to millimetres, or switch between decimal degrees and
           degrees–minutes–seconds.
         </p>
       </section>
 
-      <section className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
+      <section className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
         <fieldset>
           <legend className="mb-3 text-sm font-semibold">Converter type</legend>
           <div className="flex flex-wrap gap-4" role="radiogroup">

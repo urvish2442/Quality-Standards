@@ -14,7 +14,9 @@ const ThemedSelect = ({
   const [open, setOpen] = useState(false);
   const rootRef = useRef(null);
   const listId = useId();
-  const selected = options.find((option) => String(option.value) === String(value));
+  const selected = options.find(
+    (option) => String(option.value) === String(value)
+  );
 
   useEffect(() => {
     if (!open) {
@@ -65,14 +67,14 @@ const ThemedSelect = ({
         aria-expanded={open}
         aria-controls={listId}
         onClick={toggleOpen}
-        className="flex h-11 w-full items-center justify-between gap-2 rounded-xl border border-border bg-background px-3 text-left text-sm text-foreground outline-none transition hover:border-primary/40 focus-visible:border-primary"
+        className="border-border bg-background text-foreground hover:border-primary/40 focus-visible:border-primary flex h-11 w-full items-center justify-between gap-2 rounded-xl border px-3 text-left text-sm transition outline-none"
       >
         <span className={selected ? "text-foreground" : "text-muted"}>
           {selected?.label ?? placeholder}
         </span>
         <ChevronDown
-          className={`h-4 w-4 shrink-0 text-muted transition-transform duration-200 ${
-            open ? "rotate-180 text-primary" : ""
+          className={`text-muted h-4 w-4 shrink-0 transition-transform duration-200 ${
+            open ? "text-primary rotate-180" : ""
           }`}
           aria-hidden="true"
         />
@@ -83,7 +85,7 @@ const ThemedSelect = ({
           id={listId}
           role="listbox"
           aria-label={ariaLabel}
-          className="absolute z-30 mt-2 max-h-60 w-full overflow-auto rounded-xl border border-border bg-surface-elevated p-1 shadow-(--card-shadow)"
+          className="border-border bg-surface-elevated absolute z-30 mt-2 max-h-60 w-full overflow-auto rounded-xl border p-1 shadow-(--card-shadow)"
         >
           {options.map((option) => {
             const isSelected = String(option.value) === String(value);

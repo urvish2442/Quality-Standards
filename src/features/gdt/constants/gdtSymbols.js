@@ -50,8 +50,7 @@ export const GDT_SYMBOLS = [
     symbolKey: "flatness",
     characteristic: "form",
     characteristicLabel: "Form",
-    summary:
-      "Controls how much a surface may deviate from a perfect plane.",
+    summary: "Controls how much a surface may deviate from a perfect plane.",
     appliesTo: "Planar surfaces",
     datum: "Not allowed",
     toleranceZone: "Two parallel planes",
@@ -98,8 +97,7 @@ export const GDT_SYMBOLS = [
     symbolKey: "perpendicularity",
     characteristic: "orientation",
     characteristicLabel: "Orientation",
-    summary:
-      "Controls a surface or axis at 90° to a datum feature.",
+    summary: "Controls a surface or axis at 90° to a datum feature.",
     appliesTo: "Surfaces and axes square to a datum",
     datum: "Required",
     toleranceZone: "Two parallel planes / cylinder perpendicular to datum",
@@ -136,7 +134,8 @@ export const GDT_SYMBOLS = [
     characteristicLabel: "Location",
     summary:
       "Controls median points of a feature so they share a common axis with a datum.",
-    appliesTo: "Axes of revolved features (use carefully; often replaced by position)",
+    appliesTo:
+      "Axes of revolved features (use carefully; often replaced by position)",
     datum: "Required",
     toleranceZone: "Cylinder coaxial with the datum axis",
   },
@@ -182,11 +181,11 @@ export const GDT_SYMBOLS = [
     symbolKey: "profileLine",
     characteristic: "profile",
     characteristicLabel: "Profile",
-    summary:
-      "Controls a 2D cross-section curve relative to the true profile.",
+    summary: "Controls a 2D cross-section curve relative to the true profile.",
     appliesTo: "Cross-sections of contoured surfaces",
     datum: "Optional",
-    toleranceZone: "Uniform 2D bilateral (or unilateral) band around true profile",
+    toleranceZone:
+      "Uniform 2D bilateral (or unilateral) band around true profile",
   },
   {
     id: "profile-surface",

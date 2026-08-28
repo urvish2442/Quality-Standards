@@ -40,7 +40,7 @@ const AdminLayoutShell = ({ children }) => {
   }, [mobileOpen, closeMobile]);
 
   return (
-    <div className="min-h-screen bg-background text-foreground lg:flex">
+    <div className="bg-background text-foreground min-h-screen lg:flex">
       <Sidebar
         collapsed={collapsed}
         mobileOpen={mobileOpen}
@@ -53,7 +53,9 @@ const AdminLayoutShell = ({ children }) => {
           onToggleSidebar={() => setCollapsed((value) => !value)}
           onOpenMobile={() => setMobileOpen(true)}
         />
-        <main className="flex-1 px-4 py-3 sm:px-6 sm:py-6 lg:px-8">{children}</main>
+        <main className="flex-1 px-4 py-3 sm:px-6 sm:py-6 lg:px-8">
+          {children}
+        </main>
       </div>
     </div>
   );

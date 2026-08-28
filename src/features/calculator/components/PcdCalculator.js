@@ -21,19 +21,19 @@ const PcdCalculator = () => {
 
   const result = useMemo(
     () => calculatePcd({ holeCount, centerDistance }),
-    [holeCount, centerDistance],
+    [holeCount, centerDistance]
   );
 
   return (
     <div className="flex flex-col gap-6">
-      <section className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
-        <p className="mb-2 inline-flex rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+      <section className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
+        <p className="bg-primary-soft text-primary mb-2 inline-flex rounded-full px-3 py-1 text-xs font-semibold tracking-[0.14em] uppercase">
           PCD
         </p>
         <h2 className="font-(family-name:--font-sora) text-2xl font-semibold tracking-tight">
           Pitch circle diameter
         </h2>
-        <p className="mt-2 max-w-3xl text-sm text-muted">
+        <p className="text-muted mt-2 max-w-3xl text-sm">
           Enter the number of equally spaced holes and the center-to-center
           distance between two consecutive holes to calculate PCD. The diagram
           updates live with your inputs.
@@ -41,7 +41,7 @@ const PcdCalculator = () => {
       </section>
 
       <section className="grid gap-6 xl:grid-cols-2">
-        <div className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
+        <div className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
           <h3 className="font-(family-name:--font-sora) text-lg font-semibold">
             Inputs
           </h3>
@@ -68,17 +68,17 @@ const PcdCalculator = () => {
                 step="0.001"
                 value={centerDistance}
                 onChange={(event) => setCenterDistance(event.target.value)}
-                className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none transition focus:border-primary"
+                className="border-border bg-background focus:border-primary h-11 w-full rounded-xl border px-3 text-sm transition outline-none"
                 placeholder="e.g. 25.400"
                 aria-label="Center distance between consecutive holes"
               />
-              <span className="mt-1 block text-xs text-muted">
+              <span className="text-muted mt-1 block text-xs">
                 Between two consecutive holes (up to 3 decimals)
               </span>
             </label>
           </div>
 
-          <div className="mt-5 border-t border-border pt-5">
+          <div className="border-border mt-5 border-t pt-5">
             <h4 className="font-(family-name:--font-sora) text-base font-semibold">
               Result
             </h4>
@@ -86,14 +86,14 @@ const PcdCalculator = () => {
             {result.error ? (
               <WarningMessage className="mt-3">{result.error}</WarningMessage>
             ) : (
-              <div className="mt-3 rounded-xl border border-success/25 bg-success/10 p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-success">
+              <div className="border-success/25 bg-success/10 mt-3 rounded-xl border p-4">
+                <p className="text-success text-xs font-semibold tracking-[0.12em] uppercase">
                   Pitch circle diameter (PCD)
                 </p>
                 <p className="mt-1 font-(family-name:--font-sora) text-3xl font-semibold">
                   {result.display}
                 </p>
-                <p className="mt-2 text-xs text-muted">
+                <p className="text-muted mt-2 text-xs">
                   PCD = C ÷ sin(180° ÷ N) · N = {result.holeCount} · C ={" "}
                   {Number(result.centerDistance).toFixed(3)}
                 </p>
@@ -102,7 +102,7 @@ const PcdCalculator = () => {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
+        <div className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
           <PcdDiagram result={result} holeCount={holeCount} />
         </div>
       </section>

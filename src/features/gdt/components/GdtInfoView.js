@@ -24,7 +24,7 @@ const GdtInfoView = () => {
     }
 
     return GDT_SYMBOLS.filter(
-      (symbol) => symbol.characteristic === activeFilter,
+      (symbol) => symbol.characteristic === activeFilter
     );
   }, [activeFilter]);
 
@@ -35,21 +35,21 @@ const GdtInfoView = () => {
 
   return (
     <div className="flex flex-col gap-6">
-      <section className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
-        <p className="mb-2 inline-flex rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+      <section className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
+        <p className="bg-primary-soft text-primary mb-2 inline-flex rounded-full px-3 py-1 text-xs font-semibold tracking-[0.14em] uppercase">
           GD&T basics
         </p>
         <h2 className="font-(family-name:--font-sora) text-2xl font-semibold tracking-tight sm:text-3xl">
           Geometric characteristic symbols
         </h2>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
+        <p className="text-muted mt-3 max-w-3xl text-sm leading-relaxed sm:text-base">
           The ASME Y14.5 / ISO GPS geometric characteristic symbols used in
           feature control frames. Filter by form, orientation, location,
           profile, or runout.
         </p>
       </section>
 
-      <section className="rounded-2xl border border-border bg-surface p-4 shadow-(--card-shadow) sm:p-5">
+      <section className="border-border bg-surface rounded-2xl border p-4 shadow-(--card-shadow) sm:p-5">
         <div
           className="flex flex-wrap gap-2"
           role="tablist"
@@ -68,7 +68,7 @@ const GdtInfoView = () => {
                 className={`rounded-xl px-3 py-2 text-sm font-semibold transition ${
                   isActive
                     ? "bg-primary text-primary-foreground"
-                    : "border border-border bg-background text-muted hover:bg-primary-soft hover:text-foreground"
+                    : "border-border bg-background text-muted hover:bg-primary-soft hover:text-foreground border"
                 }`}
               >
                 {filter.label}
@@ -103,12 +103,12 @@ const GdtInfoView = () => {
         )} */}
       </section>
 
-      <section className="overflow-hidden rounded-2xl border border-border bg-surface shadow-(--card-shadow)">
-        <div className="border-b border-border px-5 py-4 sm:px-6">
+      <section className="border-border bg-surface overflow-hidden rounded-2xl border shadow-(--card-shadow)">
+        <div className="border-border border-b px-5 py-4 sm:px-6">
           <h3 className="font-(family-name:--font-sora) text-lg font-semibold sm:text-xl">
             Symbol details
           </h3>
-          <p className="mt-1 text-sm text-muted">
+          <p className="text-muted mt-1 text-sm">
             {filteredSymbols.length} symbol
             {filteredSymbols.length === 1 ? "" : "s"}
             {activeFilter === "all"
@@ -119,7 +119,7 @@ const GdtInfoView = () => {
 
         <div className="overflow-x-auto">
           <table className="min-w-full text-left text-sm">
-            <thead className="bg-background/80 text-xs uppercase tracking-[0.08em] text-muted">
+            <thead className="bg-background/80 text-muted text-xs tracking-[0.08em] uppercase">
               <tr>
                 <th className="px-5 py-3 font-semibold sm:px-6">Symbol</th>
                 <th className="px-5 py-3 font-semibold sm:px-6">Name</th>
@@ -142,30 +142,30 @@ const GdtInfoView = () => {
               {filteredSymbols.map((symbol) => (
                 <tr
                   key={symbol.id}
-                  className="border-t border-border align-top hover:bg-primary-soft/40"
+                  className="border-border hover:bg-primary-soft/40 border-t align-top"
                 >
                   <td className="px-5 py-3 sm:px-6">
                     <GdtSymbolIcon symbolKey={symbol.symbolKey} />
                     <span className="sr-only">{symbol.name} symbol</span>
                   </td>
-                  <td className="px-5 py-3 font-semibold text-foreground sm:px-6">
+                  <td className="text-foreground px-5 py-3 font-semibold sm:px-6">
                     {symbol.name}
                   </td>
                   <td className="px-5 py-3 sm:px-6">
-                    <span className="inline-flex rounded-lg bg-primary-soft px-2 py-1 text-xs font-semibold text-primary">
+                    <span className="bg-primary-soft text-primary inline-flex rounded-lg px-2 py-1 text-xs font-semibold">
                       {symbol.characteristicLabel}
                     </span>
                   </td>
-                  <td className="px-5 py-3 text-muted sm:px-6">
+                  <td className="text-muted px-5 py-3 sm:px-6">
                     {symbol.summary}
                   </td>
-                  <td className="px-5 py-3 text-foreground sm:px-6">
+                  <td className="text-foreground px-5 py-3 sm:px-6">
                     {symbol.appliesTo}
                   </td>
-                  <td className="px-5 py-3 text-foreground sm:px-6">
+                  <td className="text-foreground px-5 py-3 sm:px-6">
                     {symbol.datum}
                   </td>
-                  <td className="px-5 py-3 text-foreground sm:px-6">
+                  <td className="text-foreground px-5 py-3 sm:px-6">
                     {symbol.toleranceZone}
                   </td>
                 </tr>

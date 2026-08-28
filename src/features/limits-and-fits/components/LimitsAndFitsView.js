@@ -15,7 +15,7 @@ const LimitsAndFitsView = () => {
   return (
     <div className="flex w-full flex-col gap-3 sm:gap-6">
       <div
-        className="inline-flex w-full max-w-xl rounded-2xl border border-border bg-surface p-0.5 shadow-(--card-shadow) sm:p-1"
+        className="border-border bg-surface inline-flex w-full max-w-xl rounded-2xl border p-0.5 shadow-(--card-shadow) sm:p-1"
         role="tablist"
         aria-label="Limits and Fits sections"
       >

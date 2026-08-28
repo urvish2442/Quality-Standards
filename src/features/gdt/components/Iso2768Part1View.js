@@ -24,19 +24,19 @@ const Iso2768Part1View = () => {
 
   return (
     <div className="flex flex-col gap-6">
-      <section className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
-        <p className="mb-2 inline-flex rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+      <section className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
+        <p className="bg-primary-soft text-primary mb-2 inline-flex rounded-full px-3 py-1 text-xs font-semibold tracking-[0.14em] uppercase">
           ISO 2768-1
         </p>
         <h2 className="font-(family-name:--font-sora) text-2xl font-semibold tracking-tight sm:text-3xl">
           General tolerances for linear and angular dimensions
         </h2>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
+        <p className="text-muted mt-3 max-w-3xl text-sm leading-relaxed sm:text-base">
           ISO 2768-1 simplifies drawing indications with four tolerance classes:
           f (fine), m (medium), c (coarse), and v (very coarse). Indicate the
           class in or near the title block, for example{" "}
-          <span className="font-mono text-foreground">ISO 2768-m</span>. Click
-          a class header to highlight that column across all tables.
+          <span className="text-foreground font-mono">ISO 2768-m</span>. Click a
+          class header to highlight that column across all tables.
         </p>
       </section>
 
@@ -68,9 +68,9 @@ const Iso2768Part1View = () => {
         onColumnSelect={handleColumnSelect}
       />
 
-      <p className="text-sm text-muted">
-        For nominal sizes below 0.5 mm, deviations shall be indicated adjacent to
-        the relevant nominal size(s).
+      <p className="text-muted text-sm">
+        For nominal sizes below 0.5 mm, deviations shall be indicated adjacent
+        to the relevant nominal size(s).
       </p>
     </div>
   );

@@ -17,7 +17,10 @@ const isItemActive = (item, pathname, searchParams) => {
 
   if (item.href.includes("?tab=")) {
     const tab = new URL(item.href, "http://local").searchParams.get("tab");
-    return searchParams.get("tab") === tab || (!searchParams.get("tab") && tab === "converter");
+    return (
+      searchParams.get("tab") === tab ||
+      (!searchParams.get("tab") && tab === "converter")
+    );
   }
 
   return true;
@@ -41,14 +44,19 @@ const NavLink = ({
         nested ? "px-3 py-2" : "px-3 py-2.5"
       } ${collapsed && !nested ? "lg:justify-center lg:px-2" : ""} ${
         isActive
-          ? "bg-sidebar-active/20 font-semibold text-sidebar-active"
+          ? "bg-sidebar-active/20 text-sidebar-active font-semibold"
           : "text-sidebar-foreground/85 hover:bg-white/10 hover:text-white"
       }`}
       aria-current={isActive ? "page" : undefined}
       title={collapsed ? item.label : undefined}
     >
-      <NavIcon name={item.icon} className={nested ? "h-4 w-4 shrink-0" : "h-5 w-5 shrink-0"} />
-      <span className={collapsed && !nested ? "lg:hidden" : ""}>{item.label}</span>
+      <NavIcon
+        name={item.icon}
+        className={nested ? "h-4 w-4 shrink-0" : "h-5 w-5 shrink-0"}
+      />
+      <span className={collapsed && !nested ? "lg:hidden" : ""}>
+        {item.label}
+      </span>
     </Link>
   );
 };
@@ -64,7 +72,7 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
     NAV_ITEMS.forEach((item) => {
       if (item.children?.length) {
         const groupActive = item.children.some((child) =>
-          isItemActive(child, pathname, searchParams),
+          isItemActive(child, pathname, searchParams)
         );
         const parentActive = pathname.startsWith(item.href);
         nextOpen[item.id] = groupActive || parentActive;
@@ -92,7 +100,7 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
       />
 
       <aside
-        className={`fixed inset-y-0 left-0 z-50 flex h-screen flex-col bg-sidebar text-sidebar-foreground transition-all duration-300 lg:sticky lg:top-0 ${
+        className={`bg-sidebar text-sidebar-foreground fixed inset-y-0 left-0 z-50 flex h-screen flex-col transition-all duration-300 lg:sticky lg:top-0 ${
           collapsed ? "lg:w-[5.25rem]" : "lg:w-72"
         } ${mobileOpen ? "w-72 translate-x-0" : "w-72 -translate-x-full lg:translate-x-0"}`}
         aria-label="Main navigation"
@@ -123,13 +131,13 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
             <p className="font-(family-name:--font-sora) text-sm font-semibold tracking-tight">
               Quality Standards
             </p>
-            <p className="truncate text-xs text-sidebar-muted">
+            <p className="text-sidebar-muted truncate text-xs">
               Engineering reference
             </p>
           </div>
           <button
             type="button"
-            className="ml-auto inline-flex h-9 w-9 items-center justify-center rounded-lg text-sidebar-muted hover:bg-white/10 hover:text-sidebar-foreground lg:hidden"
+            className="text-sidebar-muted hover:text-sidebar-foreground ml-auto inline-flex h-9 w-9 items-center justify-center rounded-lg hover:bg-white/10 lg:hidden"
             onClick={onCloseMobile}
             aria-label="Close navigation"
           >
@@ -139,8 +147,8 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
 
         <nav className="flex-1 overflow-y-auto px-3 py-4">
           <p
-            className={`mb-2 px-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-sidebar-muted ${
-              collapsed ? "lg:text-center lg:px-0" : ""
+            className={`text-sidebar-muted mb-2 px-3 text-[11px] font-semibold tracking-[0.14em] uppercase ${
+              collapsed ? "lg:px-0 lg:text-center" : ""
             }`}
           >
             {collapsed ? "QS" : "Standards"}
@@ -151,7 +159,7 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
                 return (
                   <li key={item.id}>
                     <span
-                      className={`flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm text-sidebar-muted/70 ${
+                      className={`text-sidebar-muted/70 flex items-center gap-3 rounded-xl px-3 py-2.5 text-sm ${
                         collapsed ? "lg:justify-center lg:px-2" : ""
                       }`}
                       title="Coming soon"
@@ -163,7 +171,7 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
                         }`}
                       >
                         <span className="truncate">{item.label}</span>
-                        <span className="rounded-md bg-white/5 px-1.5 py-0.5 text-[10px] uppercase tracking-wide">
+                        <span className="rounded-md bg-white/5 px-1.5 py-0.5 text-[10px] tracking-wide uppercase">
                           Soon
                         </span>
                       </span>
@@ -191,12 +199,15 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
                             collapsed ? "lg:justify-center lg:px-2" : ""
                           } ${
                             parentActive
-                              ? "font-semibold text-sidebar-active"
+                              ? "text-sidebar-active font-semibold"
                               : "text-sidebar-foreground/85 hover:bg-white/10 hover:text-white"
                           }`}
                           title={collapsed ? item.label : undefined}
                         >
-                          <NavIcon name={item.icon} className="h-5 w-5 shrink-0" />
+                          <NavIcon
+                            name={item.icon}
+                            className="h-5 w-5 shrink-0"
+                          />
                           <span className={collapsed ? "lg:hidden" : ""}>
                             {item.label}
                           </span>
@@ -204,7 +215,7 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
 
                         <button
                           type="button"
-                          className={`mr-1 inline-flex h-8 w-8 items-center justify-center rounded-lg text-sidebar-muted transition hover:bg-white/10 hover:text-sidebar-foreground ${
+                          className={`text-sidebar-muted hover:text-sidebar-foreground mr-1 inline-flex h-8 w-8 items-center justify-center rounded-lg transition hover:bg-white/10 ${
                             collapsed ? "lg:hidden" : ""
                           }`}
                           onClick={() => toggleGroup(item.id)}
@@ -259,7 +270,7 @@ const Sidebar = ({ collapsed, mobileOpen, onCloseMobile }) => {
         </nav>
 
         <div
-          className={`border-t border-white/10 p-4 text-xs text-sidebar-muted ${
+          className={`text-sidebar-muted border-t border-white/10 p-4 text-xs ${
             collapsed ? "lg:hidden" : ""
           }`}
         >

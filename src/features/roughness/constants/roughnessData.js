@@ -150,21 +150,24 @@ export const ROUGHNESS_CITATIONS = [
   {
     id: "iso-4287",
     standard: "ISO 4287",
-    title: "Geometrical Product Specifications (GPS) — Surface texture: Profile method — Terms, definitions and surface texture parameters",
+    title:
+      "Geometrical Product Specifications (GPS) — Surface texture: Profile method — Terms, definitions and surface texture parameters",
     usedFor: "Ra, Rz, Rq, Rt parameter definitions",
     url: "https://www.iso.org/standard/10132.html",
   },
   {
     id: "iso-1302",
     standard: "ISO 1302",
-    title: "Geometrical Product Specifications (GPS) — Indication of surface texture in technical product documentation",
+    title:
+      "Geometrical Product Specifications (GPS) — Indication of surface texture in technical product documentation",
     usedFor: "Drawing symbols and roughness grade indication practice",
     url: "https://www.iso.org/standard/28089.html",
   },
   {
     id: "iso-4288",
     standard: "ISO 4288",
-    title: "Geometrical Product Specifications (GPS) — Surface texture: Profile method — Rules and procedures for the assessment of surface texture",
+    title:
+      "Geometrical Product Specifications (GPS) — Surface texture: Profile method — Rules and procedures for the assessment of surface texture",
     usedFor: "Cutoff selection and measurement rules",
     url: "https://www.iso.org/standard/10133.html",
   },

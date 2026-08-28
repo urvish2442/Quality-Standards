@@ -38,7 +38,6 @@ const MetricThreadsView = () => {
         rows={METRIC_FINE_THREADS}
         unitNote="Dimensions in millimetres"
       />
-
     </div>
   );
 };

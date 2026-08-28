@@ -114,8 +114,7 @@ export const dmsToDecimalDegrees = ({ degrees, minutes, seconds }) => {
   }
 
   const sign = safeDeg < 0 ? -1 : 1;
-  const decimal =
-    sign * (Math.abs(safeDeg) + safeMin / 60 + safeSec / 3600);
+  const decimal = sign * (Math.abs(safeDeg) + safeMin / 60 + safeSec / 3600);
 
   return {
     decimal,

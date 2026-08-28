@@ -9,7 +9,7 @@ const Navbar = ({ collapsed, onToggleSidebar, onOpenMobile }) => {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const current = NAV_ITEMS.find((item) =>
-    item.href === "/" ? pathname === "/" : pathname.startsWith(item.href),
+    item.href === "/" ? pathname === "/" : pathname.startsWith(item.href)
   );
 
   const activeChild =
@@ -24,10 +24,10 @@ const Navbar = ({ collapsed, onToggleSidebar, onOpenMobile }) => {
     : (current?.label ?? "Overview");
 
   return (
-    <header className="sticky top-0 z-30 flex h-16 items-center gap-3 border-b border-border bg-navbar/90 px-4 backdrop-blur-md sm:px-6">
+    <header className="border-border bg-navbar/90 sticky top-0 z-30 flex h-16 items-center gap-3 border-b px-4 backdrop-blur-md sm:px-6">
       <button
         type="button"
-        className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface text-foreground hover:bg-primary-soft lg:hidden"
+        className="border-border bg-surface text-foreground hover:bg-primary-soft inline-flex h-10 w-10 items-center justify-center rounded-xl border lg:hidden"
         onClick={onOpenMobile}
         aria-label="Open navigation"
       >
@@ -36,7 +36,7 @@ const Navbar = ({ collapsed, onToggleSidebar, onOpenMobile }) => {
 
       <button
         type="button"
-        className="hidden h-10 w-10 items-center justify-center rounded-xl border border-border bg-surface text-foreground hover:bg-primary-soft lg:inline-flex"
+        className="border-border bg-surface text-foreground hover:bg-primary-soft hidden h-10 w-10 items-center justify-center rounded-xl border lg:inline-flex"
         onClick={onToggleSidebar}
         aria-label={collapsed ? "Expand sidebar" : "Collapse sidebar"}
       >
@@ -44,7 +44,7 @@ const Navbar = ({ collapsed, onToggleSidebar, onOpenMobile }) => {
       </button>
 
       <div className="min-w-0 flex-1">
-        <p className="truncate text-xs font-medium uppercase tracking-[0.12em] text-muted">
+        <p className="text-muted truncate text-xs font-medium tracking-[0.12em] uppercase">
           Quality Standards
         </p>
         <h1 className="truncate font-(family-name:--font-sora) text-base font-semibold tracking-tight sm:text-lg">

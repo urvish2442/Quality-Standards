@@ -64,12 +64,17 @@ export const solveTriangle = ({ a, b, c, A, B, C }) => {
   let angleB = toNumber(B);
   let angleC = toNumber(C);
 
-  const knownSides = [sideA, sideB, sideC].filter((value) => value !== null).length;
-  const knownAngles = [angleA, angleB, angleC].filter((value) => value !== null).length;
+  const knownSides = [sideA, sideB, sideC].filter(
+    (value) => value !== null
+  ).length;
+  const knownAngles = [angleA, angleB, angleC].filter(
+    (value) => value !== null
+  ).length;
 
   if (knownSides + knownAngles < 3) {
     return {
-      error: "Enter at least 3 values (sides and/or angles) to solve the triangle.",
+      error:
+        "Enter at least 3 values (sides and/or angles) to solve the triangle.",
     };
   }
 
@@ -113,58 +118,73 @@ export const solveTriangle = ({ a, b, c, A, B, C }) => {
         Math.acos(
           Math.min(
             1,
-            Math.max(-1, (sideB ** 2 + sideC ** 2 - sideA ** 2) / (2 * sideB * sideC)),
-          ),
-        ),
+            Math.max(
+              -1,
+              (sideB ** 2 + sideC ** 2 - sideA ** 2) / (2 * sideB * sideC)
+            )
+          )
+        )
       );
       angleB = radToDeg(
         Math.acos(
           Math.min(
             1,
-            Math.max(-1, (sideA ** 2 + sideC ** 2 - sideB ** 2) / (2 * sideA * sideC)),
-          ),
-        ),
+            Math.max(
+              -1,
+              (sideA ** 2 + sideC ** 2 - sideB ** 2) / (2 * sideA * sideC)
+            )
+          )
+        )
       );
       angleC = 180 - angleA - angleB;
     }
     // SAS
     else if (sideA !== null && sideB !== null && angleC !== null) {
       sideC = Math.sqrt(
-        sideA ** 2 + sideB ** 2 - 2 * sideA * sideB * Math.cos(degToRad(angleC)),
+        sideA ** 2 + sideB ** 2 - 2 * sideA * sideB * Math.cos(degToRad(angleC))
       );
       angleA = radToDeg(
         Math.acos(
           Math.min(
             1,
-            Math.max(-1, (sideB ** 2 + sideC ** 2 - sideA ** 2) / (2 * sideB * sideC)),
-          ),
-        ),
+            Math.max(
+              -1,
+              (sideB ** 2 + sideC ** 2 - sideA ** 2) / (2 * sideB * sideC)
+            )
+          )
+        )
       );
       angleB = 180 - angleA - angleC;
     } else if (sideA !== null && sideC !== null && angleB !== null) {
       sideB = Math.sqrt(
-        sideA ** 2 + sideC ** 2 - 2 * sideA * sideC * Math.cos(degToRad(angleB)),
+        sideA ** 2 + sideC ** 2 - 2 * sideA * sideC * Math.cos(degToRad(angleB))
       );
       angleA = radToDeg(
         Math.acos(
           Math.min(
             1,
-            Math.max(-1, (sideB ** 2 + sideC ** 2 - sideA ** 2) / (2 * sideB * sideC)),
-          ),
-        ),
+            Math.max(
+              -1,
+              (sideB ** 2 + sideC ** 2 - sideA ** 2) / (2 * sideB * sideC)
+            )
+          )
+        )
       );
       angleC = 180 - angleA - angleB;
     } else if (sideB !== null && sideC !== null && angleA !== null) {
       sideA = Math.sqrt(
-        sideB ** 2 + sideC ** 2 - 2 * sideB * sideC * Math.cos(degToRad(angleA)),
+        sideB ** 2 + sideC ** 2 - 2 * sideB * sideC * Math.cos(degToRad(angleA))
       );
       angleB = radToDeg(
         Math.acos(
           Math.min(
             1,
-            Math.max(-1, (sideA ** 2 + sideC ** 2 - sideB ** 2) / (2 * sideA * sideC)),
-          ),
-        ),
+            Math.max(
+              -1,
+              (sideA ** 2 + sideC ** 2 - sideB ** 2) / (2 * sideA * sideC)
+            )
+          )
+        )
       );
       angleC = 180 - angleA - angleB;
     }
@@ -206,7 +226,8 @@ export const solveTriangle = ({ a, b, c, A, B, C }) => {
         }
         angleB = radToDeg(Math.asin(Math.min(1, sinB)));
         angleC = 180 - angleA - angleB;
-        sideC = (sideA * Math.sin(degToRad(angleC))) / Math.sin(degToRad(angleA));
+        sideC =
+          (sideA * Math.sin(degToRad(angleC))) / Math.sin(degToRad(angleA));
       } else if (sideA !== null && sideC !== null && angleA !== null) {
         const sinC = (sideC * Math.sin(degToRad(angleA))) / sideA;
         if (sinC > 1) {
@@ -214,7 +235,8 @@ export const solveTriangle = ({ a, b, c, A, B, C }) => {
         }
         angleC = radToDeg(Math.asin(Math.min(1, sinC)));
         angleB = 180 - angleA - angleC;
-        sideB = (sideA * Math.sin(degToRad(angleB))) / Math.sin(degToRad(angleA));
+        sideB =
+          (sideA * Math.sin(degToRad(angleB))) / Math.sin(degToRad(angleA));
       } else if (sideB !== null && sideC !== null && angleB !== null) {
         const sinC = (sideC * Math.sin(degToRad(angleB))) / sideB;
         if (sinC > 1) {
@@ -222,7 +244,8 @@ export const solveTriangle = ({ a, b, c, A, B, C }) => {
         }
         angleC = radToDeg(Math.asin(Math.min(1, sinC)));
         angleA = 180 - angleB - angleC;
-        sideA = (sideB * Math.sin(degToRad(angleA))) / Math.sin(degToRad(angleB));
+        sideA =
+          (sideB * Math.sin(degToRad(angleA))) / Math.sin(degToRad(angleB));
       } else {
         return {
           error:
@@ -238,7 +261,7 @@ export const solveTriangle = ({ a, b, c, A, B, C }) => {
 
     if (
       [sideA, sideB, sideC, angleA, angleB, angleC].some(
-        (value) => !Number.isFinite(value) || value <= 0,
+        (value) => !Number.isFinite(value) || value <= 0
       )
     ) {
       return { error: "Could not solve a valid triangle from these inputs." };

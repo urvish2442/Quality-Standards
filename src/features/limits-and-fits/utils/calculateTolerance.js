@@ -17,7 +17,7 @@ export const getToleranceTable = (featureType) => {
 
 export const getToleranceGrades = (featureType) => {
   return Object.keys(getToleranceTable(featureType)).sort((a, b) =>
-    a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" }),
+    a.localeCompare(b, undefined, { numeric: true, sensitivity: "base" })
   );
 };
 
@@ -27,7 +27,7 @@ export const findSizeRangeIndex = (nominalMm) => {
   }
 
   return ISO_SIZE_RANGES.findIndex(
-    (range) => nominalMm > range.over && nominalMm <= range.to,
+    (range) => nominalMm > range.over && nominalMm <= range.to
   );
 };
 
@@ -60,11 +60,7 @@ const formatDeviation = (micrometres) => {
   return `${sign}${micrometres} µm`;
 };
 
-export const calculateToleranceLimits = ({
-  featureType,
-  nominalMm,
-  grade,
-}) => {
+export const calculateToleranceLimits = ({ featureType, nominalMm, grade }) => {
   const table = getToleranceTable(featureType);
   const gradeData = table[grade];
 

@@ -6,14 +6,14 @@ import {
 const RoughnessBasics = () => {
   return (
     <div className="flex flex-col gap-6">
-      <section className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
-        <p className="mb-2 inline-flex rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+      <section className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
+        <p className="bg-primary-soft text-primary mb-2 inline-flex rounded-full px-3 py-1 text-xs font-semibold tracking-[0.14em] uppercase">
           Surface roughness
         </p>
         <h2 className="font-(family-name:--font-sora) text-2xl font-semibold tracking-tight sm:text-3xl">
           Profile parameters and drawing practice
         </h2>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
+        <p className="text-muted mt-3 max-w-3xl text-sm leading-relaxed sm:text-base">
           Surface roughness describes fine-scale irregularities left by
           manufacturing. Most drawings specify Ra; Rz is useful when peak height
           matters for sealing, fatigue, or coating.
@@ -23,12 +23,12 @@ const RoughnessBasics = () => {
           {ROUGHNESS_BASICS.map((item) => (
             <div
               key={item.label}
-              className="rounded-xl border border-border bg-background px-3 py-3"
+              className="border-border bg-background rounded-xl border px-3 py-3"
             >
-              <dt className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">
+              <dt className="text-muted text-[11px] font-semibold tracking-[0.12em] uppercase">
                 {item.label}
               </dt>
-              <dd className="mt-1 text-sm font-medium text-foreground">
+              <dd className="text-foreground mt-1 text-sm font-medium">
                 {item.value}
               </dd>
             </div>
@@ -36,24 +36,25 @@ const RoughnessBasics = () => {
         </dl>
       </section>
 
-      <section className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
+      <section className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
         <h3 className="font-(family-name:--font-sora) text-lg font-semibold sm:text-xl">
           Symbol notes
         </h3>
-        <p className="mt-1 text-sm text-muted">
-          Common ISO 1302 / drawing-symbol meanings used on manufacturing prints.
+        <p className="text-muted mt-1 text-sm">
+          Common ISO 1302 / drawing-symbol meanings used on manufacturing
+          prints.
         </p>
 
         <div className="mt-4 grid gap-3 sm:grid-cols-2">
           {ROUGHNESS_SYMBOL_NOTES.map((item) => (
             <article
               key={item.title}
-              className="rounded-xl border border-border bg-background p-4"
+              className="border-border bg-background rounded-xl border p-4"
             >
               <h4 className="font-(family-name:--font-sora) text-base font-semibold">
                 {item.title}
               </h4>
-              <p className="mt-2 text-sm leading-relaxed text-muted">
+              <p className="text-muted mt-2 text-sm leading-relaxed">
                 {item.detail}
               </p>
             </article>

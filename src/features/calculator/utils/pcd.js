@@ -18,7 +18,9 @@ export const calculatePcd = ({ holeCount, centerDistance }) => {
   }
 
   if (distance === null) {
-    return { error: "Enter the center distance between two consecutive holes." };
+    return {
+      error: "Enter the center distance between two consecutive holes.",
+    };
   }
 
   if (distance <= 0) {

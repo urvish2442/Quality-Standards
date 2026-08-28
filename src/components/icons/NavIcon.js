@@ -55,11 +55,7 @@ const NavIcon = ({ name, className = "h-5 w-5", strokeWidth = 1.75 }) => {
   }
 
   return (
-    <Icon
-      className={className}
-      strokeWidth={strokeWidth}
-      aria-hidden="true"
-    />
+    <Icon className={className} strokeWidth={strokeWidth} aria-hidden="true" />
   );
 };
 

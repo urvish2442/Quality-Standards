@@ -155,4 +155,6 @@ export const SYMMETRY = [
   { range: "above 100 to 300", H: "0.5", K: "1.0", L: "2.0" },
 ];
 
-export const CIRCULAR_RUNOUT = [{ range: "All ranges", H: "0.1", K: "0.2", L: "0.5" }];
+export const CIRCULAR_RUNOUT = [
+  { range: "All ranges", H: "0.1", K: "0.2", L: "0.5" },
+];

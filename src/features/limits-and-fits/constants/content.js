@@ -2,21 +2,24 @@ export const FIT_TYPES = [
   {
     id: "clearance",
     title: "Clearance Fit",
-    summary: "Always a gap between hole and shaft — free assembly and relative motion.",
+    summary:
+      "Always a gap between hole and shaft — free assembly and relative motion.",
     examples: ["H11/c11", "H9/d9", "H8/f7", "H7/g6", "H7/h6"],
     tone: "info",
   },
   {
     id: "transition",
     title: "Transition Fit",
-    summary: "May produce a small clearance or light interference — locating fits.",
+    summary:
+      "May produce a small clearance or light interference — locating fits.",
     examples: ["H7/k6", "H7/n6", "H7/j6"],
     tone: "warning",
   },
   {
     id: "interference",
     title: "Interference Fit",
-    summary: "Shaft is always larger than hole — press/force fits for rigid joints.",
+    summary:
+      "Shaft is always larger than hole — press/force fits for rigid joints.",
     examples: ["H7/p6", "H7/s6", "H7/u6"],
     tone: "error",
   },

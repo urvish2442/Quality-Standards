@@ -4,8 +4,8 @@ import NotFoundView from "@/components/NotFoundView";
 
 const NotFoundShell = ({ children }) => {
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <header className="border-b border-border bg-surface px-4 py-4 sm:px-6">
+    <div className="bg-background text-foreground min-h-screen">
+      <header className="border-border bg-surface border-b px-4 py-4 sm:px-6">
         <Link
           href="/"
           className="inline-flex items-center gap-3 transition hover:opacity-90"
@@ -33,7 +33,9 @@ const NotFoundShell = ({ children }) => {
         </Link>
       </header>
 
-      <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">{children}</main>
+      <main className="mx-auto max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
+        {children}
+      </main>
     </div>
   );
 };

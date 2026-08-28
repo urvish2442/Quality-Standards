@@ -43,11 +43,11 @@ const buildLayout = (result) => {
 
   const baseReqX = Math.min(
     Math.max(toSvgX(Math.abs(requiredX)), plotLeft),
-    plotRight,
+    plotRight
   );
   const baseReqY = Math.min(
     Math.max(toSvgY(Math.abs(requiredY)), plotTop),
-    plotBottom,
+    plotBottom
   );
 
   const deltaX = obtainedX - requiredX;
@@ -55,7 +55,13 @@ const buildLayout = (result) => {
   const amplify =
     Math.hypot(deltaX, deltaY) < 1e-9
       ? 0
-      : Math.min(48, Math.max(10, 220 / (Math.hypot(deltaX * scaleX, deltaY * scaleY) || 1)));
+      : Math.min(
+          48,
+          Math.max(
+            10,
+            220 / (Math.hypot(deltaX * scaleX, deltaY * scaleY) || 1)
+          )
+        );
 
   const req = { x: baseReqX, y: baseReqY };
   const obt = {
@@ -152,13 +158,13 @@ const PositionDiagram = ({ result }) => {
           <h3 className="font-(family-name:--font-sora) text-lg font-semibold">
             True position diagram
           </h3>
-          <p className="mt-1 text-sm text-muted">
+          <p className="text-muted mt-1 text-sm">
             Black = required (nominal). Red = obtained (measured).
           </p>
         </div>
         <div className="flex items-center gap-3 text-xs font-semibold">
-          <span className="inline-flex items-center gap-1.5 text-foreground">
-            <span className="h-2.5 w-2.5 rounded-full bg-foreground" />
+          <span className="text-foreground inline-flex items-center gap-1.5">
+            <span className="bg-foreground h-2.5 w-2.5 rounded-full" />
             Required
           </span>
           <span className="inline-flex items-center gap-1.5 text-[#dc2626]">
@@ -168,10 +174,10 @@ const PositionDiagram = ({ result }) => {
         </div>
       </div>
 
-      <div className="mt-4 flex flex-1 items-center justify-center rounded-xl border border-border bg-background p-3 sm:p-4">
+      <div className="border-border bg-background mt-4 flex flex-1 items-center justify-center rounded-xl border p-3 sm:p-4">
         <svg
           viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
-          className="h-auto w-full max-w-xl text-foreground"
+          className="text-foreground h-auto w-full max-w-xl"
           role="img"
           aria-label="True position diagram with required black and obtained red dimensions"
         >
@@ -357,7 +363,7 @@ const PositionDiagram = ({ result }) => {
             textAnchor="middle"
             dominantBaseline="middle"
             transform={`rotate(-90 ${PART.x - 18} ${(PART.y + PART.y + PART.height) / 2})`}
-            className="fill-muted text-[11px] font-semibold uppercase tracking-[0.14em]"
+            className="fill-muted text-[11px] font-semibold tracking-[0.14em] uppercase"
           >
             Y
           </text>
@@ -365,7 +371,7 @@ const PositionDiagram = ({ result }) => {
             x={PART.x + PART.width / 2}
             y={PART.y + PART.height + 28}
             textAnchor="middle"
-            className="fill-muted text-[11px] font-semibold uppercase tracking-[0.14em]"
+            className="fill-muted text-[11px] font-semibold tracking-[0.14em] uppercase"
           >
             X
           </text>
@@ -373,7 +379,7 @@ const PositionDiagram = ({ result }) => {
       </div>
 
       {!layout.hasResult ? (
-        <p className="mt-3 text-sm text-muted">
+        <p className="text-muted mt-3 text-sm">
           Enter all four values to update the diagram with your required and
           obtained coordinates.
         </p>

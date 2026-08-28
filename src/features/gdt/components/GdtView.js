@@ -25,7 +25,7 @@ const GdtView = () => {
   return (
     <div className="flex w-full flex-col gap-6">
       <div
-        className="inline-flex w-full max-w-2xl rounded-2xl border border-border bg-surface p-1 shadow-(--card-shadow)"
+        className="border-border bg-surface inline-flex w-full max-w-2xl rounded-2xl border p-1 shadow-(--card-shadow)"
         role="tablist"
         aria-label="GD&T sections"
       >

@@ -57,26 +57,26 @@ const PcdDiagram = ({ result, holeCount }) => {
           <h3 className="font-(family-name:--font-sora) text-lg font-semibold">
             PCD diagram
           </h3>
-          <p className="mt-1 text-sm text-muted">
+          <p className="text-muted mt-1 text-sm">
             Holes update with count. Dimensions update from center distance.
           </p>
         </div>
         <div className="flex flex-wrap items-center gap-3 text-xs font-semibold">
-          <span className="inline-flex items-center gap-1.5 text-primary">
-            <span className="h-2.5 w-2.5 rounded-full bg-primary" />
+          <span className="text-primary inline-flex items-center gap-1.5">
+            <span className="bg-primary h-2.5 w-2.5 rounded-full" />
             Pitch circle
           </span>
-          <span className="inline-flex items-center gap-1.5 text-foreground">
-            <span className="h-2.5 w-2.5 rounded-full border-2 border-foreground bg-surface" />
+          <span className="text-foreground inline-flex items-center gap-1.5">
+            <span className="border-foreground bg-surface h-2.5 w-2.5 rounded-full border-2" />
             Holes
           </span>
         </div>
       </div>
 
-      <div className="mt-4 flex flex-1 items-center justify-center rounded-xl border border-border bg-background p-3 sm:p-4">
+      <div className="border-border bg-background mt-4 flex flex-1 items-center justify-center rounded-xl border p-3 sm:p-4">
         <svg
           viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
-          className="h-auto w-full max-w-md text-foreground"
+          className="text-foreground h-auto w-full max-w-md"
           role="img"
           aria-label={`Pitch circle with ${holes} equally spaced holes`}
         >
@@ -216,21 +216,10 @@ const PcdDiagram = ({ result, holeCount }) => {
                 stroke="currentColor"
                 strokeWidth="2"
               />
-              <circle
-                cx={point.x}
-                cy={point.y}
-                r="2.5"
-                fill="currentColor"
-              />
+              <circle cx={point.x} cy={point.y} r="2.5" fill="currentColor" />
               <text
-                x={
-                  CX +
-                  (PITCH_RADIUS + 28) * Math.cos(point.angle)
-                }
-                y={
-                  CY +
-                  (PITCH_RADIUS + 28) * Math.sin(point.angle)
-                }
+                x={CX + (PITCH_RADIUS + 28) * Math.cos(point.angle)}
+                y={CY + (PITCH_RADIUS + 28) * Math.sin(point.angle)}
                 textAnchor="middle"
                 dominantBaseline="middle"
                 className="fill-muted text-[11px] font-semibold"
@@ -244,7 +233,7 @@ const PcdDiagram = ({ result, holeCount }) => {
             x={CX}
             y={CY - PITCH_RADIUS - 28}
             textAnchor="middle"
-            className="fill-muted text-[11px] font-semibold uppercase tracking-[0.14em]"
+            className="fill-muted text-[11px] font-semibold tracking-[0.14em] uppercase"
           >
             {holes} holes
           </text>
@@ -252,7 +241,7 @@ const PcdDiagram = ({ result, holeCount }) => {
       </div>
 
       {!hasResult ? (
-        <p className="mt-3 text-sm text-muted">
+        <p className="text-muted mt-3 text-sm">
           Enter center distance to show PCD and C values on the diagram.
         </p>
       ) : null}

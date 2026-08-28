@@ -51,7 +51,8 @@ export const NAV_ITEMS = [
     label: "Threads",
     href: "/threads",
     icon: "thread",
-    description: "Metric, British Whitworth, Unified (UN), and BSP (G) thread specs",
+    description:
+      "Metric, British Whitworth, Unified (UN), and BSP (G) thread specs",
   },
   {
     id: "calculator",
@@ -79,7 +80,9 @@ export const NAV_ITEMS = [
   },
 ];
 
-export const STANDARD_CARDS = NAV_ITEMS.filter((item) => item.id !== "overview");
+export const STANDARD_CARDS = NAV_ITEMS.filter(
+  (item) => item.id !== "overview"
+);
 
 export const getCalculatorTabId = (tab) => {
   const match = CALCULATOR_TABS.find((item) => item.id === tab);

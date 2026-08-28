@@ -25,14 +25,14 @@ const Iso2768Part2View = () => {
 
   return (
     <div className="flex flex-col gap-6">
-      <section className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
-        <p className="mb-2 inline-flex rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+      <section className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
+        <p className="bg-primary-soft text-primary mb-2 inline-flex rounded-full px-3 py-1 text-xs font-semibold tracking-[0.14em] uppercase">
           ISO 2768-2
         </p>
         <h2 className="font-(family-name:--font-sora) text-2xl font-semibold tracking-tight sm:text-3xl">
           General geometrical tolerances
         </h2>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
+        <p className="text-muted mt-3 max-w-3xl text-sm leading-relaxed sm:text-base">
           ISO 2768-2 defines general geometrical tolerances in three classes: H,
           K, and L. It covers straightness, flatness, perpendicularity,
           symmetry, and circular run-out. Click a class header to highlight that

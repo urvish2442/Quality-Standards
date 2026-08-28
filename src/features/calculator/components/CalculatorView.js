@@ -2,10 +2,7 @@
 
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import {
-  CALCULATOR_TABS,
-  getCalculatorTabId,
-} from "@/constants/navigation";
+import { CALCULATOR_TABS, getCalculatorTabId } from "@/constants/navigation";
 import PositionCalculator from "@/features/calculator/components/PositionCalculator";
 import AngleCalculator from "@/features/calculator/components/AngleCalculator";
 import Converter from "@/features/calculator/components/Converter";
@@ -26,7 +23,7 @@ const CalculatorView = () => {
   return (
     <div className="flex w-full flex-col gap-6">
       <div
-        className="inline-flex w-full max-w-3xl rounded-2xl border border-border bg-surface p-1 shadow-(--card-shadow)"
+        className="border-border bg-surface inline-flex w-full max-w-3xl rounded-2xl border p-1 shadow-(--card-shadow)"
         role="tablist"
         aria-label="Calculator sections"
       >

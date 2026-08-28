@@ -16,10 +16,7 @@ const emptyFields = {
 const PositionCalculator = () => {
   const [fields, setFields] = useState(emptyFields);
 
-  const result = useMemo(
-    () => calculatePositionDeviation(fields),
-    [fields],
-  );
+  const result = useMemo(() => calculatePositionDeviation(fields), [fields]);
 
   const updateField = (key) => (event) => {
     setFields((current) => ({
@@ -30,14 +27,14 @@ const PositionCalculator = () => {
 
   return (
     <div className="flex flex-col gap-6">
-      <section className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
-        <p className="mb-2 inline-flex rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+      <section className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
+        <p className="bg-primary-soft text-primary mb-2 inline-flex rounded-full px-3 py-1 text-xs font-semibold tracking-[0.14em] uppercase">
           Position
         </p>
         <h2 className="font-(family-name:--font-sora) text-2xl font-semibold tracking-tight">
           Required vs obtained coordinates
         </h2>
-        <p className="mt-2 max-w-3xl text-sm text-muted">
+        <p className="text-muted mt-2 max-w-3xl text-sm">
           Enter the required and obtained X/Y values to calculate ΔX, ΔY, and
           the radial position error. The diagram shows required in black and
           obtained in red.
@@ -45,7 +42,7 @@ const PositionCalculator = () => {
       </section>
 
       <section className="grid gap-6 xl:grid-cols-2">
-        <div className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
+        <div className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
           <h3 className="font-(family-name:--font-sora) text-lg font-semibold">
             Coordinates
           </h3>
@@ -54,7 +51,7 @@ const PositionCalculator = () => {
             <div>
               <p className="mb-3 text-sm font-semibold">
                 Required
-                <span className="ml-2 text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                <span className="text-muted ml-2 text-xs font-semibold tracking-[0.12em] uppercase">
                   Black
                 </span>
               </p>
@@ -67,7 +64,7 @@ const PositionCalculator = () => {
                     step="any"
                     value={fields.requiredX}
                     onChange={updateField("requiredX")}
-                    className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none transition focus:border-primary"
+                    className="border-border bg-background focus:border-primary h-11 w-full rounded-xl border px-3 text-sm transition outline-none"
                     placeholder="e.g. 2.500"
                   />
                 </label>
@@ -79,17 +76,17 @@ const PositionCalculator = () => {
                     step="any"
                     value={fields.requiredY}
                     onChange={updateField("requiredY")}
-                    className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none transition focus:border-primary"
+                    className="border-border bg-background focus:border-primary h-11 w-full rounded-xl border px-3 text-sm transition outline-none"
                     placeholder="e.g. 1.250"
                   />
                 </label>
               </div>
             </div>
 
-            <div className="border-t border-border pt-5">
+            <div className="border-border border-t pt-5">
               <p className="mb-3 text-sm font-semibold">
                 Obtained
-                <span className="ml-2 text-xs font-semibold uppercase tracking-[0.12em] text-[#dc2626]">
+                <span className="ml-2 text-xs font-semibold tracking-[0.12em] text-[#dc2626] uppercase">
                   Red
                 </span>
               </p>
@@ -102,7 +99,7 @@ const PositionCalculator = () => {
                     step="any"
                     value={fields.obtainedX}
                     onChange={updateField("obtainedX")}
-                    className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none transition focus:border-primary"
+                    className="border-border bg-background focus:border-primary h-11 w-full rounded-xl border px-3 text-sm transition outline-none"
                     placeholder="e.g. 2.753"
                   />
                 </label>
@@ -114,14 +111,14 @@ const PositionCalculator = () => {
                     step="any"
                     value={fields.obtainedY}
                     onChange={updateField("obtainedY")}
-                    className="h-11 w-full rounded-xl border border-border bg-background px-3 text-sm outline-none transition focus:border-primary"
+                    className="border-border bg-background focus:border-primary h-11 w-full rounded-xl border px-3 text-sm transition outline-none"
                     placeholder="e.g. 1.252"
                   />
                 </label>
               </div>
             </div>
 
-            <div className="border-t border-border pt-5">
+            <div className="border-border border-t pt-5">
               <h4 className="font-(family-name:--font-sora) text-base font-semibold">
                 Results
               </h4>
@@ -130,30 +127,30 @@ const PositionCalculator = () => {
                 <WarningMessage className="mt-3">{result.error}</WarningMessage>
               ) : (
                 <div className="mt-3 grid gap-3 sm:grid-cols-3">
-                  <div className="rounded-xl border border-border bg-background p-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                  <div className="border-border bg-background rounded-xl border p-4">
+                    <p className="text-muted text-xs font-semibold tracking-[0.12em] uppercase">
                       ΔX
                     </p>
-                    <p className="mt-1 font-(family-name:--font-sora) text-2xl font-semibold text-primary">
+                    <p className="text-primary mt-1 font-(family-name:--font-sora) text-2xl font-semibold">
                       {result.display.deltaX}
                     </p>
                   </div>
-                  <div className="rounded-xl border border-border bg-background p-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted">
+                  <div className="border-border bg-background rounded-xl border p-4">
+                    <p className="text-muted text-xs font-semibold tracking-[0.12em] uppercase">
                       ΔY
                     </p>
-                    <p className="mt-1 font-(family-name:--font-sora) text-2xl font-semibold text-primary">
+                    <p className="text-primary mt-1 font-(family-name:--font-sora) text-2xl font-semibold">
                       {result.display.deltaY}
                     </p>
                   </div>
-                  <div className="rounded-xl border border-success/25 bg-success/10 p-4">
-                    <p className="text-xs font-semibold uppercase tracking-[0.12em] text-success">
+                  <div className="border-success/25 bg-success/10 rounded-xl border p-4">
+                    <p className="text-success text-xs font-semibold tracking-[0.12em] uppercase">
                       Position error
                     </p>
                     <p className="mt-1 font-(family-name:--font-sora) text-2xl font-semibold">
                       {result.display.positionError}
                     </p>
-                    <p className="mt-1 text-xs text-muted">√(ΔX² + ΔY²)</p>
+                    <p className="text-muted mt-1 text-xs">√(ΔX² + ΔY²)</p>
                   </div>
                 </div>
               )}
@@ -161,7 +158,7 @@ const PositionCalculator = () => {
           </div>
         </div>
 
-        <div className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
+        <div className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
           <PositionDiagram result={result} />
         </div>
       </section>

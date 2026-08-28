@@ -1,7 +1,7 @@
 const SvgFrame = ({ children }) => (
   <svg
     viewBox="0 0 48 48"
-    className="h-10 w-10 text-foreground"
+    className="text-foreground h-10 w-10"
     fill="none"
     stroke="currentColor"
     strokeWidth="2.6"
@@ -105,11 +105,7 @@ const SYMBOL_DRAWINGS = {
   circularRunout: (
     <SvgFrame>
       <line x1="9" y1="37" x2="27" y2="19" />
-      <polygon
-        points="34,12 24,15 31,22"
-        fill="currentColor"
-        stroke="none"
-      />
+      <polygon points="34,12 24,15 31,22" fill="currentColor" stroke="none" />
     </SvgFrame>
   ),
   // Two parallel 45° arrows joined at the base (total runout)
@@ -117,17 +113,9 @@ const SYMBOL_DRAWINGS = {
     <SvgFrame>
       <line x1="7" y1="38" x2="19" y2="38" />
       <line x1="7" y1="38" x2="23" y2="22" />
-      <polygon
-        points="30,15 20,18 27,25"
-        fill="currentColor"
-        stroke="none"
-      />
+      <polygon points="30,15 20,18 27,25" fill="currentColor" stroke="none" />
       <line x1="19" y1="38" x2="35" y2="22" />
-      <polygon
-        points="42,15 32,18 39,25"
-        fill="currentColor"
-        stroke="none"
-      />
+      <polygon points="42,15 32,18 39,25" fill="currentColor" stroke="none" />
     </SvgFrame>
   ),
 };
@@ -135,7 +123,7 @@ const SYMBOL_DRAWINGS = {
 const GdtSymbolIcon = ({ symbolKey, className = "" }) => {
   return (
     <span
-      className={`inline-flex h-14 w-14 items-center justify-center rounded-xl border border-border bg-background ${className}`}
+      className={`border-border bg-background inline-flex h-14 w-14 items-center justify-center rounded-xl border ${className}`}
     >
       {SYMBOL_DRAWINGS[symbolKey] ?? null}
     </span>

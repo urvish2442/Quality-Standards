@@ -1,13 +1,13 @@
 const ThreadBasics = ({ badge, title, description, items }) => {
   return (
-    <section className="rounded-2xl border border-border bg-surface p-5 shadow-(--card-shadow) sm:p-6">
-      <p className="mb-2 inline-flex rounded-full bg-primary-soft px-3 py-1 text-xs font-semibold uppercase tracking-[0.14em] text-primary">
+    <section className="border-border bg-surface rounded-2xl border p-5 shadow-(--card-shadow) sm:p-6">
+      <p className="bg-primary-soft text-primary mb-2 inline-flex rounded-full px-3 py-1 text-xs font-semibold tracking-[0.14em] uppercase">
         {badge}
       </p>
       <h2 className="font-(family-name:--font-sora) text-2xl font-semibold tracking-tight sm:text-3xl">
         {title}
       </h2>
-      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-muted sm:text-base">
+      <p className="text-muted mt-3 max-w-3xl text-sm leading-relaxed sm:text-base">
         {description}
       </p>
 
@@ -15,12 +15,12 @@ const ThreadBasics = ({ badge, title, description, items }) => {
         {items.map((item) => (
           <div
             key={item.label}
-            className="rounded-xl border border-border bg-background px-3 py-3"
+            className="border-border bg-background rounded-xl border px-3 py-3"
           >
-            <dt className="text-[11px] font-semibold uppercase tracking-[0.12em] text-muted">
+            <dt className="text-muted text-[11px] font-semibold tracking-[0.12em] uppercase">
               {item.label}
             </dt>
-            <dd className="mt-1 text-sm font-medium text-foreground">
+            <dd className="text-foreground mt-1 text-sm font-medium">
               {item.value}
             </dd>
           </div>

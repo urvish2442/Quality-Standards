@@ -21,7 +21,7 @@ const ThemeToggle = () => {
   if (!mounted) {
     return (
       <div
-        className="h-10 w-[8.5rem] rounded-xl border border-border bg-surface"
+        className="border-border bg-surface h-10 w-[8.5rem] rounded-xl border"
         aria-hidden="true"
       />
     );
@@ -29,7 +29,7 @@ const ThemeToggle = () => {
 
   return (
     <div
-      className="inline-flex items-center gap-1 rounded-xl border border-border bg-surface p-1"
+      className="border-border bg-surface inline-flex items-center gap-1 rounded-xl border p-1"
       role="group"
       aria-label="Theme"
     >

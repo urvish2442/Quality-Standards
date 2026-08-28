@@ -22,7 +22,7 @@ const CalculatorPage = () => {
   return (
     <Suspense
       fallback={
-        <div className="rounded-2xl border border-border bg-surface p-6 text-sm text-muted shadow-(--card-shadow)">
+        <div className="border-border bg-surface text-muted rounded-2xl border p-6 text-sm shadow-(--card-shadow)">
           Loading calculator…
         </div>
       }
