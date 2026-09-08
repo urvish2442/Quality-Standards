@@ -35,8 +35,8 @@ const PositionCalculator = () => {
           Required vs obtained coordinates
         </h2>
         <p className="text-muted mt-2 max-w-3xl text-sm">
-          Enter the required and obtained X/Y values to calculate ΔX, ΔY, and
-          the radial position error. The diagram shows required in black and
+          Enter the required and obtained X/Y values to calculate ΔX, ΔY, True
+          Position (⌀), and Radial Error. The diagram shows required in black and
           obtained in red.
         </p>
       </section>
@@ -126,7 +126,7 @@ const PositionCalculator = () => {
               {result.error ? (
                 <WarningMessage className="mt-3">{result.error}</WarningMessage>
               ) : (
-                <div className="mt-3 grid gap-3 sm:grid-cols-3">
+                <div className="mt-3 grid gap-3 sm:grid-cols-2">
                   <div className="border-border bg-background rounded-xl border p-4">
                     <p className="text-muted text-xs font-semibold tracking-[0.12em] uppercase">
                       ΔX
@@ -134,6 +134,7 @@ const PositionCalculator = () => {
                     <p className="text-primary mt-1 font-(family-name:--font-sora) text-2xl font-semibold">
                       {result.display.deltaX}
                     </p>
+                    <p className="text-muted mt-1 text-xs">Obtained X - Required X</p>
                   </div>
                   <div className="border-border bg-background rounded-xl border p-4">
                     <p className="text-muted text-xs font-semibold tracking-[0.12em] uppercase">
@@ -142,13 +143,23 @@ const PositionCalculator = () => {
                     <p className="text-primary mt-1 font-(family-name:--font-sora) text-2xl font-semibold">
                       {result.display.deltaY}
                     </p>
+                    <p className="text-muted mt-1 text-xs">Obtained Y - Required Y</p>
                   </div>
                   <div className="border-success/25 bg-success/10 rounded-xl border p-4">
                     <p className="text-success text-xs font-semibold tracking-[0.12em] uppercase">
-                      Position error
+                      True Position (⌀)
                     </p>
                     <p className="mt-1 font-(family-name:--font-sora) text-2xl font-semibold">
-                      {result.display.positionError}
+                      ⌀ {result.display.truePosition}
+                    </p>
+                    <p className="text-muted mt-1 text-xs">2 × √(ΔX² + ΔY²)</p>
+                  </div>
+                  <div className="border-border bg-background rounded-xl border p-4">
+                    <p className="text-muted text-xs font-semibold tracking-[0.12em] uppercase">
+                      Radial Error
+                    </p>
+                    <p className="text-primary mt-1 font-(family-name:--font-sora) text-2xl font-semibold">
+                      {result.display.radialError}
                     </p>
                     <p className="text-muted mt-1 text-xs">√(ΔX² + ΔY²)</p>
                   </div>

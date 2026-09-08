@@ -24,7 +24,8 @@ export const calculatePositionDeviation = ({
 
   const deltaX = obtX - reqX;
   const deltaY = obtY - reqY;
-  const positionError = Math.hypot(deltaX, deltaY);
+  const radialError = Math.hypot(deltaX, deltaY);
+  const truePosition = 2 * radialError;
 
   return {
     requiredX: reqX,
@@ -33,11 +34,15 @@ export const calculatePositionDeviation = ({
     obtainedY: obtY,
     deltaX,
     deltaY,
-    positionError,
+    radialError,
+    truePosition,
+    positionError: truePosition,
     display: {
       deltaX: deltaX.toFixed(4),
       deltaY: deltaY.toFixed(4),
-      positionError: positionError.toFixed(4),
+      radialError: radialError.toFixed(4),
+      truePosition: truePosition.toFixed(4),
+      positionError: truePosition.toFixed(4),
     },
   };
 };

@@ -73,6 +73,8 @@ const buildLayout = (result) => {
   obt.x = Math.min(Math.max(obt.x, PART.x + 20), PART.x + PART.width - 20);
   obt.y = Math.min(Math.max(obt.y, PART.y + 20), PART.y + PART.height - 20);
 
+  const devDist = Math.hypot(obt.x - req.x, obt.y - req.y);
+
   return {
     hasResult,
     requiredX,
@@ -81,6 +83,7 @@ const buildLayout = (result) => {
     obtainedY,
     req,
     obt,
+    devDist,
     leftEdge: PART.x,
     bottomEdge: PART.y + PART.height,
   };
@@ -146,10 +149,11 @@ const DimensionArrow = ({
 
 const PositionDiagram = ({ result }) => {
   const layout = buildLayout(result);
-  const { req, obt, leftEdge, bottomEdge } = layout;
+  const { req, obt, leftEdge, bottomEdge, devDist } = layout;
 
   const requiredColor = "currentColor";
   const obtainedColor = "#dc2626";
+  const zoneColor = "#16a34a";
 
   return (
     <div className="flex h-full flex-col">
@@ -159,7 +163,7 @@ const PositionDiagram = ({ result }) => {
             True position diagram
           </h3>
           <p className="text-muted mt-1 text-sm">
-            Black = required (nominal). Red = obtained (measured).
+            Black = required. Red = obtained. Green = position tolerance zone (⌀).
           </p>
         </div>
         <div className="flex items-center gap-3 text-xs font-semibold">
@@ -171,6 +175,10 @@ const PositionDiagram = ({ result }) => {
             <span className="h-2.5 w-2.5 rounded-full bg-[#dc2626]" />
             Obtained
           </span>
+          <span className="inline-flex items-center gap-1.5 text-[#16a34a]">
+            <span className="h-2.5 w-2.5 rounded-full border border-[#16a34a] bg-[#16a34a]/20" />
+            Zone (⌀)
+          </span>
         </div>
       </div>
 
@@ -179,7 +187,7 @@ const PositionDiagram = ({ result }) => {
           viewBox={`0 0 ${VIEW_W} ${VIEW_H}`}
           className="text-foreground h-auto w-full max-w-xl"
           role="img"
-          aria-label="True position diagram with required black and obtained red dimensions"
+          aria-label="True position diagram with required black, obtained red, and green tolerance zone dimensions"
         >
           {/* Part body */}
           <rect
@@ -252,17 +260,28 @@ const PositionDiagram = ({ result }) => {
           {/* Required center mark */}
           <circle cx={req.x} cy={req.y} r="2.5" fill="currentColor" />
 
-          {/* Deviation connector */}
-          {layout.hasResult && (req.x !== obt.x || req.y !== obt.y) ? (
-            <line
-              x1={req.x}
-              y1={req.y}
-              x2={obt.x}
-              y2={obt.y}
-              stroke="currentColor"
-              strokeWidth="1.2"
-              opacity="0.85"
-            />
+          {/* True Position Tolerance Zone Circle & Deviation Vector */}
+          {layout.hasResult && devDist > 0 ? (
+            <g>
+              <circle
+                cx={req.x}
+                cy={req.y}
+                r={devDist}
+                fill={zoneColor}
+                fillOpacity="0.08"
+                stroke={zoneColor}
+                strokeWidth="1.5"
+                strokeDasharray="5 3"
+              />
+              <line
+                x1={req.x}
+                y1={req.y}
+                x2={obt.x}
+                y2={obt.y}
+                stroke={zoneColor}
+                strokeWidth="1.5"
+              />
+            </g>
           ) : null}
 
           {/* Obtained marker */}
