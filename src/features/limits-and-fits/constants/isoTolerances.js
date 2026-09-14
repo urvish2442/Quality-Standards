@@ -1,84 +1,84 @@
 export const ISO_SIZE_RANGES = [
   {
     over: 3,
-    to: 6,
+    to: 6
   },
   {
     over: 6,
-    to: 10,
+    to: 10
   },
   {
     over: 10,
-    to: 18,
+    to: 18
   },
   {
     over: 18,
-    to: 30,
+    to: 30
   },
   {
     over: 30,
-    to: 40,
+    to: 40
   },
   {
     over: 40,
-    to: 50,
+    to: 50
   },
   {
     over: 50,
-    to: 65,
+    to: 65
   },
   {
     over: 65,
-    to: 80,
+    to: 80
   },
   {
     over: 80,
-    to: 100,
+    to: 100
   },
   {
     over: 100,
-    to: 120,
+    to: 120
   },
   {
     over: 120,
-    to: 140,
+    to: 140
   },
   {
     over: 140,
-    to: 160,
+    to: 160
   },
   {
     over: 160,
-    to: 180,
+    to: 180
   },
   {
     over: 180,
-    to: 200,
+    to: 200
   },
   {
     over: 200,
-    to: 225,
+    to: 225
   },
   {
     over: 225,
-    to: 250,
+    to: 250
   },
   {
     over: 250,
-    to: 280,
+    to: 280
   },
   {
     over: 280,
-    to: 315,
+    to: 315
   },
   {
     over: 315,
-    to: 355,
+    to: 355
   },
   {
     over: 355,
-    to: 400,
-  },
+    to: 400
+  }
 ];
 
 export const SHAFT_TOLERANCES = {
@@ -104,64 +104,64 @@ export const SHAFT_TOLERANCES = {
       lower: -560,
     },
     {
+      upper: -310,
+      lower: -560,
+    },
+    {
       upper: -320,
-      lower: -570,
+      lower: -620,
+    },
+    {
+      upper: -320,
+      lower: -620,
     },
     {
       upper: -340,
-      lower: -640,
+      lower: -690,
+    },
+    {
+      upper: -340,
+      lower: -690,
     },
     {
       upper: -360,
-      lower: -660,
-    },
-    {
-      upper: -380,
-      lower: -730,
-    },
-    {
-      upper: -410,
       lower: -760,
     },
     {
+      upper: -360,
+      lower: -760,
+    },
+    {
+      upper: -360,
+      lower: -760,
+    },
+    {
+      upper: -380,
+      lower: -840,
+    },
+    {
+      upper: -380,
+      lower: -840,
+    },
+    {
+      upper: -380,
+      lower: -840,
+    },
+    {
+      upper: -410,
+      lower: -930,
+    },
+    {
+      upper: -410,
+      lower: -930,
+    },
+    {
       upper: -460,
-      lower: -860,
+      lower: -1030,
     },
     {
-      upper: -520,
-      lower: -920,
-    },
-    {
-      upper: -580,
-      lower: -980,
-    },
-    {
-      upper: -660,
-      lower: -1120,
-    },
-    {
-      upper: -740,
-      lower: -1200,
-    },
-    {
-      upper: -820,
-      lower: -1280,
-    },
-    {
-      upper: -920,
-      lower: -1440,
-    },
-    {
-      upper: -1050,
-      lower: -1570,
-    },
-    {
-      upper: -1200,
-      lower: -1770,
-    },
-    {
-      upper: -1350,
-      lower: -1920,
+      upper: -460,
+      lower: -1030,
     },
   ],
   d6: [
@@ -186,8 +186,20 @@ export const SHAFT_TOLERANCES = {
       lower: -96,
     },
     {
+      upper: -80,
+      lower: -96,
+    },
+    {
       upper: -100,
       lower: -119,
+    },
+    {
+      upper: -100,
+      lower: -119,
+    },
+    {
+      upper: -120,
+      lower: -142,
     },
     {
       upper: -120,
@@ -198,8 +210,28 @@ export const SHAFT_TOLERANCES = {
       lower: -170,
     },
     {
+      upper: -145,
+      lower: -170,
+    },
+    {
+      upper: -145,
+      lower: -170,
+    },
+    {
       upper: -170,
       lower: -199,
+    },
+    {
+      upper: -170,
+      lower: -199,
+    },
+    {
+      upper: -170,
+      lower: -199,
+    },
+    {
+      upper: -190,
+      lower: -222,
     },
     {
       upper: -190,
@@ -209,15 +241,10 @@ export const SHAFT_TOLERANCES = {
       upper: -210,
       lower: -246,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -210,
+      lower: -246,
+    },
   ],
   e6: [
     {
@@ -241,8 +268,20 @@ export const SHAFT_TOLERANCES = {
       lower: -66,
     },
     {
+      upper: -50,
+      lower: -66,
+    },
+    {
       upper: -60,
       lower: -79,
+    },
+    {
+      upper: -60,
+      lower: -79,
+    },
+    {
+      upper: -72,
+      lower: -94,
     },
     {
       upper: -72,
@@ -253,8 +292,28 @@ export const SHAFT_TOLERANCES = {
       lower: -110,
     },
     {
+      upper: -85,
+      lower: -110,
+    },
+    {
+      upper: -85,
+      lower: -110,
+    },
+    {
       upper: -100,
       lower: -129,
+    },
+    {
+      upper: -100,
+      lower: -129,
+    },
+    {
+      upper: -100,
+      lower: -129,
+    },
+    {
+      upper: -110,
+      lower: -142,
     },
     {
       upper: -110,
@@ -264,15 +323,10 @@ export const SHAFT_TOLERANCES = {
       upper: -125,
       lower: -161,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -125,
+      lower: -161,
+    },
   ],
   e13: [
     {
@@ -296,8 +350,20 @@ export const SHAFT_TOLERANCES = {
       lower: -440,
     },
     {
+      upper: -50,
+      lower: -440,
+    },
+    {
       upper: -60,
       lower: -520,
+    },
+    {
+      upper: -60,
+      lower: -520,
+    },
+    {
+      upper: -72,
+      lower: -612,
     },
     {
       upper: -72,
@@ -308,8 +374,28 @@ export const SHAFT_TOLERANCES = {
       lower: -715,
     },
     {
+      upper: -85,
+      lower: -715,
+    },
+    {
+      upper: -85,
+      lower: -715,
+    },
+    {
       upper: -100,
       lower: -820,
+    },
+    {
+      upper: -100,
+      lower: -820,
+    },
+    {
+      upper: -100,
+      lower: -820,
+    },
+    {
+      upper: -110,
+      lower: -920,
     },
     {
       upper: -110,
@@ -319,15 +405,10 @@ export const SHAFT_TOLERANCES = {
       upper: -125,
       lower: -1015,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -125,
+      lower: -1015,
+    },
   ],
   f5: [
     {
@@ -351,8 +432,20 @@ export const SHAFT_TOLERANCES = {
       lower: -36,
     },
     {
+      upper: -25,
+      lower: -36,
+    },
+    {
       upper: -30,
       lower: -43,
+    },
+    {
+      upper: -30,
+      lower: -43,
+    },
+    {
+      upper: -36,
+      lower: -51,
     },
     {
       upper: -36,
@@ -363,8 +456,28 @@ export const SHAFT_TOLERANCES = {
       lower: -61,
     },
     {
+      upper: -43,
+      lower: -61,
+    },
+    {
+      upper: -43,
+      lower: -61,
+    },
+    {
       upper: -50,
       lower: -70,
+    },
+    {
+      upper: -50,
+      lower: -70,
+    },
+    {
+      upper: -50,
+      lower: -70,
+    },
+    {
+      upper: -56,
+      lower: -79,
     },
     {
       upper: -56,
@@ -374,15 +487,10 @@ export const SHAFT_TOLERANCES = {
       upper: -62,
       lower: -87,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -62,
+      lower: -87,
+    },
   ],
   f6: [
     {
@@ -406,6 +514,14 @@ export const SHAFT_TOLERANCES = {
       lower: -41,
     },
     {
+      upper: -25,
+      lower: -41,
+    },
+    {
+      upper: -30,
+      lower: -49,
+    },
+    {
       upper: -30,
       lower: -49,
     },
@@ -414,8 +530,28 @@ export const SHAFT_TOLERANCES = {
       lower: -58,
     },
     {
+      upper: -36,
+      lower: -58,
+    },
+    {
       upper: -43,
-      lower: -48,
+      lower: -68,
+    },
+    {
+      upper: -43,
+      lower: -68,
+    },
+    {
+      upper: -43,
+      lower: -68,
+    },
+    {
+      upper: -50,
+      lower: -79,
+    },
+    {
+      upper: -50,
+      lower: -79,
     },
     {
       upper: -50,
@@ -426,18 +562,17 @@ export const SHAFT_TOLERANCES = {
       lower: -88,
     },
     {
+      upper: -56,
+      lower: -88,
+    },
+    {
       upper: -62,
       lower: -98,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -62,
+      lower: -98,
+    },
   ],
   f7: [
     {
@@ -461,8 +596,20 @@ export const SHAFT_TOLERANCES = {
       lower: -50,
     },
     {
+      upper: -25,
+      lower: -50,
+    },
+    {
       upper: -30,
       lower: -60,
+    },
+    {
+      upper: -30,
+      lower: -60,
+    },
+    {
+      upper: -36,
+      lower: -71,
     },
     {
       upper: -36,
@@ -473,8 +620,28 @@ export const SHAFT_TOLERANCES = {
       lower: -83,
     },
     {
+      upper: -43,
+      lower: -83,
+    },
+    {
+      upper: -43,
+      lower: -83,
+    },
+    {
       upper: -50,
       lower: -96,
+    },
+    {
+      upper: -50,
+      lower: -96,
+    },
+    {
+      upper: -50,
+      lower: -96,
+    },
+    {
+      upper: -56,
+      lower: -108,
     },
     {
       upper: -56,
@@ -484,15 +651,10 @@ export const SHAFT_TOLERANCES = {
       upper: -62,
       lower: -119,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -62,
+      lower: -119,
+    },
   ],
   g5: [
     {
@@ -516,8 +678,20 @@ export const SHAFT_TOLERANCES = {
       lower: -20,
     },
     {
+      upper: -9,
+      lower: -20,
+    },
+    {
       upper: -10,
       lower: -23,
+    },
+    {
+      upper: -10,
+      lower: -23,
+    },
+    {
+      upper: -12,
+      lower: -27,
     },
     {
       upper: -12,
@@ -528,8 +702,28 @@ export const SHAFT_TOLERANCES = {
       lower: -32,
     },
     {
+      upper: -14,
+      lower: -32,
+    },
+    {
+      upper: -14,
+      lower: -32,
+    },
+    {
       upper: -15,
       lower: -35,
+    },
+    {
+      upper: -15,
+      lower: -35,
+    },
+    {
+      upper: -15,
+      lower: -35,
+    },
+    {
+      upper: -17,
+      lower: -40,
     },
     {
       upper: -17,
@@ -539,15 +733,10 @@ export const SHAFT_TOLERANCES = {
       upper: -18,
       lower: -43,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -18,
+      lower: -43,
+    },
   ],
   g6: [
     {
@@ -571,8 +760,20 @@ export const SHAFT_TOLERANCES = {
       lower: -25,
     },
     {
+      upper: -9,
+      lower: -25,
+    },
+    {
       upper: -10,
       lower: -29,
+    },
+    {
+      upper: -10,
+      lower: -29,
+    },
+    {
+      upper: -12,
+      lower: -34,
     },
     {
       upper: -12,
@@ -583,8 +784,28 @@ export const SHAFT_TOLERANCES = {
       lower: -39,
     },
     {
+      upper: -14,
+      lower: -39,
+    },
+    {
+      upper: -14,
+      lower: -39,
+    },
+    {
       upper: -15,
       lower: -44,
+    },
+    {
+      upper: -15,
+      lower: -44,
+    },
+    {
+      upper: -15,
+      lower: -44,
+    },
+    {
+      upper: -17,
+      lower: -49,
     },
     {
       upper: -17,
@@ -594,15 +815,10 @@ export const SHAFT_TOLERANCES = {
       upper: -18,
       lower: -54,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -18,
+      lower: -54,
+    },
   ],
   g7: [
     {
@@ -626,8 +842,20 @@ export const SHAFT_TOLERANCES = {
       lower: -34,
     },
     {
+      upper: -9,
+      lower: -34,
+    },
+    {
       upper: -10,
       lower: -40,
+    },
+    {
+      upper: -10,
+      lower: -40,
+    },
+    {
+      upper: -12,
+      lower: -47,
     },
     {
       upper: -12,
@@ -638,8 +866,28 @@ export const SHAFT_TOLERANCES = {
       lower: -54,
     },
     {
+      upper: -14,
+      lower: -54,
+    },
+    {
+      upper: -14,
+      lower: -54,
+    },
+    {
       upper: -15,
       lower: -61,
+    },
+    {
+      upper: -15,
+      lower: -61,
+    },
+    {
+      upper: -15,
+      lower: -61,
+    },
+    {
+      upper: -17,
+      lower: -69,
     },
     {
       upper: -17,
@@ -649,15 +897,10 @@ export const SHAFT_TOLERANCES = {
       upper: -18,
       lower: -75,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -18,
+      lower: -75,
+    },
   ],
   h4: [
     {
@@ -667,10 +910,6 @@ export const SHAFT_TOLERANCES = {
     {
       upper: 0,
       lower: -4,
-    },
-    {
-      upper: 0,
-      lower: -5,
     },
     {
       upper: 0,
@@ -686,7 +925,31 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -8,
+    },
+    {
+      upper: 0,
+      lower: -9,
+    },
+    {
+      upper: 0,
+      lower: -9,
+    },
+    {
+      upper: 0,
       lower: -10,
+    },
+    {
+      upper: 0,
+      lower: -10,
+    },
+    {
+      upper: 0,
+      lower: -12,
+    },
+    {
+      upper: 0,
+      lower: -12,
     },
     {
       upper: 0,
@@ -698,21 +961,28 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -14,
+    },
+    {
+      upper: 0,
+      lower: -14,
+    },
+    {
+      upper: 0,
+      lower: -16,
+    },
+    {
+      upper: 0,
       lower: -16,
     },
     {
       upper: 0,
       lower: -18,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 0,
+      lower: -18,
+    },
   ],
   h5: [
     {
@@ -737,7 +1007,19 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -11,
+    },
+    {
+      upper: 0,
       lower: -13,
+    },
+    {
+      upper: 0,
+      lower: -13,
+    },
+    {
+      upper: 0,
+      lower: -15,
     },
     {
       upper: 0,
@@ -749,7 +1031,27 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -18,
+    },
+    {
+      upper: 0,
+      lower: -18,
+    },
+    {
+      upper: 0,
       lower: -20,
+    },
+    {
+      upper: 0,
+      lower: -20,
+    },
+    {
+      upper: 0,
+      lower: -20,
+    },
+    {
+      upper: 0,
+      lower: -23,
     },
     {
       upper: 0,
@@ -759,15 +1061,10 @@ export const SHAFT_TOLERANCES = {
       upper: 0,
       lower: -25,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 0,
+      lower: -25,
+    },
   ],
   h6: [
     {
@@ -792,7 +1089,19 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -16,
+    },
+    {
+      upper: 0,
       lower: -19,
+    },
+    {
+      upper: 0,
+      lower: -19,
+    },
+    {
+      upper: 0,
+      lower: -22,
     },
     {
       upper: 0,
@@ -804,7 +1113,27 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -25,
+    },
+    {
+      upper: 0,
+      lower: -25,
+    },
+    {
+      upper: 0,
       lower: -29,
+    },
+    {
+      upper: 0,
+      lower: -29,
+    },
+    {
+      upper: 0,
+      lower: -29,
+    },
+    {
+      upper: 0,
+      lower: -32,
     },
     {
       upper: 0,
@@ -814,15 +1143,10 @@ export const SHAFT_TOLERANCES = {
       upper: 0,
       lower: -36,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 0,
+      lower: -36,
+    },
   ],
   h7: [
     {
@@ -847,7 +1171,19 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -25,
+    },
+    {
+      upper: 0,
       lower: -30,
+    },
+    {
+      upper: 0,
+      lower: -30,
+    },
+    {
+      upper: 0,
+      lower: -35,
     },
     {
       upper: 0,
@@ -859,7 +1195,27 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -40,
+    },
+    {
+      upper: 0,
+      lower: -40,
+    },
+    {
+      upper: 0,
       lower: -46,
+    },
+    {
+      upper: 0,
+      lower: -46,
+    },
+    {
+      upper: 0,
+      lower: -46,
+    },
+    {
+      upper: 0,
+      lower: -52,
     },
     {
       upper: 0,
@@ -869,15 +1225,10 @@ export const SHAFT_TOLERANCES = {
       upper: 0,
       lower: -57,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 0,
+      lower: -57,
+    },
   ],
   h8: [
     {
@@ -902,7 +1253,19 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -39,
+    },
+    {
+      upper: 0,
       lower: -46,
+    },
+    {
+      upper: 0,
+      lower: -46,
+    },
+    {
+      upper: 0,
+      lower: -54,
     },
     {
       upper: 0,
@@ -914,7 +1277,27 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -63,
+    },
+    {
+      upper: 0,
+      lower: -63,
+    },
+    {
+      upper: 0,
       lower: -72,
+    },
+    {
+      upper: 0,
+      lower: -72,
+    },
+    {
+      upper: 0,
+      lower: -72,
+    },
+    {
+      upper: 0,
+      lower: -81,
     },
     {
       upper: 0,
@@ -924,15 +1307,10 @@ export const SHAFT_TOLERANCES = {
       upper: 0,
       lower: -89,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 0,
+      lower: -89,
+    },
   ],
   h9: [
     {
@@ -957,7 +1335,19 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -62,
+    },
+    {
+      upper: 0,
       lower: -74,
+    },
+    {
+      upper: 0,
+      lower: -74,
+    },
+    {
+      upper: 0,
+      lower: -87,
     },
     {
       upper: 0,
@@ -969,7 +1359,27 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -100,
+    },
+    {
+      upper: 0,
+      lower: -100,
+    },
+    {
+      upper: 0,
       lower: -115,
+    },
+    {
+      upper: 0,
+      lower: -115,
+    },
+    {
+      upper: 0,
+      lower: -115,
+    },
+    {
+      upper: 0,
+      lower: -130,
     },
     {
       upper: 0,
@@ -979,15 +1389,10 @@ export const SHAFT_TOLERANCES = {
       upper: 0,
       lower: -140,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 0,
+      lower: -140,
+    },
   ],
   h10: [
     {
@@ -1012,7 +1417,19 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -100,
+    },
+    {
+      upper: 0,
       lower: -120,
+    },
+    {
+      upper: 0,
+      lower: -120,
+    },
+    {
+      upper: 0,
+      lower: -140,
     },
     {
       upper: 0,
@@ -1024,7 +1441,27 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -160,
+    },
+    {
+      upper: 0,
+      lower: -160,
+    },
+    {
+      upper: 0,
       lower: -185,
+    },
+    {
+      upper: 0,
+      lower: -185,
+    },
+    {
+      upper: 0,
+      lower: -185,
+    },
+    {
+      upper: 0,
+      lower: -210,
     },
     {
       upper: 0,
@@ -1034,15 +1471,10 @@ export const SHAFT_TOLERANCES = {
       upper: 0,
       lower: -230,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 0,
+      lower: -230,
+    },
   ],
   h11: [
     {
@@ -1067,7 +1499,19 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -160,
+    },
+    {
+      upper: 0,
       lower: -190,
+    },
+    {
+      upper: 0,
+      lower: -190,
+    },
+    {
+      upper: 0,
+      lower: -220,
     },
     {
       upper: 0,
@@ -1079,7 +1523,27 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -250,
+    },
+    {
+      upper: 0,
+      lower: -250,
+    },
+    {
+      upper: 0,
       lower: -290,
+    },
+    {
+      upper: 0,
+      lower: -290,
+    },
+    {
+      upper: 0,
+      lower: -290,
+    },
+    {
+      upper: 0,
+      lower: -320,
     },
     {
       upper: 0,
@@ -1089,15 +1553,10 @@ export const SHAFT_TOLERANCES = {
       upper: 0,
       lower: -360,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 0,
+      lower: -360,
+    },
   ],
   h12: [
     {
@@ -1122,7 +1581,19 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -250,
+    },
+    {
+      upper: 0,
       lower: -300,
+    },
+    {
+      upper: 0,
+      lower: -300,
+    },
+    {
+      upper: 0,
+      lower: -350,
     },
     {
       upper: 0,
@@ -1134,7 +1605,27 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -400,
+    },
+    {
+      upper: 0,
+      lower: -400,
+    },
+    {
+      upper: 0,
       lower: -460,
+    },
+    {
+      upper: 0,
+      lower: -460,
+    },
+    {
+      upper: 0,
+      lower: -460,
+    },
+    {
+      upper: 0,
+      lower: -520,
     },
     {
       upper: 0,
@@ -1144,15 +1635,10 @@ export const SHAFT_TOLERANCES = {
       upper: 0,
       lower: -570,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 0,
+      lower: -570,
+    },
   ],
   j5: [
     {
@@ -1177,7 +1663,19 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 6,
+      lower: -5,
+    },
+    {
+      upper: 6,
       lower: -7,
+    },
+    {
+      upper: 6,
+      lower: -7,
+    },
+    {
+      upper: 6,
+      lower: -9,
     },
     {
       upper: 6,
@@ -1189,7 +1687,27 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 7,
+      lower: -11,
+    },
+    {
+      upper: 7,
+      lower: -11,
+    },
+    {
+      upper: 7,
       lower: -13,
+    },
+    {
+      upper: 7,
+      lower: -13,
+    },
+    {
+      upper: 7,
+      lower: -13,
+    },
+    {
+      upper: 7,
+      lower: -16,
     },
     {
       upper: 7,
@@ -1199,15 +1717,10 @@ export const SHAFT_TOLERANCES = {
       upper: 7,
       lower: -18,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 7,
+      lower: -18,
+    },
   ],
   j6: [
     {
@@ -1231,12 +1744,32 @@ export const SHAFT_TOLERANCES = {
       lower: -5,
     },
     {
+      upper: 11,
+      lower: -5,
+    },
+    {
+      upper: 12,
+      lower: -7,
+    },
+    {
       upper: 12,
       lower: -7,
     },
     {
       upper: 13,
       lower: -9,
+    },
+    {
+      upper: 13,
+      lower: -9,
+    },
+    {
+      upper: 14,
+      lower: -11,
+    },
+    {
+      upper: 14,
+      lower: -11,
     },
     {
       upper: 14,
@@ -1248,21 +1781,28 @@ export const SHAFT_TOLERANCES = {
     },
     {
       upper: 16,
+      lower: -13,
+    },
+    {
+      upper: 16,
+      lower: -13,
+    },
+    {
+      upper: 16,
+      lower: -16,
+    },
+    {
+      upper: 16,
       lower: -16,
     },
     {
       upper: 18,
       lower: -18,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 18,
+      lower: -18,
+    },
   ],
   j7: [
     {
@@ -1286,8 +1826,20 @@ export const SHAFT_TOLERANCES = {
       lower: -10,
     },
     {
+      upper: 15,
+      lower: -10,
+    },
+    {
       upper: 18,
       lower: -12,
+    },
+    {
+      upper: 18,
+      lower: -12,
+    },
+    {
+      upper: 20,
+      lower: -15,
     },
     {
       upper: 20,
@@ -1298,8 +1850,28 @@ export const SHAFT_TOLERANCES = {
       lower: -18,
     },
     {
+      upper: 22,
+      lower: -18,
+    },
+    {
+      upper: 22,
+      lower: -18,
+    },
+    {
       upper: 25,
       lower: -21,
+    },
+    {
+      upper: 25,
+      lower: -21,
+    },
+    {
+      upper: 25,
+      lower: -21,
+    },
+    {
+      upper: 26,
+      lower: -26,
     },
     {
       upper: 26,
@@ -1309,15 +1881,10 @@ export const SHAFT_TOLERANCES = {
       upper: 29,
       lower: -28,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 29,
+      lower: -28,
+    },
   ],
   js5: [
     {
@@ -1341,8 +1908,20 @@ export const SHAFT_TOLERANCES = {
       lower: -5.5,
     },
     {
+      upper: 5.5,
+      lower: -5.5,
+    },
+    {
       upper: 6.5,
       lower: -6.5,
+    },
+    {
+      upper: 6.5,
+      lower: -6.5,
+    },
+    {
+      upper: 7.5,
+      lower: -7.5,
     },
     {
       upper: 7.5,
@@ -1353,8 +1932,28 @@ export const SHAFT_TOLERANCES = {
       lower: -9,
     },
     {
+      upper: 9,
+      lower: -9,
+    },
+    {
+      upper: 9,
+      lower: -9,
+    },
+    {
       upper: 10,
       lower: -10,
+    },
+    {
+      upper: 10,
+      lower: -10,
+    },
+    {
+      upper: 10,
+      lower: -10,
+    },
+    {
+      upper: 11.5,
+      lower: -11.5,
     },
     {
       upper: 11.5,
@@ -1364,15 +1963,10 @@ export const SHAFT_TOLERANCES = {
       upper: 12.5,
       lower: -12.5,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 12.5,
+      lower: -12.5,
+    },
   ],
   js6: [
     {
@@ -1396,8 +1990,20 @@ export const SHAFT_TOLERANCES = {
       lower: -8,
     },
     {
+      upper: 8,
+      lower: -8,
+    },
+    {
       upper: 9.5,
       lower: -9.5,
+    },
+    {
+      upper: 9.5,
+      lower: -9.5,
+    },
+    {
+      upper: 11,
+      lower: -11,
     },
     {
       upper: 11,
@@ -1408,8 +2014,28 @@ export const SHAFT_TOLERANCES = {
       lower: -12.5,
     },
     {
+      upper: 12.5,
+      lower: -12.5,
+    },
+    {
+      upper: 12.5,
+      lower: -12.5,
+    },
+    {
       upper: 14.5,
       lower: -14.5,
+    },
+    {
+      upper: 14.5,
+      lower: -14.5,
+    },
+    {
+      upper: 14.5,
+      lower: -14.5,
+    },
+    {
+      upper: 16,
+      lower: -16,
     },
     {
       upper: 16,
@@ -1419,15 +2045,10 @@ export const SHAFT_TOLERANCES = {
       upper: 18,
       lower: -18,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 18,
+      lower: -18,
+    },
   ],
   js7: [
     {
@@ -1451,8 +2072,20 @@ export const SHAFT_TOLERANCES = {
       lower: -12.5,
     },
     {
+      upper: 12.5,
+      lower: -12.5,
+    },
+    {
       upper: 15,
       lower: -15,
+    },
+    {
+      upper: 15,
+      lower: -15,
+    },
+    {
+      upper: 17.5,
+      lower: -17.5,
     },
     {
       upper: 17.5,
@@ -1463,8 +2096,28 @@ export const SHAFT_TOLERANCES = {
       lower: -20,
     },
     {
+      upper: 20,
+      lower: -20,
+    },
+    {
+      upper: 20,
+      lower: -20,
+    },
+    {
       upper: 23,
       lower: -23,
+    },
+    {
+      upper: 23,
+      lower: -23,
+    },
+    {
+      upper: 23,
+      lower: -23,
+    },
+    {
+      upper: 26,
+      lower: -26,
     },
     {
       upper: 26,
@@ -1474,15 +2127,10 @@ export const SHAFT_TOLERANCES = {
       upper: 28.5,
       lower: -28.5,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 28.5,
+      lower: -28.5,
+    },
   ],
   k5: [
     {
@@ -1506,11 +2154,31 @@ export const SHAFT_TOLERANCES = {
       lower: 2,
     },
     {
+      upper: 13,
+      lower: 2,
+    },
+    {
+      upper: 15,
+      lower: 2,
+    },
+    {
       upper: 15,
       lower: 2,
     },
     {
       upper: 18,
+      lower: 3,
+    },
+    {
+      upper: 18,
+      lower: 3,
+    },
+    {
+      upper: 21,
+      lower: 3,
+    },
+    {
+      upper: 21,
       lower: 3,
     },
     {
@@ -1522,6 +2190,18 @@ export const SHAFT_TOLERANCES = {
       lower: 4,
     },
     {
+      upper: 24,
+      lower: 4,
+    },
+    {
+      upper: 24,
+      lower: 4,
+    },
+    {
+      upper: 27,
+      lower: 4,
+    },
+    {
       upper: 27,
       lower: 4,
     },
@@ -1529,15 +2209,10 @@ export const SHAFT_TOLERANCES = {
       upper: 29,
       lower: 4,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 29,
+      lower: 4,
+    },
   ],
   k6: [
     {
@@ -1561,11 +2236,31 @@ export const SHAFT_TOLERANCES = {
       lower: 2,
     },
     {
+      upper: 18,
+      lower: 2,
+    },
+    {
+      upper: 21,
+      lower: 2,
+    },
+    {
       upper: 21,
       lower: 2,
     },
     {
       upper: 25,
+      lower: 3,
+    },
+    {
+      upper: 25,
+      lower: 3,
+    },
+    {
+      upper: 28,
+      lower: 3,
+    },
+    {
+      upper: 28,
       lower: 3,
     },
     {
@@ -1577,6 +2272,18 @@ export const SHAFT_TOLERANCES = {
       lower: 4,
     },
     {
+      upper: 33,
+      lower: 4,
+    },
+    {
+      upper: 33,
+      lower: 4,
+    },
+    {
+      upper: 36,
+      lower: 4,
+    },
+    {
       upper: 36,
       lower: 4,
     },
@@ -1584,15 +2291,10 @@ export const SHAFT_TOLERANCES = {
       upper: 40,
       lower: 4,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 40,
+      lower: 4,
+    },
   ],
   k7: [
     {
@@ -1616,11 +2318,31 @@ export const SHAFT_TOLERANCES = {
       lower: 2,
     },
     {
+      upper: 27,
+      lower: 2,
+    },
+    {
+      upper: 32,
+      lower: 2,
+    },
+    {
       upper: 32,
       lower: 2,
     },
     {
       upper: 38,
+      lower: 3,
+    },
+    {
+      upper: 38,
+      lower: 3,
+    },
+    {
+      upper: 43,
+      lower: 3,
+    },
+    {
+      upper: 43,
       lower: 3,
     },
     {
@@ -1632,6 +2354,18 @@ export const SHAFT_TOLERANCES = {
       lower: 4,
     },
     {
+      upper: 50,
+      lower: 4,
+    },
+    {
+      upper: 50,
+      lower: 4,
+    },
+    {
+      upper: 56,
+      lower: 4,
+    },
+    {
       upper: 56,
       lower: 4,
     },
@@ -1639,15 +2373,10 @@ export const SHAFT_TOLERANCES = {
       upper: 61,
       lower: 4,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 61,
+      lower: 4,
+    },
   ],
   m5: [
     {
@@ -1671,8 +2400,20 @@ export const SHAFT_TOLERANCES = {
       lower: 9,
     },
     {
+      upper: 20,
+      lower: 9,
+    },
+    {
       upper: 24,
       lower: 11,
+    },
+    {
+      upper: 24,
+      lower: 11,
+    },
+    {
+      upper: 28,
+      lower: 13,
     },
     {
       upper: 28,
@@ -1683,8 +2424,28 @@ export const SHAFT_TOLERANCES = {
       lower: 15,
     },
     {
+      upper: 33,
+      lower: 15,
+    },
+    {
+      upper: 33,
+      lower: 15,
+    },
+    {
       upper: 37,
       lower: 17,
+    },
+    {
+      upper: 37,
+      lower: 17,
+    },
+    {
+      upper: 37,
+      lower: 17,
+    },
+    {
+      upper: 43,
+      lower: 20,
     },
     {
       upper: 43,
@@ -1694,15 +2455,10 @@ export const SHAFT_TOLERANCES = {
       upper: 46,
       lower: 21,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 46,
+      lower: 21,
+    },
   ],
   m6: [
     {
@@ -1726,8 +2482,20 @@ export const SHAFT_TOLERANCES = {
       lower: 9,
     },
     {
+      upper: 25,
+      lower: 9,
+    },
+    {
       upper: 30,
       lower: 11,
+    },
+    {
+      upper: 30,
+      lower: 11,
+    },
+    {
+      upper: 35,
+      lower: 13,
     },
     {
       upper: 35,
@@ -1738,8 +2506,28 @@ export const SHAFT_TOLERANCES = {
       lower: 15,
     },
     {
+      upper: 40,
+      lower: 15,
+    },
+    {
+      upper: 40,
+      lower: 15,
+    },
+    {
       upper: 46,
       lower: 17,
+    },
+    {
+      upper: 46,
+      lower: 17,
+    },
+    {
+      upper: 46,
+      lower: 17,
+    },
+    {
+      upper: 52,
+      lower: 20,
     },
     {
       upper: 52,
@@ -1749,15 +2537,10 @@ export const SHAFT_TOLERANCES = {
       upper: 57,
       lower: 21,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 57,
+      lower: 21,
+    },
   ],
   m7: [
     {
@@ -1781,8 +2564,20 @@ export const SHAFT_TOLERANCES = {
       lower: 9,
     },
     {
+      upper: 34,
+      lower: 9,
+    },
+    {
       upper: 41,
       lower: 11,
+    },
+    {
+      upper: 41,
+      lower: 11,
+    },
+    {
+      upper: 48,
+      lower: 13,
     },
     {
       upper: 48,
@@ -1793,8 +2588,28 @@ export const SHAFT_TOLERANCES = {
       lower: 15,
     },
     {
+      upper: 55,
+      lower: 15,
+    },
+    {
+      upper: 55,
+      lower: 15,
+    },
+    {
       upper: 63,
       lower: 17,
+    },
+    {
+      upper: 63,
+      lower: 17,
+    },
+    {
+      upper: 63,
+      lower: 17,
+    },
+    {
+      upper: 72,
+      lower: 20,
     },
     {
       upper: 72,
@@ -1804,15 +2619,10 @@ export const SHAFT_TOLERANCES = {
       upper: 78,
       lower: 21,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 78,
+      lower: 21,
+    },
   ],
   n5: [
     {
@@ -1836,8 +2646,20 @@ export const SHAFT_TOLERANCES = {
       lower: 17,
     },
     {
+      upper: 28,
+      lower: 17,
+    },
+    {
       upper: 33,
       lower: 20,
+    },
+    {
+      upper: 33,
+      lower: 20,
+    },
+    {
+      upper: 38,
+      lower: 23,
     },
     {
       upper: 38,
@@ -1848,8 +2670,28 @@ export const SHAFT_TOLERANCES = {
       lower: 27,
     },
     {
+      upper: 45,
+      lower: 27,
+    },
+    {
+      upper: 45,
+      lower: 27,
+    },
+    {
       upper: 51,
       lower: 31,
+    },
+    {
+      upper: 51,
+      lower: 31,
+    },
+    {
+      upper: 51,
+      lower: 31,
+    },
+    {
+      upper: 57,
+      lower: 34,
     },
     {
       upper: 57,
@@ -1859,15 +2701,10 @@ export const SHAFT_TOLERANCES = {
       upper: 62,
       lower: 37,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 62,
+      lower: 37,
+    },
   ],
   n6: [
     {
@@ -1891,8 +2728,20 @@ export const SHAFT_TOLERANCES = {
       lower: 17,
     },
     {
+      upper: 33,
+      lower: 17,
+    },
+    {
       upper: 39,
       lower: 20,
+    },
+    {
+      upper: 39,
+      lower: 20,
+    },
+    {
+      upper: 45,
+      lower: 23,
     },
     {
       upper: 45,
@@ -1903,8 +2752,28 @@ export const SHAFT_TOLERANCES = {
       lower: 27,
     },
     {
+      upper: 52,
+      lower: 27,
+    },
+    {
+      upper: 52,
+      lower: 27,
+    },
+    {
       upper: 60,
       lower: 31,
+    },
+    {
+      upper: 60,
+      lower: 31,
+    },
+    {
+      upper: 60,
+      lower: 31,
+    },
+    {
+      upper: 66,
+      lower: 34,
     },
     {
       upper: 66,
@@ -1914,15 +2783,10 @@ export const SHAFT_TOLERANCES = {
       upper: 73,
       lower: 37,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 73,
+      lower: 37,
+    },
   ],
   n7: [
     {
@@ -1946,8 +2810,20 @@ export const SHAFT_TOLERANCES = {
       lower: 17,
     },
     {
+      upper: 42,
+      lower: 17,
+    },
+    {
       upper: 50,
       lower: 20,
+    },
+    {
+      upper: 50,
+      lower: 20,
+    },
+    {
+      upper: 58,
+      lower: 23,
     },
     {
       upper: 58,
@@ -1958,8 +2834,28 @@ export const SHAFT_TOLERANCES = {
       lower: 27,
     },
     {
+      upper: 67,
+      lower: 27,
+    },
+    {
+      upper: 67,
+      lower: 27,
+    },
+    {
       upper: 77,
       lower: 31,
+    },
+    {
+      upper: 77,
+      lower: 31,
+    },
+    {
+      upper: 77,
+      lower: 31,
+    },
+    {
+      upper: 86,
+      lower: 34,
     },
     {
       upper: 86,
@@ -1969,15 +2865,10 @@ export const SHAFT_TOLERANCES = {
       upper: 94,
       lower: 37,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 94,
+      lower: 37,
+    },
   ],
   p5: [
     {
@@ -2001,8 +2892,20 @@ export const SHAFT_TOLERANCES = {
       lower: 26,
     },
     {
+      upper: 37,
+      lower: 26,
+    },
+    {
       upper: 45,
       lower: 32,
+    },
+    {
+      upper: 45,
+      lower: 32,
+    },
+    {
+      upper: 52,
+      lower: 37,
     },
     {
       upper: 52,
@@ -2013,8 +2916,28 @@ export const SHAFT_TOLERANCES = {
       lower: 43,
     },
     {
+      upper: 61,
+      lower: 43,
+    },
+    {
+      upper: 61,
+      lower: 43,
+    },
+    {
       upper: 70,
       lower: 50,
+    },
+    {
+      upper: 70,
+      lower: 50,
+    },
+    {
+      upper: 70,
+      lower: 50,
+    },
+    {
+      upper: 79,
+      lower: 56,
     },
     {
       upper: 79,
@@ -2024,15 +2947,10 @@ export const SHAFT_TOLERANCES = {
       upper: 87,
       lower: 62,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 87,
+      lower: 62,
+    },
   ],
   p6: [
     {
@@ -2056,8 +2974,20 @@ export const SHAFT_TOLERANCES = {
       lower: 26,
     },
     {
+      upper: 42,
+      lower: 26,
+    },
+    {
       upper: 51,
       lower: 32,
+    },
+    {
+      upper: 51,
+      lower: 32,
+    },
+    {
+      upper: 59,
+      lower: 37,
     },
     {
       upper: 59,
@@ -2068,8 +2998,28 @@ export const SHAFT_TOLERANCES = {
       lower: 43,
     },
     {
+      upper: 68,
+      lower: 43,
+    },
+    {
+      upper: 68,
+      lower: 43,
+    },
+    {
       upper: 79,
       lower: 50,
+    },
+    {
+      upper: 79,
+      lower: 50,
+    },
+    {
+      upper: 79,
+      lower: 50,
+    },
+    {
+      upper: 88,
+      lower: 56,
     },
     {
       upper: 88,
@@ -2079,15 +3029,10 @@ export const SHAFT_TOLERANCES = {
       upper: 98,
       lower: 62,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 98,
+      lower: 62,
+    },
   ],
   r6: [
     {
@@ -2166,7 +3111,10 @@ export const SHAFT_TOLERANCES = {
       upper: 150,
       lower: 114,
     },
-    null,
+    {
+      upper: 162,
+      lower: 126,
+    },
   ],
 };
 
@@ -2193,8 +3141,20 @@ export const HOLE_TOLERANCES = {
       lower: 50,
     },
     {
+      upper: 66,
+      lower: 50,
+    },
+    {
       upper: 79,
       lower: 60,
+    },
+    {
+      upper: 79,
+      lower: 60,
+    },
+    {
+      upper: 94,
+      lower: 72,
     },
     {
       upper: 94,
@@ -2205,8 +3165,28 @@ export const HOLE_TOLERANCES = {
       lower: 85,
     },
     {
+      upper: 110,
+      lower: 85,
+    },
+    {
+      upper: 110,
+      lower: 85,
+    },
+    {
       upper: 129,
       lower: 100,
+    },
+    {
+      upper: 129,
+      lower: 100,
+    },
+    {
+      upper: 129,
+      lower: 100,
+    },
+    {
+      upper: 142,
+      lower: 110,
     },
     {
       upper: 142,
@@ -2216,15 +3196,10 @@ export const HOLE_TOLERANCES = {
       upper: 161,
       lower: 125,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 161,
+      lower: 125,
+    },
   ],
   E7: [
     {
@@ -2248,8 +3223,20 @@ export const HOLE_TOLERANCES = {
       lower: 50,
     },
     {
+      upper: 75,
+      lower: 50,
+    },
+    {
       upper: 90,
       lower: 60,
+    },
+    {
+      upper: 90,
+      lower: 60,
+    },
+    {
+      upper: 107,
+      lower: 72,
     },
     {
       upper: 107,
@@ -2260,6 +3247,22 @@ export const HOLE_TOLERANCES = {
       lower: 85,
     },
     {
+      upper: 125,
+      lower: 85,
+    },
+    {
+      upper: 125,
+      lower: 85,
+    },
+    {
+      upper: 146,
+      lower: 100,
+    },
+    {
+      upper: 146,
+      lower: 100,
+    },
+    {
       upper: 146,
       lower: 100,
     },
@@ -2268,18 +3271,17 @@ export const HOLE_TOLERANCES = {
       lower: 110,
     },
     {
-      upper: 185,
+      upper: 162,
+      lower: 110,
+    },
+    {
+      upper: 182,
       lower: 125,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 182,
+      lower: 125,
+    },
   ],
   E11: [
     {
@@ -2303,8 +3305,20 @@ export const HOLE_TOLERANCES = {
       lower: 50,
     },
     {
+      upper: 210,
+      lower: 50,
+    },
+    {
       upper: 250,
       lower: 60,
+    },
+    {
+      upper: 250,
+      lower: 60,
+    },
+    {
+      upper: 292,
+      lower: 72,
     },
     {
       upper: 292,
@@ -2315,8 +3329,28 @@ export const HOLE_TOLERANCES = {
       lower: 85,
     },
     {
+      upper: 335,
+      lower: 85,
+    },
+    {
+      upper: 335,
+      lower: 85,
+    },
+    {
       upper: 390,
       lower: 100,
+    },
+    {
+      upper: 390,
+      lower: 100,
+    },
+    {
+      upper: 390,
+      lower: 100,
+    },
+    {
+      upper: 430,
+      lower: 110,
     },
     {
       upper: 430,
@@ -2326,15 +3360,10 @@ export const HOLE_TOLERANCES = {
       upper: 485,
       lower: 125,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 485,
+      lower: 125,
+    },
   ],
   E12: [
     {
@@ -2358,8 +3387,20 @@ export const HOLE_TOLERANCES = {
       lower: 50,
     },
     {
+      upper: 300,
+      lower: 50,
+    },
+    {
       upper: 360,
       lower: 60,
+    },
+    {
+      upper: 360,
+      lower: 60,
+    },
+    {
+      upper: 422,
+      lower: 72,
     },
     {
       upper: 422,
@@ -2370,8 +3411,28 @@ export const HOLE_TOLERANCES = {
       lower: 85,
     },
     {
+      upper: 485,
+      lower: 85,
+    },
+    {
+      upper: 485,
+      lower: 85,
+    },
+    {
       upper: 560,
       lower: 100,
+    },
+    {
+      upper: 560,
+      lower: 100,
+    },
+    {
+      upper: 560,
+      lower: 100,
+    },
+    {
+      upper: 630,
+      lower: 110,
     },
     {
       upper: 630,
@@ -2381,15 +3442,10 @@ export const HOLE_TOLERANCES = {
       upper: 695,
       lower: 125,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 695,
+      lower: 125,
+    },
   ],
   E13: [
     {
@@ -2413,8 +3469,20 @@ export const HOLE_TOLERANCES = {
       lower: 50,
     },
     {
+      upper: 440,
+      lower: 50,
+    },
+    {
       upper: 520,
       lower: 60,
+    },
+    {
+      upper: 520,
+      lower: 60,
+    },
+    {
+      upper: 612,
+      lower: 72,
     },
     {
       upper: 612,
@@ -2425,8 +3493,28 @@ export const HOLE_TOLERANCES = {
       lower: 85,
     },
     {
+      upper: 715,
+      lower: 85,
+    },
+    {
+      upper: 715,
+      lower: 85,
+    },
+    {
       upper: 820,
       lower: 100,
+    },
+    {
+      upper: 820,
+      lower: 100,
+    },
+    {
+      upper: 820,
+      lower: 100,
+    },
+    {
+      upper: 920,
+      lower: 110,
     },
     {
       upper: 920,
@@ -2436,15 +3524,10 @@ export const HOLE_TOLERANCES = {
       upper: 1015,
       lower: 125,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 1015,
+      lower: 125,
+    },
   ],
   F6: [
     {
@@ -2468,8 +3551,20 @@ export const HOLE_TOLERANCES = {
       lower: 25,
     },
     {
+      upper: 41,
+      lower: 25,
+    },
+    {
       upper: 49,
       lower: 30,
+    },
+    {
+      upper: 49,
+      lower: 30,
+    },
+    {
+      upper: 58,
+      lower: 36,
     },
     {
       upper: 58,
@@ -2480,8 +3575,28 @@ export const HOLE_TOLERANCES = {
       lower: 43,
     },
     {
+      upper: 68,
+      lower: 43,
+    },
+    {
+      upper: 68,
+      lower: 43,
+    },
+    {
       upper: 79,
       lower: 50,
+    },
+    {
+      upper: 79,
+      lower: 50,
+    },
+    {
+      upper: 79,
+      lower: 50,
+    },
+    {
+      upper: 88,
+      lower: 56,
     },
     {
       upper: 88,
@@ -2491,15 +3606,10 @@ export const HOLE_TOLERANCES = {
       upper: 98,
       lower: 62,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 98,
+      lower: 62,
+    },
   ],
   F7: [
     {
@@ -2523,8 +3633,20 @@ export const HOLE_TOLERANCES = {
       lower: 25,
     },
     {
+      upper: 50,
+      lower: 25,
+    },
+    {
       upper: 60,
       lower: 30,
+    },
+    {
+      upper: 60,
+      lower: 30,
+    },
+    {
+      upper: 71,
+      lower: 36,
     },
     {
       upper: 71,
@@ -2535,8 +3657,28 @@ export const HOLE_TOLERANCES = {
       lower: 43,
     },
     {
+      upper: 83,
+      lower: 43,
+    },
+    {
+      upper: 83,
+      lower: 43,
+    },
+    {
       upper: 96,
       lower: 50,
+    },
+    {
+      upper: 96,
+      lower: 50,
+    },
+    {
+      upper: 96,
+      lower: 50,
+    },
+    {
+      upper: 108,
+      lower: 56,
     },
     {
       upper: 108,
@@ -2546,15 +3688,10 @@ export const HOLE_TOLERANCES = {
       upper: 119,
       lower: 62,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 119,
+      lower: 62,
+    },
   ],
   F8: [
     {
@@ -2578,8 +3715,20 @@ export const HOLE_TOLERANCES = {
       lower: 25,
     },
     {
+      upper: 64,
+      lower: 25,
+    },
+    {
       upper: 76,
       lower: 30,
+    },
+    {
+      upper: 76,
+      lower: 30,
+    },
+    {
+      upper: 90,
+      lower: 36,
     },
     {
       upper: 90,
@@ -2590,8 +3739,28 @@ export const HOLE_TOLERANCES = {
       lower: 43,
     },
     {
+      upper: 106,
+      lower: 43,
+    },
+    {
+      upper: 106,
+      lower: 43,
+    },
+    {
       upper: 122,
       lower: 50,
+    },
+    {
+      upper: 122,
+      lower: 50,
+    },
+    {
+      upper: 122,
+      lower: 50,
+    },
+    {
+      upper: 137,
+      lower: 56,
     },
     {
       upper: 137,
@@ -2601,15 +3770,10 @@ export const HOLE_TOLERANCES = {
       upper: 151,
       lower: 62,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 151,
+      lower: 62,
+    },
   ],
   G6: [
     {
@@ -2633,8 +3797,20 @@ export const HOLE_TOLERANCES = {
       lower: 9,
     },
     {
+      upper: 25,
+      lower: 9,
+    },
+    {
       upper: 29,
       lower: 10,
+    },
+    {
+      upper: 29,
+      lower: 10,
+    },
+    {
+      upper: 34,
+      lower: 12,
     },
     {
       upper: 34,
@@ -2645,8 +3821,28 @@ export const HOLE_TOLERANCES = {
       lower: 14,
     },
     {
+      upper: 39,
+      lower: 14,
+    },
+    {
+      upper: 39,
+      lower: 14,
+    },
+    {
       upper: 44,
       lower: 15,
+    },
+    {
+      upper: 44,
+      lower: 15,
+    },
+    {
+      upper: 44,
+      lower: 15,
+    },
+    {
+      upper: 49,
+      lower: 17,
     },
     {
       upper: 49,
@@ -2656,15 +3852,10 @@ export const HOLE_TOLERANCES = {
       upper: 54,
       lower: 18,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 54,
+      lower: 18,
+    },
   ],
   G7: [
     {
@@ -2688,8 +3879,20 @@ export const HOLE_TOLERANCES = {
       lower: 9,
     },
     {
+      upper: 34,
+      lower: 9,
+    },
+    {
       upper: 40,
       lower: 10,
+    },
+    {
+      upper: 40,
+      lower: 10,
+    },
+    {
+      upper: 47,
+      lower: 12,
     },
     {
       upper: 47,
@@ -2700,8 +3903,28 @@ export const HOLE_TOLERANCES = {
       lower: 14,
     },
     {
+      upper: 54,
+      lower: 14,
+    },
+    {
+      upper: 54,
+      lower: 14,
+    },
+    {
       upper: 61,
       lower: 15,
+    },
+    {
+      upper: 61,
+      lower: 15,
+    },
+    {
+      upper: 61,
+      lower: 15,
+    },
+    {
+      upper: 69,
+      lower: 17,
     },
     {
       upper: 69,
@@ -2711,15 +3934,10 @@ export const HOLE_TOLERANCES = {
       upper: 75,
       lower: 18,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 75,
+      lower: 18,
+    },
   ],
   G8: [
     {
@@ -2743,8 +3961,20 @@ export const HOLE_TOLERANCES = {
       lower: 9,
     },
     {
+      upper: 48,
+      lower: 9,
+    },
+    {
       upper: 56,
       lower: 10,
+    },
+    {
+      upper: 56,
+      lower: 10,
+    },
+    {
+      upper: 66,
+      lower: 12,
     },
     {
       upper: 66,
@@ -2755,8 +3985,28 @@ export const HOLE_TOLERANCES = {
       lower: 14,
     },
     {
+      upper: 77,
+      lower: 14,
+    },
+    {
+      upper: 77,
+      lower: 14,
+    },
+    {
       upper: 87,
       lower: 15,
+    },
+    {
+      upper: 87,
+      lower: 15,
+    },
+    {
+      upper: 87,
+      lower: 15,
+    },
+    {
+      upper: 98,
+      lower: 17,
     },
     {
       upper: 98,
@@ -2766,15 +4016,10 @@ export const HOLE_TOLERANCES = {
       upper: 107,
       lower: 18,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 107,
+      lower: 18,
+    },
   ],
   H6: [
     {
@@ -2798,7 +4043,19 @@ export const HOLE_TOLERANCES = {
       lower: 0,
     },
     {
+      upper: 16,
+      lower: 0,
+    },
+    {
       upper: 19,
+      lower: 0,
+    },
+    {
+      upper: 19,
+      lower: 0,
+    },
+    {
+      upper: 22,
       lower: 0,
     },
     {
@@ -2810,7 +4067,27 @@ export const HOLE_TOLERANCES = {
       lower: 0,
     },
     {
+      upper: 25,
+      lower: 0,
+    },
+    {
+      upper: 25,
+      lower: 0,
+    },
+    {
       upper: 29,
+      lower: 0,
+    },
+    {
+      upper: 29,
+      lower: 0,
+    },
+    {
+      upper: 29,
+      lower: 0,
+    },
+    {
+      upper: 32,
       lower: 0,
     },
     {
@@ -2821,15 +4098,10 @@ export const HOLE_TOLERANCES = {
       upper: 36,
       lower: 0,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 36,
+      lower: 0,
+    },
   ],
   H7: [
     {
@@ -2853,7 +4125,19 @@ export const HOLE_TOLERANCES = {
       lower: 0,
     },
     {
+      upper: 25,
+      lower: 0,
+    },
+    {
       upper: 30,
+      lower: 0,
+    },
+    {
+      upper: 30,
+      lower: 0,
+    },
+    {
+      upper: 35,
       lower: 0,
     },
     {
@@ -2865,7 +4149,27 @@ export const HOLE_TOLERANCES = {
       lower: 0,
     },
     {
+      upper: 40,
+      lower: 0,
+    },
+    {
+      upper: 40,
+      lower: 0,
+    },
+    {
       upper: 46,
+      lower: 0,
+    },
+    {
+      upper: 46,
+      lower: 0,
+    },
+    {
+      upper: 46,
+      lower: 0,
+    },
+    {
+      upper: 52,
       lower: 0,
     },
     {
@@ -2876,15 +4180,10 @@ export const HOLE_TOLERANCES = {
       upper: 57,
       lower: 0,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 57,
+      lower: 0,
+    },
   ],
   H8: [
     {
@@ -2908,7 +4207,19 @@ export const HOLE_TOLERANCES = {
       lower: 0,
     },
     {
+      upper: 39,
+      lower: 0,
+    },
+    {
       upper: 46,
+      lower: 0,
+    },
+    {
+      upper: 46,
+      lower: 0,
+    },
+    {
+      upper: 54,
       lower: 0,
     },
     {
@@ -2920,7 +4231,27 @@ export const HOLE_TOLERANCES = {
       lower: 0,
     },
     {
+      upper: 63,
+      lower: 0,
+    },
+    {
+      upper: 63,
+      lower: 0,
+    },
+    {
       upper: 72,
+      lower: 0,
+    },
+    {
+      upper: 72,
+      lower: 0,
+    },
+    {
+      upper: 72,
+      lower: 0,
+    },
+    {
+      upper: 81,
       lower: 0,
     },
     {
@@ -2931,15 +4262,10 @@ export const HOLE_TOLERANCES = {
       upper: 89,
       lower: 0,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 89,
+      lower: 0,
+    },
   ],
   H9: [
     {
@@ -2963,7 +4289,19 @@ export const HOLE_TOLERANCES = {
       lower: 0,
     },
     {
+      upper: 62,
+      lower: 0,
+    },
+    {
       upper: 74,
+      lower: 0,
+    },
+    {
+      upper: 74,
+      lower: 0,
+    },
+    {
+      upper: 87,
       lower: 0,
     },
     {
@@ -2975,7 +4313,27 @@ export const HOLE_TOLERANCES = {
       lower: 0,
     },
     {
+      upper: 100,
+      lower: 0,
+    },
+    {
+      upper: 100,
+      lower: 0,
+    },
+    {
       upper: 115,
+      lower: 0,
+    },
+    {
+      upper: 115,
+      lower: 0,
+    },
+    {
+      upper: 115,
+      lower: 0,
+    },
+    {
+      upper: 130,
       lower: 0,
     },
     {
@@ -2986,15 +4344,10 @@ export const HOLE_TOLERANCES = {
       upper: 140,
       lower: 0,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 140,
+      lower: 0,
+    },
   ],
   H10: [
     {
@@ -3018,7 +4371,19 @@ export const HOLE_TOLERANCES = {
       lower: 0,
     },
     {
+      upper: 100,
+      lower: 0,
+    },
+    {
       upper: 120,
+      lower: 0,
+    },
+    {
+      upper: 120,
+      lower: 0,
+    },
+    {
+      upper: 140,
       lower: 0,
     },
     {
@@ -3030,7 +4395,27 @@ export const HOLE_TOLERANCES = {
       lower: 0,
     },
     {
+      upper: 160,
+      lower: 0,
+    },
+    {
+      upper: 160,
+      lower: 0,
+    },
+    {
       upper: 185,
+      lower: 0,
+    },
+    {
+      upper: 185,
+      lower: 0,
+    },
+    {
+      upper: 185,
+      lower: 0,
+    },
+    {
+      upper: 210,
       lower: 0,
     },
     {
@@ -3041,15 +4426,10 @@ export const HOLE_TOLERANCES = {
       upper: 230,
       lower: 0,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 230,
+      lower: 0,
+    },
   ],
   H11: [
     {
@@ -3073,7 +4453,19 @@ export const HOLE_TOLERANCES = {
       lower: 0,
     },
     {
+      upper: 160,
+      lower: 0,
+    },
+    {
       upper: 190,
+      lower: 0,
+    },
+    {
+      upper: 190,
+      lower: 0,
+    },
+    {
+      upper: 220,
       lower: 0,
     },
     {
@@ -3085,7 +4477,27 @@ export const HOLE_TOLERANCES = {
       lower: 0,
     },
     {
+      upper: 250,
+      lower: 0,
+    },
+    {
+      upper: 250,
+      lower: 0,
+    },
+    {
       upper: 290,
+      lower: 0,
+    },
+    {
+      upper: 290,
+      lower: 0,
+    },
+    {
+      upper: 290,
+      lower: 0,
+    },
+    {
+      upper: 320,
       lower: 0,
     },
     {
@@ -3096,15 +4508,10 @@ export const HOLE_TOLERANCES = {
       upper: 360,
       lower: 0,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 360,
+      lower: 0,
+    },
   ],
   J6: [
     {
@@ -3128,7 +4535,19 @@ export const HOLE_TOLERANCES = {
       lower: -6,
     },
     {
+      upper: 10,
+      lower: -6,
+    },
+    {
       upper: 13,
+      lower: -6,
+    },
+    {
+      upper: 13,
+      lower: -6,
+    },
+    {
+      upper: 16,
       lower: -6,
     },
     {
@@ -3140,7 +4559,27 @@ export const HOLE_TOLERANCES = {
       lower: -7,
     },
     {
+      upper: 18,
+      lower: -7,
+    },
+    {
+      upper: 18,
+      lower: -7,
+    },
+    {
       upper: 22,
+      lower: -7,
+    },
+    {
+      upper: 22,
+      lower: -7,
+    },
+    {
+      upper: 22,
+      lower: -7,
+    },
+    {
+      upper: 25,
       lower: -7,
     },
     {
@@ -3151,15 +4590,10 @@ export const HOLE_TOLERANCES = {
       upper: 29,
       lower: -7,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 29,
+      lower: -7,
+    },
   ],
   J7: [
     {
@@ -3183,8 +4617,20 @@ export const HOLE_TOLERANCES = {
       lower: -11,
     },
     {
+      upper: 14,
+      lower: -11,
+    },
+    {
       upper: 18,
       lower: -12,
+    },
+    {
+      upper: 18,
+      lower: -12,
+    },
+    {
+      upper: 22,
+      lower: -13,
     },
     {
       upper: 22,
@@ -3195,7 +4641,27 @@ export const HOLE_TOLERANCES = {
       lower: -14,
     },
     {
+      upper: 26,
+      lower: -14,
+    },
+    {
+      upper: 26,
+      lower: -14,
+    },
+    {
       upper: 30,
+      lower: -16,
+    },
+    {
+      upper: 30,
+      lower: -16,
+    },
+    {
+      upper: 30,
+      lower: -16,
+    },
+    {
+      upper: 36,
       lower: -16,
     },
     {
@@ -3206,15 +4672,10 @@ export const HOLE_TOLERANCES = {
       upper: 39,
       lower: -18,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 39,
+      lower: -18,
+    },
   ],
   J8: [
     {
@@ -3238,8 +4699,20 @@ export const HOLE_TOLERANCES = {
       lower: -15,
     },
     {
+      upper: 24,
+      lower: -15,
+    },
+    {
       upper: 28,
       lower: -18,
+    },
+    {
+      upper: 28,
+      lower: -18,
+    },
+    {
+      upper: 34,
+      lower: -20,
     },
     {
       upper: 34,
@@ -3250,8 +4723,28 @@ export const HOLE_TOLERANCES = {
       lower: -22,
     },
     {
+      upper: 41,
+      lower: -22,
+    },
+    {
+      upper: 41,
+      lower: -22,
+    },
+    {
       upper: 47,
       lower: -25,
+    },
+    {
+      upper: 47,
+      lower: -25,
+    },
+    {
+      upper: 47,
+      lower: -25,
+    },
+    {
+      upper: 55,
+      lower: -26,
     },
     {
       upper: 55,
@@ -3261,15 +4754,10 @@ export const HOLE_TOLERANCES = {
       upper: 60,
       lower: -29,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 60,
+      lower: -29,
+    },
   ],
   JS6: [
     {
@@ -3293,8 +4781,20 @@ export const HOLE_TOLERANCES = {
       lower: -8,
     },
     {
+      upper: 8,
+      lower: -8,
+    },
+    {
       upper: 9.5,
       lower: -9.5,
+    },
+    {
+      upper: 9.5,
+      lower: -9.5,
+    },
+    {
+      upper: 11,
+      lower: -11,
     },
     {
       upper: 11,
@@ -3305,8 +4805,28 @@ export const HOLE_TOLERANCES = {
       lower: -12.5,
     },
     {
+      upper: 12.5,
+      lower: -12.5,
+    },
+    {
+      upper: 12.5,
+      lower: -12.5,
+    },
+    {
       upper: 14.5,
       lower: -14.5,
+    },
+    {
+      upper: 14.5,
+      lower: -14.5,
+    },
+    {
+      upper: 14.5,
+      lower: -14.5,
+    },
+    {
+      upper: 16,
+      lower: -16,
     },
     {
       upper: 16,
@@ -3316,15 +4836,10 @@ export const HOLE_TOLERANCES = {
       upper: 18,
       lower: -18,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 18,
+      lower: -18,
+    },
   ],
   JS7: [
     {
@@ -3348,8 +4863,20 @@ export const HOLE_TOLERANCES = {
       lower: -12.5,
     },
     {
+      upper: 12.5,
+      lower: -12.5,
+    },
+    {
       upper: 15,
       lower: -15,
+    },
+    {
+      upper: 15,
+      lower: -15,
+    },
+    {
+      upper: 17.5,
+      lower: -17.5,
     },
     {
       upper: 17.5,
@@ -3360,8 +4887,28 @@ export const HOLE_TOLERANCES = {
       lower: -20,
     },
     {
+      upper: 20,
+      lower: -20,
+    },
+    {
+      upper: 20,
+      lower: -20,
+    },
+    {
       upper: 23,
       lower: -23,
+    },
+    {
+      upper: 23,
+      lower: -23,
+    },
+    {
+      upper: 23,
+      lower: -23,
+    },
+    {
+      upper: 26,
+      lower: -26,
     },
     {
       upper: 26,
@@ -3371,15 +4918,10 @@ export const HOLE_TOLERANCES = {
       upper: 28.5,
       lower: -28.5,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 28.5,
+      lower: -28.5,
+    },
   ],
   JS8: [
     {
@@ -3403,8 +4945,20 @@ export const HOLE_TOLERANCES = {
       lower: -19.5,
     },
     {
+      upper: 19.5,
+      lower: -19.5,
+    },
+    {
       upper: 23,
       lower: -23,
+    },
+    {
+      upper: 23,
+      lower: -23,
+    },
+    {
+      upper: 27,
+      lower: -27,
     },
     {
       upper: 27,
@@ -3415,8 +4969,28 @@ export const HOLE_TOLERANCES = {
       lower: -31.5,
     },
     {
+      upper: 31.5,
+      lower: -31.5,
+    },
+    {
+      upper: 31.5,
+      lower: -31.5,
+    },
+    {
       upper: 36,
       lower: -36,
+    },
+    {
+      upper: 36,
+      lower: -36,
+    },
+    {
+      upper: 36,
+      lower: -36,
+    },
+    {
+      upper: 40.5,
+      lower: -40.5,
     },
     {
       upper: 40.5,
@@ -3426,15 +5000,10 @@ export const HOLE_TOLERANCES = {
       upper: 44.5,
       lower: -44.5,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 44.5,
+      lower: -44.5,
+    },
   ],
   K6: [
     {
@@ -3443,7 +5012,7 @@ export const HOLE_TOLERANCES = {
     },
     {
       upper: 2,
-      lower: -6,
+      lower: -7,
     },
     {
       upper: 2,
@@ -3458,12 +5027,32 @@ export const HOLE_TOLERANCES = {
       lower: -13,
     },
     {
+      upper: 3,
+      lower: -13,
+    },
+    {
+      upper: 4,
+      lower: -15,
+    },
+    {
       upper: 4,
       lower: -15,
     },
     {
       upper: 4,
       lower: -18,
+    },
+    {
+      upper: 4,
+      lower: -18,
+    },
+    {
+      upper: 4,
+      lower: -21,
+    },
+    {
+      upper: 4,
+      lower: -21,
     },
     {
       upper: 4,
@@ -3475,21 +5064,28 @@ export const HOLE_TOLERANCES = {
     },
     {
       upper: 5,
+      lower: -24,
+    },
+    {
+      upper: 5,
+      lower: -24,
+    },
+    {
+      upper: 5,
+      lower: -27,
+    },
+    {
+      upper: 5,
       lower: -27,
     },
     {
       upper: 7,
       lower: -29,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 7,
+      lower: -29,
+    },
   ],
   K7: [
     {
@@ -3513,8 +5109,20 @@ export const HOLE_TOLERANCES = {
       lower: -18,
     },
     {
+      upper: 7,
+      lower: -18,
+    },
+    {
       upper: 9,
       lower: -21,
+    },
+    {
+      upper: 9,
+      lower: -21,
+    },
+    {
+      upper: 10,
+      lower: -25,
     },
     {
       upper: 10,
@@ -3525,8 +5133,28 @@ export const HOLE_TOLERANCES = {
       lower: -28,
     },
     {
+      upper: 12,
+      lower: -28,
+    },
+    {
+      upper: 12,
+      lower: -28,
+    },
+    {
       upper: 13,
       lower: -33,
+    },
+    {
+      upper: 13,
+      lower: -33,
+    },
+    {
+      upper: 13,
+      lower: -33,
+    },
+    {
+      upper: 16,
+      lower: -36,
     },
     {
       upper: 16,
@@ -3536,15 +5164,10 @@ export const HOLE_TOLERANCES = {
       upper: 17,
       lower: -40,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 17,
+      lower: -40,
+    },
   ],
   K8: [
     {
@@ -3568,8 +5191,20 @@ export const HOLE_TOLERANCES = {
       lower: -27,
     },
     {
+      upper: 12,
+      lower: -27,
+    },
+    {
       upper: 14,
       lower: -32,
+    },
+    {
+      upper: 14,
+      lower: -32,
+    },
+    {
+      upper: 16,
+      lower: -38,
     },
     {
       upper: 16,
@@ -3580,8 +5215,28 @@ export const HOLE_TOLERANCES = {
       lower: -43,
     },
     {
+      upper: 20,
+      lower: -43,
+    },
+    {
+      upper: 20,
+      lower: -43,
+    },
+    {
       upper: 22,
       lower: -50,
+    },
+    {
+      upper: 22,
+      lower: -50,
+    },
+    {
+      upper: 22,
+      lower: -50,
+    },
+    {
+      upper: 25,
+      lower: -56,
     },
     {
       upper: 25,
@@ -3591,15 +5246,10 @@ export const HOLE_TOLERANCES = {
       upper: 28,
       lower: -61,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 28,
+      lower: -61,
+    },
   ],
   M6: [
     {
@@ -3623,8 +5273,20 @@ export const HOLE_TOLERANCES = {
       lower: -20,
     },
     {
+      upper: -4,
+      lower: -20,
+    },
+    {
       upper: -5,
       lower: -24,
+    },
+    {
+      upper: -5,
+      lower: -24,
+    },
+    {
+      upper: -6,
+      lower: -28,
     },
     {
       upper: -6,
@@ -3636,7 +5298,27 @@ export const HOLE_TOLERANCES = {
     },
     {
       upper: -8,
+      lower: -33,
+    },
+    {
+      upper: -8,
+      lower: -33,
+    },
+    {
+      upper: -8,
       lower: -37,
+    },
+    {
+      upper: -8,
+      lower: -37,
+    },
+    {
+      upper: -8,
+      lower: -37,
+    },
+    {
+      upper: -9,
+      lower: -41,
     },
     {
       upper: -9,
@@ -3646,15 +5328,10 @@ export const HOLE_TOLERANCES = {
       upper: -10,
       lower: -46,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -10,
+      lower: -46,
+    },
   ],
   M7: [
     {
@@ -3679,7 +5356,19 @@ export const HOLE_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -25,
+    },
+    {
+      upper: 0,
       lower: -30,
+    },
+    {
+      upper: 0,
+      lower: -30,
+    },
+    {
+      upper: 0,
+      lower: -35,
     },
     {
       upper: 0,
@@ -3691,7 +5380,27 @@ export const HOLE_TOLERANCES = {
     },
     {
       upper: 0,
+      lower: -40,
+    },
+    {
+      upper: 0,
+      lower: -40,
+    },
+    {
+      upper: 0,
       lower: -46,
+    },
+    {
+      upper: 0,
+      lower: -46,
+    },
+    {
+      upper: 0,
+      lower: -46,
+    },
+    {
+      upper: 0,
+      lower: -52,
     },
     {
       upper: 0,
@@ -3701,15 +5410,10 @@ export const HOLE_TOLERANCES = {
       upper: 0,
       lower: -57,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 0,
+      lower: -57,
+    },
   ],
   M8: [
     {
@@ -3734,11 +5438,31 @@ export const HOLE_TOLERANCES = {
     },
     {
       upper: 5,
+      lower: -34,
+    },
+    {
+      upper: 5,
+      lower: -41,
+    },
+    {
+      upper: 5,
       lower: -41,
     },
     {
       upper: 6,
       lower: -48,
+    },
+    {
+      upper: 6,
+      lower: -48,
+    },
+    {
+      upper: 8,
+      lower: -55,
+    },
+    {
+      upper: 8,
+      lower: -55,
     },
     {
       upper: 8,
@@ -3750,21 +5474,28 @@ export const HOLE_TOLERANCES = {
     },
     {
       upper: 9,
+      lower: -63,
+    },
+    {
+      upper: 9,
+      lower: -63,
+    },
+    {
+      upper: 9,
+      lower: -72,
+    },
+    {
+      upper: 9,
       lower: -72,
     },
     {
       upper: 11,
       lower: -78,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: 11,
+      lower: -78,
+    },
   ],
   N6: [
     {
@@ -3788,8 +5519,20 @@ export const HOLE_TOLERANCES = {
       lower: -28,
     },
     {
+      upper: -12,
+      lower: -28,
+    },
+    {
       upper: -14,
       lower: -33,
+    },
+    {
+      upper: -14,
+      lower: -33,
+    },
+    {
+      upper: -16,
+      lower: -38,
     },
     {
       upper: -16,
@@ -3800,8 +5543,28 @@ export const HOLE_TOLERANCES = {
       lower: -45,
     },
     {
+      upper: -20,
+      lower: -45,
+    },
+    {
+      upper: -20,
+      lower: -45,
+    },
+    {
       upper: -22,
       lower: -51,
+    },
+    {
+      upper: -22,
+      lower: -51,
+    },
+    {
+      upper: -22,
+      lower: -51,
+    },
+    {
+      upper: -25,
+      lower: -57,
     },
     {
       upper: -25,
@@ -3811,15 +5574,10 @@ export const HOLE_TOLERANCES = {
       upper: -26,
       lower: -62,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -26,
+      lower: -62,
+    },
   ],
   N7: [
     {
@@ -3843,12 +5601,32 @@ export const HOLE_TOLERANCES = {
       lower: -33,
     },
     {
+      upper: -8,
+      lower: -33,
+    },
+    {
+      upper: -9,
+      lower: -39,
+    },
+    {
       upper: -9,
       lower: -39,
     },
     {
       upper: -10,
       lower: -45,
+    },
+    {
+      upper: -10,
+      lower: -45,
+    },
+    {
+      upper: -12,
+      lower: -52,
+    },
+    {
+      upper: -12,
+      lower: -52,
     },
     {
       upper: -12,
@@ -3860,21 +5638,28 @@ export const HOLE_TOLERANCES = {
     },
     {
       upper: -14,
+      lower: -60,
+    },
+    {
+      upper: -14,
+      lower: -60,
+    },
+    {
+      upper: -14,
+      lower: -66,
+    },
+    {
+      upper: -14,
       lower: -66,
     },
     {
       upper: -16,
       lower: -73,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -16,
+      lower: -73,
+    },
   ],
   N8: [
     {
@@ -3898,12 +5683,32 @@ export const HOLE_TOLERANCES = {
       lower: -42,
     },
     {
+      upper: -3,
+      lower: -42,
+    },
+    {
+      upper: -4,
+      lower: -50,
+    },
+    {
       upper: -4,
       lower: -50,
     },
     {
       upper: -4,
       lower: -58,
+    },
+    {
+      upper: -4,
+      lower: -58,
+    },
+    {
+      upper: -4,
+      lower: -67,
+    },
+    {
+      upper: -4,
+      lower: -67,
     },
     {
       upper: -4,
@@ -3915,21 +5720,28 @@ export const HOLE_TOLERANCES = {
     },
     {
       upper: -5,
+      lower: -77,
+    },
+    {
+      upper: -5,
+      lower: -77,
+    },
+    {
+      upper: -5,
+      lower: -86,
+    },
+    {
+      upper: -5,
       lower: -86,
     },
     {
       upper: -5,
       lower: -94,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -5,
+      lower: -94,
+    },
   ],
   P6: [
     {
@@ -3953,8 +5765,20 @@ export const HOLE_TOLERANCES = {
       lower: -37,
     },
     {
+      upper: -21,
+      lower: -37,
+    },
+    {
       upper: -26,
       lower: -45,
+    },
+    {
+      upper: -26,
+      lower: -45,
+    },
+    {
+      upper: -30,
+      lower: -52,
     },
     {
       upper: -30,
@@ -3965,8 +5789,28 @@ export const HOLE_TOLERANCES = {
       lower: -61,
     },
     {
+      upper: -36,
+      lower: -61,
+    },
+    {
+      upper: -36,
+      lower: -61,
+    },
+    {
       upper: -41,
       lower: -70,
+    },
+    {
+      upper: -41,
+      lower: -70,
+    },
+    {
+      upper: -41,
+      lower: -70,
+    },
+    {
+      upper: -47,
+      lower: -79,
     },
     {
       upper: -47,
@@ -3976,15 +5820,10 @@ export const HOLE_TOLERANCES = {
       upper: -51,
       lower: -87,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -51,
+      lower: -87,
+    },
   ],
   P7: [
     {
@@ -4008,8 +5847,20 @@ export const HOLE_TOLERANCES = {
       lower: -42,
     },
     {
+      upper: -17,
+      lower: -42,
+    },
+    {
       upper: -21,
       lower: -51,
+    },
+    {
+      upper: -21,
+      lower: -51,
+    },
+    {
+      upper: -24,
+      lower: -59,
     },
     {
       upper: -24,
@@ -4020,8 +5871,28 @@ export const HOLE_TOLERANCES = {
       lower: -68,
     },
     {
+      upper: -28,
+      lower: -68,
+    },
+    {
+      upper: -28,
+      lower: -68,
+    },
+    {
       upper: -33,
       lower: -79,
+    },
+    {
+      upper: -33,
+      lower: -79,
+    },
+    {
+      upper: -33,
+      lower: -79,
+    },
+    {
+      upper: -36,
+      lower: -88,
     },
     {
       upper: -36,
@@ -4031,15 +5902,10 @@ export const HOLE_TOLERANCES = {
       upper: -41,
       lower: -98,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -41,
+      lower: -98,
+    },
   ],
   P8: [
     {
@@ -4063,8 +5929,20 @@ export const HOLE_TOLERANCES = {
       lower: -65,
     },
     {
+      upper: -26,
+      lower: -65,
+    },
+    {
       upper: -32,
       lower: -78,
+    },
+    {
+      upper: -32,
+      lower: -78,
+    },
+    {
+      upper: -37,
+      lower: -91,
     },
     {
       upper: -37,
@@ -4075,8 +5953,28 @@ export const HOLE_TOLERANCES = {
       lower: -106,
     },
     {
+      upper: -43,
+      lower: -106,
+    },
+    {
+      upper: -43,
+      lower: -106,
+    },
+    {
       upper: -50,
       lower: -122,
+    },
+    {
+      upper: -50,
+      lower: -122,
+    },
+    {
+      upper: -50,
+      lower: -122,
+    },
+    {
+      upper: -56,
+      lower: -137,
     },
     {
       upper: -56,
@@ -4086,15 +5984,10 @@ export const HOLE_TOLERANCES = {
       upper: -62,
       lower: -151,
     },
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
-    null,
+    {
+      upper: -62,
+      lower: -151,
+    },
   ],
   R6: [
     {
@@ -4173,7 +6066,10 @@ export const HOLE_TOLERANCES = {
       upper: -103,
       lower: -139,
     },
-    null,
+    {
+      upper: -113,
+      lower: -149,
+    },
   ],
   R7: [
     {
@@ -4252,6 +6148,9 @@ export const HOLE_TOLERANCES = {
       upper: -93,
       lower: -150,
     },
-    null,
+    {
+      upper: -105,
+      lower: -162,
+    },
   ],
 };
