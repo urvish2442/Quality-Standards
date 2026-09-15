@@ -3,15 +3,20 @@ import ThreadsView from "@/features/threads/components/ThreadsView";
 export const metadata = {
   title: "Threads",
   description:
-    "Metric, British Whitworth, Unified (UN), NPT, and BSP (G) screw thread basics and size tables.",
+    "Metric, British Whitworth, Unified (UN), UNS, NPT, and BSP (G) thread specs and size limits calculator.",
   keywords: [
     "metric threads",
+    "thread size calculator",
+    "pitch diameter min max",
+    "major diameter min max",
+    "minor diameter min max",
     "ISO 261",
     "Whitworth",
     "BSW",
     "BSF",
     "UNC",
     "UNF",
+    "UNS threads",
     "NPT threads",
     "tapered pipe thread",
     "ASME B1.20.1",

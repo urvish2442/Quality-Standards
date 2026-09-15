@@ -6,6 +6,7 @@ import BritishThreadsView from "@/features/threads/components/BritishThreadsView
 import UnThreadsView from "@/features/threads/components/UnThreadsView";
 import BspThreadsView from "@/features/threads/components/BspThreadsView";
 import NptThreadsView from "@/features/threads/components/NptThreadsView";
+import ThreadSizeCalculatorView from "@/features/threads/components/ThreadSizeCalculatorView";
 import ThreadCitations from "@/features/threads/components/ThreadCitations";
 import { THREAD_CITATIONS } from "@/features/threads/constants/threadsData";
 
@@ -15,6 +16,7 @@ const TABS = [
   { id: "bsp", label: "BSP (G)" },
   { id: "un", label: "UN" },
   { id: "npt", label: "NPT" },
+  { id: "size-calculator", label: "Size Calculator" },
 ];
 
 const TAB_CONTENT = {
@@ -23,6 +25,7 @@ const TAB_CONTENT = {
   bsp: BspThreadsView,
   un: UnThreadsView,
   npt: NptThreadsView,
+  "size-calculator": ThreadSizeCalculatorView,
 };
 
 const ThreadsView = () => {
@@ -32,7 +35,7 @@ const ThreadsView = () => {
   return (
     <div className="flex w-full flex-col gap-6">
       <div
-        className="border-border bg-surface inline-flex w-full max-w-3xl rounded-2xl border p-1 shadow-(--card-shadow)"
+        className="border-border bg-surface inline-flex w-full max-w-4xl rounded-2xl border p-1 shadow-(--card-shadow)"
         role="tablist"
         aria-label="Thread standards"
       >
