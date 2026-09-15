@@ -23,6 +23,12 @@ export const CALCULATOR_TABS = [
     href: "/calculator?tab=angle",
     icon: "triangle",
   },
+  {
+    id: "weight",
+    label: "Weight",
+    href: "/calculator?tab=weight",
+    icon: "weight",
+  },
 ];
 
 export const NAV_ITEMS = [
@@ -52,7 +58,7 @@ export const NAV_ITEMS = [
     href: "/threads",
     icon: "thread",
     description:
-      "Metric, British Whitworth, Unified (UN), and BSP (G) thread specs",
+      "Metric, British Whitworth, Unified (UN), NPT, and BSP (G) thread specs",
   },
   {
     id: "calculator",

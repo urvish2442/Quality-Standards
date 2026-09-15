@@ -3,7 +3,7 @@ import ThreadsView from "@/features/threads/components/ThreadsView";
 export const metadata = {
   title: "Threads",
   description:
-    "Metric, British Whitworth, Unified (UN), and BSP (G) screw thread basics and size tables.",
+    "Metric, British Whitworth, Unified (UN), NPT, and BSP (G) screw thread basics and size tables.",
   keywords: [
     "metric threads",
     "ISO 261",
@@ -12,6 +12,9 @@ export const metadata = {
     "BSF",
     "UNC",
     "UNF",
+    "NPT threads",
+    "tapered pipe thread",
+    "ASME B1.20.1",
     "BSP",
     "BSPP",
     "G thread",

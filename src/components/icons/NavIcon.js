@@ -20,6 +20,7 @@ import {
   Triangle,
   Disc,
   Diamond,
+  Scale,
 } from "lucide-react";
 
 const ICON_MAP = {
@@ -33,6 +34,7 @@ const ICON_MAP = {
   roughness: Activity,
   hardness: Diamond,
   calculator: Calculator,
+  weight: Scale,
   converter: RefreshCw,
   position: Crosshair,
   pcd: Disc,

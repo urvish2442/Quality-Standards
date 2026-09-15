@@ -7,8 +7,10 @@ import PositionCalculator from "@/features/calculator/components/PositionCalcula
 import AngleCalculator from "@/features/calculator/components/AngleCalculator";
 import Converter from "@/features/calculator/components/Converter";
 import PcdCalculator from "@/features/calculator/components/PcdCalculator";
+import WeightCalculator from "@/features/calculator/components/WeightCalculator";
 
 const PANEL_MAP = {
+  weight: WeightCalculator,
   converter: Converter,
   position: PositionCalculator,
   pcd: PcdCalculator,
