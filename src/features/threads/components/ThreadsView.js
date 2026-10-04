@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import ThreadCalculatorView from "@/features/threads/components/ThreadCalculatorView";
 import MetricThreadsView from "@/features/threads/components/MetricThreadsView";
 import BritishThreadsView from "@/features/threads/components/BritishThreadsView";
 import UnThreadsView from "@/features/threads/components/UnThreadsView";
@@ -10,16 +11,19 @@ import ThreadSizeCalculatorView from "@/features/threads/components/ThreadSizeCa
 import ThreadCitations from "@/features/threads/components/ThreadCitations";
 import { THREAD_CITATIONS } from "@/features/threads/constants/threadsData";
 
+/*
 const TABS = [
+  { id: "thread-calculator", label: "Thread Calculator" },
   { id: "metric", label: "Metric" },
   { id: "bswbsf", label: "BSW/BSF" },
   { id: "bsp", label: "BSP (G)" },
   { id: "un", label: "UN" },
   { id: "npt", label: "NPT" },
-  { id: "size-calculator", label: "Size Calculator" },
+  { id: "size-calculator", label: "Size Limits" },
 ];
 
 const TAB_CONTENT = {
+  "thread-calculator": ThreadCalculatorView,
   metric: MetricThreadsView,
   bswbsf: BritishThreadsView,
   bsp: BspThreadsView,
@@ -27,13 +31,17 @@ const TAB_CONTENT = {
   npt: NptThreadsView,
   "size-calculator": ThreadSizeCalculatorView,
 };
+*/
 
 const ThreadsView = () => {
-  const [activeTab, setActiveTab] = useState("metric");
+  /*
+  const [activeTab, setActiveTab] = useState("thread-calculator");
   const ActiveView = TAB_CONTENT[activeTab];
+  */
 
   return (
     <div className="flex w-full flex-col gap-6">
+      {/* Tabs navigation commented out per user request:
       <div
         className="border-border bg-surface inline-flex w-full max-w-4xl rounded-2xl border p-1 shadow-(--card-shadow)"
         role="tablist"
@@ -60,10 +68,9 @@ const ThreadsView = () => {
           );
         })}
       </div>
+      */}
 
-      <div role="tabpanel">
-        <ActiveView />
-      </div>
+      <ThreadCalculatorView />
 
       <ThreadCitations citations={THREAD_CITATIONS} />
     </div>

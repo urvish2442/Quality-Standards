@@ -13,11 +13,13 @@ const ThemedSelect = ({
 }) => {
   const [open, setOpen] = useState(false);
   const rootRef = useRef(null);
+  const listRef = useRef(null);
   const listId = useId();
   const selected = options.find(
     (option) => String(option.value) === String(value)
   );
 
+  // Close dropdown on outside click or Escape key
   useEffect(() => {
     if (!open) {
       return undefined;
@@ -44,21 +46,27 @@ const ThemedSelect = ({
     };
   }, [open]);
 
-  const selectOption = (event, nextValue) => {
-    event.preventDefault();
-    event.stopPropagation();
+  // Automatically scroll selected option into view when dropdown opens
+  useEffect(() => {
+    if (open && listRef.current) {
+      const selectedEl = listRef.current.querySelector('[aria-selected="true"]');
+      if (selectedEl) {
+        selectedEl.scrollIntoView({ block: "nearest" });
+      }
+    }
+  }, [open]);
+
+  const selectOption = (nextValue) => {
     onChange(String(nextValue));
     setOpen(false);
   };
 
-  const toggleOpen = (event) => {
-    event.preventDefault();
-    event.stopPropagation();
+  const toggleOpen = () => {
     setOpen((current) => !current);
   };
 
   return (
-    <div ref={rootRef} className="relative">
+    <div ref={rootRef} className="relative w-full">
       <button
         id={id}
         type="button"
@@ -69,7 +77,7 @@ const ThemedSelect = ({
         onClick={toggleOpen}
         className="border-border bg-background text-foreground hover:border-primary/40 focus-visible:border-primary flex h-11 w-full items-center justify-between gap-2 rounded-xl border px-3 text-left text-sm transition outline-none"
       >
-        <span className={selected ? "text-foreground" : "text-muted"}>
+        <span className={`truncate ${selected ? "text-foreground font-medium" : "text-muted"}`}>
           {selected?.label ?? placeholder}
         </span>
         <ChevronDown
@@ -82,10 +90,12 @@ const ThemedSelect = ({
 
       {open ? (
         <ul
+          ref={listRef}
           id={listId}
           role="listbox"
           aria-label={ariaLabel}
-          className="border-border bg-surface-elevated absolute z-30 mt-2 max-h-60 w-full overflow-auto rounded-xl border p-1 shadow-(--card-shadow)"
+          className="border-border bg-surface-elevated absolute z-50 mt-2 max-h-60 sm:max-h-72 w-full overflow-y-auto overscroll-contain rounded-xl border p-1 shadow-(--card-shadow) touch-pan-y"
+          style={{ WebkitOverflowScrolling: "touch" }}
         >
           {options.map((option) => {
             const isSelected = String(option.value) === String(value);
@@ -94,21 +104,14 @@ const ThemedSelect = ({
               <li key={option.value} role="option" aria-selected={isSelected}>
                 <button
                   type="button"
-                  onPointerDown={(event) => {
-                    if (event.button !== 0) {
-                      return;
-                    }
-
-                    selectOption(event, option.value);
-                  }}
-                  onClick={(event) => selectOption(event, option.value)}
-                  className={`flex w-full items-center rounded-lg px-3 py-2.5 text-left text-sm transition ${
+                  onClick={() => selectOption(option.value)}
+                  className={`flex w-full items-center rounded-lg px-3 py-2.5 text-left text-sm transition select-none ${
                     isSelected
-                      ? "bg-primary text-primary-foreground"
+                      ? "bg-primary text-primary-foreground font-semibold"
                       : "text-foreground hover:bg-primary-soft hover:text-foreground"
                   }`}
                 >
-                  {option.label}
+                  <span className="truncate">{option.label}</span>
                 </button>
               </li>
             );
